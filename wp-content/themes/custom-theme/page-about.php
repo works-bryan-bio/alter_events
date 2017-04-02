@@ -5,32 +5,18 @@
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
 <div class="row" style="padding: 20px;margin-left: 40px;">
-	<div class="col-md-12">
-		<div class="col-md-6 left" style="">
-			<img src="<?php bloginfo('template_directory'); ?>/assets/images/about/top-content.png" style="width:90%;"/>
-		</div>
-		<div class="col-md-4 left">
-			<h1 class="about-text-1">about</h1>
-			<h1 class="about-text-2">Our Story</h1>
-			<br/>
-			<h3 style="text-align: justify;">This is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your professional journey. People want to know the real you, so don't be afraid to share personal anecdotes. </h3>	
-			<br/>
-			<a href=""><h3 class="box-black">Read More</h3></a>
-		</div>
-	</div>
-	<div class="col-md-12" style="">
-		<div class="col-md-5 left" style="padding-left: 40px;padding-right: 95px;">
-			<h1 class="about-text-1">about</h1>
-			<h1 class="about-text-2">Our Story</h1>
-			<br/>
-			<h3 style="text-align: justify;">This is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your professional journey. People want to know the real you, so don't be afraid to share personal anecdotes. </h3>	
-			<br/>
-			<a href=""><h3 class="box-black">Read More</h3></a>
-		</div>
-		<div class="col-md-6 left">
-			<img src="<?php bloginfo('template_directory'); ?>/assets/images/about/bottom-content.png" style="width:90%;"/>
-		</div>
-	</div>
+	<?php
+			while ( have_posts() ) : the_post();
+
+				get_template_part( 'template-parts/page/content', 'page' );
+
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+
+			endwhile; // End of the loop.
+			?>
 </div>
 </article><!-- #post-## -->
 	

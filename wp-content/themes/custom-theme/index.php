@@ -1,5 +1,8 @@
 <?php get_header(); ?>
-
+<?php 
+	$header_menu_items = wp_get_nav_menu_items('HEADER');
+	$slider_images = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE post_parent =43");
+?>
 <div id="background">
 	<div class="bg-photo bg-photo-1" style="display: block;"></div>
 	<div class="bg-photo bg-photo-2" style="display: none;"></div>
@@ -12,12 +15,15 @@
 		<nav id="access" role="navigation" style="padding-top: 20px;padding-left: 4px;">
 			<div class="menu-header">
 				<ul id="menu-main-menu" class="menu">
-					<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21"><a class="active-menu" href="">HOME</a></li>
+					<?php foreach( $header_menu_items as $m ){ ?>
+						<li><a href="<?php echo $m->url; ?>"><?php echo strtoupper($m->title); ?></a></li>
+					<?php } ?>
+					<!-- <li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21"><a class="active-menu" href="">HOME</a></li>
 					<li id="menu-item-197" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-197"><a href="#">ABOUT US</a></li>
 					<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-15 current_page_item menu-item-26"><a href="">WHY US</a></li>
 					<li id="menu-item-2582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2582"><a href="">GALLERY</a></li>
 					<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="">BEAUTY TIPS</a></li>
-					<li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="">CONTACT US</a></li>
+					<li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="">CONTACT US</a></li> -->
 				</ul>
 			</div>             
 		</nav>
@@ -25,11 +31,14 @@
 		<nav id="mobile-access" role="navigation">
 				<div class="mobile-menu">
 				<ul id="menu-mobile-menu" class="menu">
-					<li id="menu-item-457" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-457"><a href="">HOME</a></li>
+					<?php foreach( $header_menu_items as $m ){ ?>
+						<li><a href="<?php echo $m->url; ?>"><?php echo strtoupper($m->title); ?></a></li>
+					<?php } ?>
+					<!-- <li id="menu-item-457" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-457"><a href="">HOME</a></li>
 					<li id="menu-item-462" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-462"><a href="">ABOUT US</a></li>
 					<li id="menu-item-459" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-459"><a href="">GALLERY</a></li>
 					<li id="menu-item-2756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2756"><a href="">BEAUTY TIPS</a></li>
-					<li id="menu-item-2758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2758"><a href="">CONTACT US</a></li>
+					<li id="menu-item-2758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2758"><a href="">CONTACT US</a></li> -->
 				</ul>
 			</div>             
 		</nav><!-- #mobile-access -->
