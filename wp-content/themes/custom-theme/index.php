@@ -2,10 +2,17 @@
 <?php 
 	$header_menu_items = wp_get_nav_menu_items('HEADER');
 	$slider_images = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE post_parent =43");
+
 ?>
 <div id="background">
-	<div class="bg-photo bg-photo-1" style="display: block;"></div>
-	<div class="bg-photo bg-photo-2" style="display: none;"></div>
+	<?php $counter = 0; ?>
+	<?php foreach($slider_images as $img_files){ ?>
+		<?php $counter += 1; if($counter == 1){ ?>
+			<div class="bg-photo" style="display: block;"><img class="max-width" src="<?php echo $img_files->guid; ?>"></div>
+		<?php } else{ ?>
+			<div class="bg-photo" style="display: none;"><img class="max-width" src="<?php echo $img_files->guid; ?>"></div>
+		<?php } ?>
+	<?php } ?>
 </div>
 <div id="main-content">
 	<header id="header" role="banner" style="display: block;">

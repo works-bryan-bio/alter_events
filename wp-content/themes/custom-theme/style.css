@@ -84,6 +84,37 @@ a:hover, a:active { outline: 0; }
     font-weight: normal;
     font-style: normal;
 }
+.center{
+  text-align: center;
+}
+.beauty-image{
+    width: 445px;
+    margin: auto;
+}
+.full-width{
+    width:100%;
+}
+.white{
+    color: white;
+}
+
+.beauty-text-title{
+    font-size: 21px;
+}
+.text-detail-beauty{
+    font-style: italic;
+    font-size: 17px;
+    color: #585858;
+}
+.beauty-text-italic{
+    font-family: 'alters-italic';
+    font-size: 38px;
+    letter-spacing: 6px;
+    margin: 0px !important;
+    position: relative;
+    top: 12px;
+    text-align: center;
+}
 .about-text-1{
     font-family: 'alters-italic';
     font-size: 70px;
@@ -92,11 +123,49 @@ a:hover, a:active { outline: 0; }
     position: relative;
     top: 12px;
 }
+.label-contact{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none !important;
 }
+.no-margin{
+    margin: 0px !important;
+}
+.margin-top-35{
+    margin-top: 35px;
+}
+.max-width{
+    width:100%;
+}
+.input-contact{
+    font-size: 16px;
+    padding:5px;
+}
+.black{
+    color:black;
+}
+.box-black-beauty:hover{
+    background-color: #111111;
+    border: 1px solid black; 
 
+}
+.box-black-beauty:hover > a{
+    color:#ffffff;
+}
+.box-black-beauty{
+    width: 150px;
+    text-align: center;
+    background-color: #fdfcf8;
+    border: 1px solid black; 
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: white;
+    text-decoration: none;
+}
 .box-black{
     width: 300px;
     text-align: center;
@@ -110,6 +179,11 @@ a:hover, a:visited, a:link, a:active
 .about-text-2{
     margin: 0px !important;
     font-size:70px;
+    font-weight: bold;
+}
+.contact-text-1{
+    margin: 0px !important;
+    font-size:64px;
     font-weight: bold;
 }
 @font-face {
@@ -953,6 +1027,9 @@ h1, h2, h3, h4, h5, h6 { font-weight:bold } /* This helps to identify headings a
   font-size: 39px !important;
   padding-top: 10px;
 }
+.black{
+  color:black; 
+}
 a.facebook-icon:hover { 
   color: #3063ce !important;
 }
@@ -962,7 +1039,13 @@ a.twitter-icon:hover {
 a.google-icon:hover { 
   color: #c75a47 !important;
 }
-
+.max-width{
+  width:100% !important;
+  margin: 0 auto 0px !important;
+}
+.right{
+  float:right;
+}
 @media (max-width: 1750px) {
   .about-text-1{
     font-size:65px !important;
