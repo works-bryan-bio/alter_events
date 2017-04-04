@@ -5,98 +5,28 @@
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
 <div class="row" style="padding: 20px;margin-left: 40px;">
-
+<?php 
+	$args = array( 'posts_per_page' => 6, 'offset'=> 1, 'category' => 3 );
+    $beautyPosts = get_posts( $args );   
+?>
 	<div class="col-md-12">
+		<?php foreach( $beautyPosts as $post ){ ?>			
 		<div class="col-md-4 left margin-top-35">
 			<h1 class="beauty-text-italic">Perfect for your event</h1>
 			<br/>
 			<div class="center beauty-image">
-				<img class="full-width" src="<?php bloginfo('template_directory'); ?>/assets/images/beauty/beauty-content-1.jpg" style="">
+				<?php echo get_the_post_thumbnail( $post->ID, 'full-width' ); ?>				
 			</div>
 			<br/>
 			<div class="col-md-12 center">
-				<span class="text-detail-beauty">March 30, 2017 &nbsp; | &nbsp;</span><span class="text-detail-beauty">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty">3 comments</span>
+				<span class="text-detail-beauty">March 30, 2017 &nbsp; | &nbsp;</span><span class="text-detail-beauty">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty"><?php echo $post->comment_count; ?> comments</span>
 			</div>
 			<div class="col-md-12 center">
-				<h1 class="beauty-text-title">Name of the Dished</h1>
-				<div class="box-black-beauty"><a class="black" href="#">Read More</a></div>
+				<h1 class="beauty-text-title"><?php echo apply_filters( 'the_title', $post->post_title, $post->ID ); ?></h1>
+				<div class="box-black-beauty"><a class="black" href="<?php echo get_permalink( $post->ID ); ?>">Read More</a></div>
 			</div>
-		</div>
-		<div class="col-md-4 left margin-top-35">
-			<h1 class="beauty-text-italic">Perfect for your event</h1>
-			<br/>
-			<div class="center beauty-image">
-				<img class="full-width" src="<?php bloginfo('template_directory'); ?>/assets/images/beauty/beauty-content-2.jpg" style="">
-			</div>
-			<br/>
-			<div class="col-md-12 center">
-				<span class="text-detail-beauty">March 30, 2017 &nbsp; | &nbsp;</span><span class="text-detail-beauty">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty">3 comments</span>
-			</div>
-			<div class="col-md-12 center">
-				<h1 class="beauty-text-title">Name of the Dished</h1>
-				<div class="box-black-beauty"><a class="black" href="#">Read More</a></div>
-			</div>
-		</div>
-		<div class="col-md-4 left margin-top-35">
-			<h1 class="beauty-text-italic">Perfect for your event</h1>
-			<br/>
-			<div class="center beauty-image">
-				<img class="full-width" src="<?php bloginfo('template_directory'); ?>/assets/images/beauty/beauty-content-3.jpg" style="">
-			</div>
-			<br/>
-			<div class="col-md-12 center">
-				<span class="text-detail-beauty">March 30, 2017 &nbsp; | &nbsp;</span><span class="text-detail-beauty">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty">3 comments</span>
-			</div>
-			<div class="col-md-12 center">
-				<h1 class="beauty-text-title">Name of the Dished</h1>
-				<div class="box-black-beauty"><a class="black" href="#">Read More</a></div>
-			</div>
-		</div>
-		<div class="col-md-4 left margin-top-35">
-			<h1 class="beauty-text-italic">Perfect for your event</h1>
-			<br/>
-			<div class="center beauty-image">
-				<img class="full-width" src="<?php bloginfo('template_directory'); ?>/assets/images/beauty/beauty-content-4.jpg" style="">
-			</div>
-			<br/>
-			<div class="col-md-12 center">
-				<span class="text-detail-beauty">March 30, 2017 &nbsp; | &nbsp;</span><span class="text-detail-beauty">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty">3 comments</span>
-			</div>
-			<div class="col-md-12 center">
-				<h1 class="beauty-text-title">Name of the Dished</h1>
-				<div class="box-black-beauty"><a class="black" href="#">Read More</a></div>
-			</div>
-		</div>
-		<div class="col-md-4 left margin-top-35">
-			<h1 class="beauty-text-italic">Perfect for your event</h1>
-			<br/>
-			<div class="center beauty-image">
-				<img class="full-width" src="<?php bloginfo('template_directory'); ?>/assets/images/beauty/beauty-content-5.jpg" style="">
-			</div>
-			<br/>
-			<div class="col-md-12 center">
-				<span class="text-detail-beauty">March 30, 2017 &nbsp; | &nbsp;</span><span class="text-detail-beauty">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty">3 comments</span>
-			</div>
-			<div class="col-md-12 center">
-				<h1 class="beauty-text-title">Name of the Dished</h1>
-				<div class="box-black-beauty"><a class="black" href="#">Read More</a></div>
-			</div>
-		</div>
-		<div class="col-md-4 left margin-top-35">
-			<h1 class="beauty-text-italic">Perfect for your event</h1>
-			<br/>
-			<div class="center beauty-image">
-				<img class="full-width" src="<?php bloginfo('template_directory'); ?>/assets/images/beauty/beauty-content-6.jpg" style="">
-			</div>
-			<br/>
-			<div class="col-md-12 center">
-				<span class="text-detail-beauty">March 30, 2017 &nbsp; | &nbsp;</span><span class="text-detail-beauty">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty">3 comments</span>
-			</div>
-			<div class="col-md-12 center">
-				<h1 class="beauty-text-title">Name of the Dished</h1>
-				<div class="box-black-beauty"><a class="black" href="#">Read More</a></div>
-			</div>
-		</div>
+		</div>	
+		<?php } ?>		
 	</div>
 
 
