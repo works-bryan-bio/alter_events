@@ -4,7 +4,7 @@
 <h2 class="page-title"><?php the_title(); ?></h2>
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
-<div class="row" style="padding: 20px;margin-left: 40px;">
+<div class="row margin-content" style="">
 	<?php
 			while ( have_posts() ) : the_post();
 

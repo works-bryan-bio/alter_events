@@ -4,7 +4,7 @@
 <h2 class="page-title"><?php the_title(); ?></h2>
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
-<div class="row" style="padding: 20px;margin-left: 40px;">
+<div class="row margin-content">
 	<div class="col-md-12">
 		<h1 class="contact-text-1" style="text-align: center;">Get_In_Touch</h1>
 		<div class="col-md-12" style="padding-top: 50px;padding-left: 22%;">

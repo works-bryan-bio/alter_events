@@ -8,9 +8,9 @@
 	<?php $counter = 0; ?>
 	<?php foreach($slider_images as $img_files){ ?>
 		<?php $counter += 1; if($counter == 1){ ?>
-			<div class="bg-photo" style="display: block;"><img class="max-width" src="<?php echo $img_files->guid; ?>"></div>
+			<div class="bg-photo" style="display: block;background-image: url('<?php echo $img_files->guid; ?>')"></div>
 		<?php } else{ ?>
-			<div class="bg-photo" style="display: none;"><img class="max-width" src="<?php echo $img_files->guid; ?>"></div>
+			<div class="bg-photo" style="display: none;background-image: url('<?php echo $img_files->guid; ?>')"></div>
 		<?php } ?>
 	<?php } ?>
 </div>

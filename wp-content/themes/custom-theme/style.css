@@ -871,7 +871,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
   #main-content-int { padding: 0; display: block; position: relative;}
   #main-content-int #content { margin: 0 auto; width: 100%;}
   #main-content-int #content article { width: 90%; top: 0;}
-  #main-content-int #content h2.page-title { color: #333; font-size: 30px; margin: 0 auto; top: 0; width: 90%;}
+
   #main-content-int #mast { position: relative !important; width: 100%; height: 360px;}
   #main-content-int #mast_cat { position: relative !important; width: 100%; height: 360px;}
   #main-content-int #mast_error { position: relative !important; width: 100%; height: 360px;}
@@ -1055,6 +1055,9 @@ a.google-icon:hover {
 .right{
   float:right;
 }
+.margin-content{
+  padding: 20px;margin-left: 40px;
+}
 @media (max-width: 1750px) {
   .about-text-1{
     font-size:65px !important;
@@ -1087,6 +1090,15 @@ a.google-icon:hover {
   h3{
     font-size: 17px !important;
   }
+
+}
+@media (max-width: 1560px) {
+
+  .beauty-image > img {
+    width: 80% !important;
+    max-width: none !important;
+    height: 80% !important;
+  }
 }
 @media (max-width: 1385px) {
   .about-text-1{
@@ -1097,6 +1109,14 @@ a.google-icon:hover {
   }
   h3{
     font-size: 15px !important;
+  }
+  .beauty-image > img {
+    width: 70% !important;
+    max-width: none !important;
+    height: 70% !important;
+    text-align: left;
+    float: left;
+    margin-left: 24px;
   }
 }
 @media (max-width: 1255px) {
@@ -1111,19 +1131,239 @@ a.google-icon:hover {
     font-size:40px !important;
   }
   h3{
-    font-size: 12px !important;
+    font-size: 14px !important;
+  }
+  .about-text-1{
+    text-align: center !important;
+  }
+  .about-text-2{
+    text-align: center !important;
+  }
+  .read-more {
+    color: white !important;
+    background-color: black !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    font-size: 16px !important;
   }
 }
-@media (max-width: 720px) {
-  .phone-number{
-    padding-left: 41% !important;
+@media (max-width: 1080px) {
+  .beauty-image > img {
+    width: 40% !important;
+    max-width: none !important;
+    height: 40% !important;
+    text-align: left;
+    float: left;
+    margin-left: 24px;
+  }
+
+}
+@media (max-width: 1215px) {
+  .beauty-image > img {
+    width: 60% !important;
+    max-width: none !important;
+    height: 60% !important;
+    text-align: left;
+    float: left;
+    margin-left: 24px;
+  }
+
+}
+@media (max-width: 991px){
+  .beauty-image > img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 50% !important;
+  }
+  .about-text-1{
+    text-align: center !important;
+  }
+  .about-text-2{
+    text-align: center !important;
+  }
+  .col-md-6{
+    width:100% !important;
+    text-align: center !important;
+    padding: 0px !important;
+  }
+  .margin-content{
+    padding: 0px !important;margin-left: 0px !important;
+  }
+  .read-more {
+    color: white !important;
+    background-color: black !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    font-size: 16px !important;
+  }
+  .col-md-5{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 100% !important;
+  }
+  .col-md-4{
+    width:100% !important;
+    padding-left:15px !important;
+    padding-right: 15px !important;
+    clear: both !important;
+  }
+  .col-md-12{
+    width:100% !important;
+    padding-left:15px !important;
+    padding-right: 15px !important;
+    clear: both !important;
   }
 }
+@media (max-width: 960px){
+  .about-text-1{
+    text-align: center !important;
+  }
+  .about-text-2{
+    text-align: center !important;
+  }
+  .col-md-6{
+    width:100% !important;
+    text-align: center !important;
+    padding: 0px !important;
+  }
+  .contact-text-1 {
+    margin: 0px !important;
+    font-size: 31px !important;
+    font-weight: bold;
+    margin-top: 30px !important;
+  }
+  .margin-content{
+    padding: 0px !important;margin-left: 0px !important;
+  }
+  .read-more {
+    color: white !important;
+    background-color: black !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    font-size: 16px !important;
+  }
+  .col-md-5{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 100% !important;
+  }
+  .row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
+
+}
+/* for mobile */
 @media (max-width: 720px) {
   .phone-number{
     padding-left: 38% !important;
   }
+  #main-content-int #content h2.page-title { 
+    color: #333;
+    font-size: 24px;
+    margin: 0 auto;
+    top: 0;
+    width: 90%;
+    padding-left: 0px !important;
+    margin-top: 20px !important;
+    text-align: center;
+  }
+  #main-content-int #content article {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    position: relative;
+    top: 0px !important;
+  }
+  .about-text-1{
+    text-align: center !important;
+  }
+  .about-text-2{
+    text-align: center !important;
+  }
+  .col-md-6{
+    width:100% !important;
+    text-align: center !important;
+    padding: 0px !important;
+  }
+  .margin-content{
+    padding: 0px !important;margin-left: 0px !important;
+  }
+  .read-more {
+    color: white !important;
+    background-color: black !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    font-size: 16px !important;
+  }
+  .col-md-5{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 100% !important;
+  }
+}
+@media (max-width: 480px){
+  .testimonial-inner {
+    padding-left: 20px !important;
+    padding-right: 30px !important;
+  }
 }
 .current_page_item{
   background-color: #BBA89A;
+}
+.max-height-img{
+  max-height: 800px;
+}
+div#comments {
+    padding-left: 15px;
+}
+nav.navigation.post-navigation {
+    padding-left: 15px;
+}
+.margin-small{
+  margin-top:20px !important;
+}
+.text-detail-beauty-blog {
+    font-style: italic;
+    font-size: 20px;
+    color: #797979;
+}
+.content-blog-beauty > p{
+    font-size: 21px;
+}
+#reply-title{
+    font-family: 'alters-italic';
+    font-size: 34px;
+    letter-spacing: 6px;
+    margin: 0px !important;
+    position: relative;
+    margin-bottom:35px !important;
+    top: 12px;
+    text-align: left;
+}
+.beauty-image > img{
+
+}
+textarea.wpcf7-form-control.wpcf7-textarea.max-width.input-contact {
+    position: relative;
+    top: 15px;
+}
+input.wpcf7-form-control.wpcf7-submit {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 0px !important;
+    background-color: black;
 }
