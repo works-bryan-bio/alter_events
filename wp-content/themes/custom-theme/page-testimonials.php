@@ -1,5 +1,5 @@
 <?php get_header('inner'); ?>
-<section id="mast" style="position: fixed; background: none;"><div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;"><img src="<?php bloginfo('template_directory'); ?>/assets/images/about/about-top.png" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 1903px; height: 1031.03px; left: 0px; top: -430.516px;"></div></section>
+<section id="mast" style="position: fixed; background: none;"><div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;"><img src="<?php bloginfo('template_directory'); ?>/assets/images/testimonial/testimonial-top.png" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 1903px; height: 1031.03px; left: 0px; top: -322.516px;"></div></section>
 <section id="content" role="main">
 <h2 class="page-title"><?php the_title(); ?></h2>
 			
@@ -20,5 +20,5 @@
 </div>
 </article><!-- #post-## -->
 	
-<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/about/about-bottom.png') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
+<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/testimonial/testimonial-bottom.png') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0;"></section>
 <?php get_footer('inner'); ?>

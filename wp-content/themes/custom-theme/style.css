@@ -1023,6 +1023,15 @@ h1, h2, h3, h4, h5, h6 { font-weight:bold } /* This helps to identify headings a
 .left{
   float:left;
 }
+.read-more{
+  color: white;
+  background-color: black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 75px;
+  padding-right: 75px;
+  font-size: 24px;
+}
 .font-large{
   font-size: 39px !important;
   padding-top: 10px;
