@@ -1124,3 +1124,6 @@ a.google-icon:hover {
     padding-left: 38% !important;
   }
 }
+.current_page_item{
+  background-color: #BBA89A;
+}
