@@ -1,9 +1,5 @@
 <?php get_header(); ?>
-<?php 
-	$header_menu_items = wp_get_nav_menu_items('HEADER');
-	$slider_images = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE post_parent =43");
-
-?>
+<?php $slider_images = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE post_parent =43"); ?>
 <div id="background">
 	<?php $counter = 0; ?>
 	<?php foreach($slider_images as $img_files){ ?>

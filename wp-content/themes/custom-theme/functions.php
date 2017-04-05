@@ -35,3 +35,12 @@ add_action('get_header', 'my_filter_head');
 function my_filter_head() {
    remove_action('wp_head', '_admin_bar_bump_cb');
 } 
+
+function wpb_move_comment_field_to_bottom( $fields ) {
+$comment_field = $fields['comment'];
+unset( $fields['comment'] );
+$fields['comment'] = $comment_field;
+return $fields;
+}
+
+add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );

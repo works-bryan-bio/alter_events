@@ -76,7 +76,35 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
-	comment_form();
+	$commenter = wp_get_current_commenter();
+	$req       = get_option( 'require_name_email' );
+	$aria_req  = ( $req ? " aria-required='true'" : '' );
+
+	$fields =  array(
+	  'author' =>	    
+	    '<input id="author" name="author" type="text" placeholder="Your name" value="' . esc_attr( $commenter['comment_author'] ) .
+	    '" size="30"' . $aria_req . ' /></p>',
+
+	  'email' =>	    
+	    '<input id="email" name="email" type="text" placeholder="Your email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+	    '" size="30"' . $aria_req . ' /></p>',
+
+	  'url' =>	    
+	    '<input id="url" name="url" type="text" placeholder="Your Website" value="' . esc_attr( $commenter['comment_author_url'] ) .
+	    '" size="30" /></p>',
+	);
+	
+	$comment_args = array(
+		'title_reply' => 'Leave a reply',
+		'fields' => apply_filters(
+				'comment_form_default_fields', $fields
+			),
+		'comment_field' => '<textarea id="comment" placeholder="Your comments" name="comment" aria-required="true"></textarea></p>'		
+	);
+	
+	comment_form($comment_args);
+
+	
 	?>
 
 </div><!-- #comments -->

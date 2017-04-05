@@ -35,7 +35,9 @@
 <script src="<?php bloginfo('template_directory'); ?>/assets/bootstrap/js/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php bloginfo('template_directory'); ?>/assets/bootstrap/js/bootstrap.min.js"></script>
-
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/masonry.pkgd.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/imagesloaded.pkgd.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/gallery.js"></script>
 
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/plugins.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/b-script.js"></script>
