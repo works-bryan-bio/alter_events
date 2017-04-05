@@ -140,6 +140,9 @@ a:hover, a:visited, a:link, a:active
 .max-width{
     width:100%;
 }
+.box-black-beauty:hover {
+    color: white;
+}
 .input-contact{
     font-size: 16px;
     padding:5px;
@@ -163,7 +166,7 @@ a:hover, a:visited, a:link, a:active
     padding: 15px;
     margin: 0 auto;
     margin-top: 20px;
-    color: white;
+    color: black;
     text-decoration: none;
 }
 .box-black{
@@ -1058,6 +1061,9 @@ a.google-icon:hover {
 .margin-content{
   padding: 20px;margin-left: 40px;
 }
+.default-theme{
+  padding: 20px;margin-left: 40px;
+}
 @media (max-width: 1750px) {
   .about-text-1{
     font-size:65px !important;
@@ -1158,6 +1164,9 @@ a.google-icon:hover {
     float: left;
     margin-left: 24px;
   }
+  .text-size-mobile{
+    font-size: 15px !important;
+  }
 
 }
 @media (max-width: 1215px) {
@@ -1189,6 +1198,9 @@ a.google-icon:hover {
     padding: 0px !important;
   }
   .margin-content{
+    padding: 0px !important;margin-left: 0px !important;
+  }
+  .default-theme{
     padding: 0px !important;margin-left: 0px !important;
   }
   .read-more {
@@ -1239,6 +1251,9 @@ a.google-icon:hover {
   .margin-content{
     padding: 0px !important;margin-left: 0px !important;
   }
+  .default-theme{
+    padding: 0px !important;margin-left: 0px !important;
+  }
   .read-more {
     color: white !important;
     background-color: black !important;
@@ -1256,6 +1271,9 @@ a.google-icon:hover {
   .row {
     margin-right: 0px !important;
     margin-left: 0px !important;
+  }
+  .text-size-mobile{
+    font-size: 10px !important;
   }
 
 }
@@ -1296,6 +1314,9 @@ a.google-icon:hover {
     padding: 0px !important;
   }
   .margin-content{
+    padding: 0px !important;margin-left: 0px !important;
+  }
+  .default-theme{
     padding: 0px !important;margin-left: 0px !important;
   }
   .read-more {
@@ -1339,6 +1360,9 @@ nav.navigation.post-navigation {
     font-size: 20px;
     color: #797979;
 }
+p{
+  font-size: 16px;
+}
 .content-blog-beauty > p{
     font-size: 21px;
 }
@@ -1366,4 +1390,80 @@ input.wpcf7-form-control.wpcf7-submit {
     padding-bottom: 5px;
     margin-left: 0px !important;
     background-color: black;
+}
+.size-large{
+    font-size: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+input:valid, textarea:valid {
+    width: 70%;
+    font-size: 17px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.form-submit > input#submit {
+    width: 170px;
+    font-size: 15px;
+    padding: 12px;
+    background-color: black;
+    margin: 0px !important;
+}
+.testimonial-image > img {
+    width: 83px;
+    height: 75px;
+    margin-top: 22px;
+}
+.gallery-event{
+    margin-top: 25px;
+    max-width: 1415px;
+    text-align: justify;
+}
+.grid-item > img {
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+.gallery-btn-style{
+    background-color: #fdfcf8;
+    border: 1px solid black;
+    color: black;
+    padding-left: 50%;
+    padding-right: 50%;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.gallery-btn-food{
+    background-color: #fdfcf8;
+    border: 1px solid black;
+    color: black;
+    padding-left: 43%;
+    padding-right: 43%;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.gallery-btn-bev{
+    background-color: #fdfcf8;
+    border: 1px solid black;
+    color: black;
+    padding-left: 36.5%;
+    padding-right: 36.5%;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.gallery-btn-style:hover, .gallery-btn-bev:hover, .gallery-btn-food:hover{
+  background-color: black;
+}
+.gallery-btn-active{
+  background-color: black;
+  color:white;
+}
+.gallery-btn-container{
+  width: 23.700%;
 }

@@ -1,10 +1,10 @@
 <?php get_header('inner'); ?>
-<section id="mast" style="position: fixed; background: none;"><div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;"><img src="<?php bloginfo('template_directory'); ?>/assets/images/why-us/why-us-top.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 1903px; height: 1031.03px; left: 0px; top: -430.516px;"></div></section>
+<section id="mast" style="position: fixed; background: none;"><div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;"><img src="<?php bloginfo('template_directory'); ?>/assets/images/why-us/why-us-top.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -430.516px;"></div></section>
 <section id="content" role="main">
 <h2 class="page-title"><?php the_title(); ?></h2>
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
-<div class="row" style="padding: 20px;margin-left: 40px;">
+<div class="row margin-content">
 	<div class="col-md-12 center">
 		<h1 class="contact-text-1">Why_Us</h1>
 	</div>
@@ -14,7 +14,7 @@
 	</div>
 	<br style="clear: both;" /><Br/><Br/>
 	<div class="col-md-12 center"><a href="#" class="read-more">Read More</a></div>
-</div>
+
 
 	<?php
 			while ( have_posts() ) : the_post();
@@ -29,6 +29,7 @@
 			endwhile; // End of the loop.
 			?>
 </div>
+
 </article><!-- #post-## -->
 	
 <section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/why-us/why-us-bottom.jpg') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>

@@ -23,7 +23,7 @@
 			</div>
 			<div class="col-md-12 center">
 				<h1 class="beauty-text-title"><?php echo apply_filters( 'the_title', $post->post_title, $post->ID ); ?></h1>
-				<div class="box-black-beauty"><a class="black" href="<?php echo get_permalink( $post->ID ); ?>">Read More</a></div>
+				<a class="black" href="<?php echo get_permalink( $post->ID ); ?>"><div class="box-black-beauty">Read More</div></a>
 			</div>
 		</div>	
 		<?php } ?>		

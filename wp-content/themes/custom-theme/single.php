@@ -25,7 +25,7 @@ get_header('inner');
 			<span class="text-detail-beauty-blog">March 30, 2017 &nbsp; | &nbsp;</span><span class="text-detail-beauty-blog">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty-blog">0 comments</span>
 		</div>
 		<div class="col-md-12 center">
-				<h1 class="beauty-text-title">Name of the dished</h1>
+				<h1 class="beauty-text-title"><?php the_title(); ?></h1>
 		</div>
 	</div>
 	<div class="col-md-7 right content-blog-beauty">
