@@ -37,7 +37,7 @@ body { font-family: sans-serif; }
 	    'order'      => 'ASC',
 	    'hide_empty' => false	    
 	);
-	$product_categories = get_terms( 'product_cat', $args );	
+	$product_categories = get_terms( 'product_cat', $args );		
 ?>
 
 <section id="mast" style="position: fixed; background: none;"><div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;"><img src="<?php bloginfo('template_directory'); ?>/assets/images/gallery-landing/gallery-top.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 1903px; height: 1031.03px; left: 0px; top: -430.516px;"></div></section>
@@ -52,15 +52,19 @@ body { font-family: sans-serif; }
 			$thumbnail_id = get_woocommerce_term_meta( $c->term_id, 'thumbnail_id', true );
 			$image        = wp_get_attachment_url( $thumbnail_id );
 			$product_url  = add_query_arg('projectid', $c->term_id, get_permalink(21));
+
+			//Get products
+			$args     = array( 'post_type' => 'product', 'product_cat' => $c->slug );
+			$products = get_posts( $args ); 						
 		?>
 			<div class="col-md-4 left auto-fit gallery-block" style="background-image: url('<?php echo $image; ?>')">
 				<div class="overlay-gallery center hidden">
 					<p class="overlay-title"><?php echo $c->name; ?></p>
-					<h1 class="gallery-text-italic white">Food</h1>
-					<h1 class="gallery-text-italic white">Beverage</h1>
-					<h1 class="gallery-text-italic white">Decoration</h1>
+					<?php foreach( $products as $p ){ ?>
+						<h1 class="gallery-text-italic white"><?php echo $p->post_title; ?></h1>
+					<?php } ?>
 					<br/>
-					<a class="black" href="http://localhost/dov/git/wordpress/alterseventsdev/2017/04/03/ad-mei-mundi-inimicus-ocurreret/"><div class="box-transparent-beauty">VIEW</div></a>
+					<a class="black" href="<?php echo $product_url; ?>"><div class="box-transparent-beauty">VIEW</div></a>
 				</div>
 			</div>
 		<?php } ?>
