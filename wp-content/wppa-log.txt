@@ -1,0 +1,22 @@
+{b}Obs{/b}: on:April 6, 2017 7:07 pm: admin_alter: Created path: C:/xampp/htdocs/dov/git/wordpress/alterseventsdev/wp-content/uploads/wppa
+{b}Obs{/b}: on:April 6, 2017 7:07 pm: admin_alter: Created path: C:/xampp/htdocs/dov/git/wordpress/alterseventsdev/wp-content/uploads/wppa/thumbs
+{b}Obs{/b}: on:April 6, 2017 7:07 pm: admin_alter: Created path: C:/xampp/htdocs/dov/git/wordpress/alterseventsdev/wp-content/wppa-depot
+{b}Obs{/b}: on:April 6, 2017 7:07 pm: admin_alter: Created path: C:/xampp/htdocs/dov/git/wordpress/alterseventsdev/wp-content/wppa-depot/admin_alter
+{b}Obs{/b}: on:April 6, 2017 7:07 pm: admin_alter: Created path: C:/xampp/htdocs/dov/git/wordpress/alterseventsdev/wp-content/uploads/wppa/watermarks
+{b}Obs{/b}: on:April 6, 2017 7:07 pm: admin_alter: Created path: C:/xampp/htdocs/dov/git/wordpress/alterseventsdev/wp-content/uploads/wppa/fonts
+{b}Obs{/b}: on:April 6, 2017 7:07 pm: admin_alter: Created path: C:/xampp/htdocs/dov/git/wordpress/alterseventsdev/wp-content/uploads/wppa/temp/
+{b}Err{/b}: on:April 6, 2017 7:07 pm: admin_alter: Unimplemented choice for wppa_cre_uploads_htaccess remove
+{b}Err{/b}: on:April 6, 2017 7:07 pm: admin_alter: $wppa_opt[wppa_grant_parent] is not a setting
+{b}url{/b}: /dov/git/wordpress/alterseventsdev/wp-admin/plugins.php?plugin_status=all&paged=1&s
+#0  wppa_log() called at [C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-content\plugins\wp-photo-album-plus\wppa-utils.php:427]
+#1  wppa_opt() called at [C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-content\plugins\wp-photo-album-plus\wppa-common-functions.php:52]
+#2  wppa_initialize_runtime()
+#3  call_user_func_array() called at [C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-includes\class-wp-hook.php:298]
+#4  WP_Hook->apply_filters() called at [C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-includes\class-wp-hook.php:323]
+#5  WP_Hook->do_action() called at [C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-includes\plugin.php:453]
+#6  do_action() called at [C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-settings.php:449]
+#7  require_once(C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-settings.php) called at [C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-config.php:89]
+#8  require_once(C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-config.php) called at [C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-load.php:37]
+#9  require_once(C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-load.php) called at [C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-admin\admin.php:31]
+#10 require_once(C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-admin\admin.php) called at [C:\xampp\htdocs\dov\git\wordpress\alterseventsdev\wp-admin\plugins.php:10]
+
