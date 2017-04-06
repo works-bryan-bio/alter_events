@@ -48,6 +48,11 @@ $(document).ready(function(){
     itemSelector: '.grid-item',
     columnWidth: 5
   });
+  $(".gallery-block").hover(function() {
+    $(this).find('.overlay-gallery').removeClass("hidden");
+  },function(){
+    $(this).find('.overlay-gallery').addClass("hidden");
+  });
 
 });
 /* <![CDATA[ */

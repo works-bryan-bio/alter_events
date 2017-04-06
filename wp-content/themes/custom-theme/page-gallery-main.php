@@ -30,19 +30,6 @@ body { font-family: sans-serif; }
   max-width: 100%;
 }
 </style>
-
-<section id="mast" style="position: fixed; background: none;"><div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;"><img src="<?php bloginfo('template_directory'); ?>/assets/images/gallery/gallery-top.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 1903px; height: 1031.03px; left: 0px; top: -430.516px;"></div></section>
-<section id="content" role="main">
-<h2 class="page-title"><?php the_title(); ?></h2>
-			
-<article id="post-691" class="post-691 page type-page status-publish hentry">
-<div class="row default-theme" style="">
-	<h1 class="about-text-1">event name</h1>
-	<div class="col-md-12 gallery-event"> 
-		<p>This is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your paThis is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your place.</p>
-	</div>
-	
-</div>
 <?php 
 	global $wp_query;
 	$args = array(	    
@@ -52,17 +39,37 @@ body { font-family: sans-serif; }
 	);
 	$product_categories = get_terms( 'product_cat', $args );	
 ?>
-<?php foreach( $product_categories as $c ){ ?>
-	<?php 
-		$thumbnail_id = get_woocommerce_term_meta( $c->term_id, 'thumbnail_id', true );
-		$image        = wp_get_attachment_url( $thumbnail_id );
-		$product_url  = add_query_arg('projectid', $c->term_id, get_permalink(21));
-	?>
-	<a href="<?php echo $product_url; ?>"><h1><?php echo $c->name; ?></h1></a>
-	<img src="<?php echo $image; ?>" width="152" height="245"/>
-<?php } ?>
-</article><!-- #post-## -->
 
-	
-<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/gallery/gallery-bottom.jpg') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
+<section id="mast" style="position: fixed; background: none;"><div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;"><img src="<?php bloginfo('template_directory'); ?>/assets/images/gallery-landing/gallery-top.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 1903px; height: 1031.03px; left: 0px; top: -430.516px;"></div></section>
+<section id="content" role="main">
+<h2 class="page-title"><?php the_title(); ?></h2>
+			
+<article id="post-691" class="post-691 page type-page status-publish hentry">
+<div class="row default-theme" style="padding-right: 50px !important;">
+	<div class="row">
+		<?php foreach( $product_categories as $c ){ ?>
+		<?php 
+			$thumbnail_id = get_woocommerce_term_meta( $c->term_id, 'thumbnail_id', true );
+			$image        = wp_get_attachment_url( $thumbnail_id );
+			$product_url  = add_query_arg('projectid', $c->term_id, get_permalink(21));
+		?>
+			<div class="col-md-4 left auto-fit gallery-block" style="background-image: url('<?php echo $image; ?>')">
+				<div class="overlay-gallery center hidden">
+					<p class="overlay-title"><?php echo $c->name; ?></p>
+					<h1 class="gallery-text-italic white">Food</h1>
+					<h1 class="gallery-text-italic white">Beverage</h1>
+					<h1 class="gallery-text-italic white">Decoration</h1>
+					<br/>
+					<a class="black" href="http://localhost/dov/git/wordpress/alterseventsdev/2017/04/03/ad-mei-mundi-inimicus-ocurreret/"><div class="box-transparent-beauty">VIEW</div></a>
+				</div>
+			</div>
+		<?php } ?>
+	</div>
+	<br class="clear">
+	<div class="col-md-12 center">
+		<a class="black" href="http://localhost/dov/git/wordpress/alterseventsdev/2017/04/03/ad-mei-mundi-inimicus-ocurreret/"><div class="box-black-beauty">View More</div></a>
+	</div>
+</div>
+</article><!-- #post-## -->
+<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/gallery-landing/gallery-bottom.jpg') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
 <?php get_footer('inner'); ?>
