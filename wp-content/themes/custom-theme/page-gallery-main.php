@@ -51,7 +51,7 @@ body { font-family: sans-serif; }
 		<?php 
 			$thumbnail_id = get_woocommerce_term_meta( $c->term_id, 'thumbnail_id', true );
 			$image        = wp_get_attachment_url( $thumbnail_id );
-			$product_url  = add_query_arg('projectid', $c->term_id, get_permalink(21));
+			$product_url  = add_query_arg('project', $c->slug, get_permalink(21));
 
 			//Get products
 			$args     = array( 'post_type' => 'product', 'product_cat' => $c->slug );

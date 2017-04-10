@@ -56,48 +56,65 @@ body { font-family: sans-serif; }
 	<?php 	
 		$project = $_GET['project'];
 		//Get products
-		$args      = array( 'post_type' => 'product', 'product_cat' => $project );
-		$products  = get_posts( $args );
-		$productsB = get_posts( $args );
+		$args     = array( 'post_type' => 'product', 'product_cat' => $project );
+		$products = get_posts( $args );
+
+		$style_images    = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE post_parent =89");		
+		$beverage_images = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE post_parent =85");
+		$food_images     = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE post_parent =82");
 	?>
 
 	<br class="clear"><br/>
 	<div class="image-gallery-btn-container" style="margin-bottom: 80px;margin-left:20px;">
 		<?php foreach( $products as $p ){ ?>
 			<div class="gallery-btn-container left center">
-				<a data-id="<?php echo $p->post_name; ?>" class="text-size-mobile gallery-btn-<?php echo $p->post_name; ?> btn-gallery-<?php echo $p->post_name; ?>" href="javascript:void(0);"><?php echo $p->post_title; ?></a>
+				<a class="text-size-mobile gallery-btn-<?php echo $p->post_name; ?> btn-gallery-<?php echo $p->post_name; ?>" href="javascript:void(0);"><?php echo $p->post_title; ?></a>
 			</div>
 		<?php } ?>		
 	</div>
 
-	<?php  $count = 0; foreach( $products as $p ){ ?>
-		<?php 
-			if( $count > 0 ){ 
-				$add_hidden = "style='display: none;'";
-			}else{
-				$add_hidden = '';
-			}
-		?>
-		<div class="col-md-12 <?php echo $p->post_name; ?>-images-container gallery-container left" <?php echo $add_hidden; ?>>
-			<div class="grid grid-<?php echo $p->post_name; ?>">
-				<div class="grid-sizer"></div>
+	<div class="col-md-12 food-images-container left">
+		<div class="grid grid-food">
+			<div class="grid-sizer"></div>
+			<?php $count = 0; foreach($food_images as $img_files){ ?>
 				<?php 
-					$count   = 0;
-					$product = new WC_product($p->ID);
-		    		$attachment_ids = $product->get_gallery_image_ids();
-		    	?>
-		    	<?php foreach( $attachment_ids as $attachment_id ){ ?>
-			          <?php 
-			          	$image_url = wp_get_attachment_url( $attachment_id );
-			          	if( $count >= 8 ){
-							$add_class = "hidden";
-						}
-			          ?>
-			          <div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div>
-			    <?php } ?>				
-			</div>
+					if( $count >= 8 ){
+						$add_class = "hidden";
+					}
+				?>
+				<div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $img_files->guid; ?>" /></div>
+			<?php $count++;} ?>
 		</div>
-	<?php $count++;} ?>
+	</div>
+
+	<div class="col-md-12 beverage-images-container left" style="display: none;">
+		<div class="grid grid-beverage">
+			<div class="grid-sizer"></div>
+			<?php $count = 0; foreach($beverage_images as $img_files){ ?>
+				<?php 
+					if( $count >= 8 ){
+						$add_class = "hidden";
+					}
+				?>
+				<div class="grid-item"><img src="<?php echo $img_files->guid; ?>" /></div>
+			<?php $count++;} ?>
+		</div>
+	</div>
+
+
+	<div class="col-md-12 style-images-container left" style="display: none;">
+		<div class="grid grid-style">
+			<div class="grid-sizer"></div>
+			<?php $count = 0; foreach($style_images as $img_files){ ?>
+				<?php 
+					if( $count >= 8 ){
+						$add_class = "hidden";
+					}
+				?>
+				<div class="grid-item"><img src="<?php echo $img_files->guid; ?>" /></div>
+			<?php $count++;} ?>
+		</div>
+	</div>
 	<br class="clear">
 	<div class="col-md-9 center" style="margin-top:80px;margin-bottom: 40px;">
 		<a href="#" class="box-black size-large">See More</a>
@@ -108,33 +125,3 @@ body { font-family: sans-serif; }
 	
 <section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/gallery/gallery-bottom.jpg') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
 <?php get_footer('gallery'); ?>
- <script type="text/javascript">
- 	$(function(){
- 		<?php foreach( $products as $p ){ ?>
- 			$('.btn-gallery-<?php echo $p->post_name; ?>').click(function(){
- 				var selected_gallery = $(this).attr("data-id"); 				
- 				$(".btn-gallery-<?php echo $p->post_name; ?>").addClass('gallery-btn-active');
- 				<?php foreach( $productsB as $pb ){ ?>
- 					<?php if( $p->post_name != $pb->post_name ){ ?>
- 						$(".btn-gallery-<?php echo $pb->post_name; ?>").removeClass('gallery-btn-active');
- 					<?php } ?>
- 				<?php } ?>
-
- 				$(".gallery-container").not("." + selected_gallery + "-images-container").fadeOut('fast',function(){
- 					$("." + selected_gallery + "-images-container").fadeIn();
- 				});
-
- 				var $grid = $('.grid-' + selected_gallery).masonry({
-				  itemSelector: '.grid-item',
-				  percentPosition: true,
-				  columnWidth: '.grid-sizer'
-				});
-
-				$grid.imagesLoaded().progress( function() {
-				  $grid.masonry();
-				}); 		
- 			});
-		<?php } ?>	
- 	});
-	
-</script>
