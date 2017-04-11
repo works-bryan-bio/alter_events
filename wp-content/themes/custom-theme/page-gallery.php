@@ -66,7 +66,6 @@ body { font-family: sans-serif; }
 		<?php foreach( $products as $p ){ ?>
 			<div class="gallery-btn-container left center">
 				<a data-id="<?php echo $p->post_name; ?>" class="text-size-mobile gallery-btn-<?php echo $p->post_name; ?> btn-gallery-<?php echo $p->post_name; ?>" href="javascript:void(0);"><?php echo $p->post_title; ?></a>
-
 			</div>
 		<?php } ?>		
 	</div>
@@ -113,14 +112,9 @@ body { font-family: sans-serif; }
  	$(function(){
  		<?php foreach( $products as $p ){ ?>
  			$('.btn-gallery-<?php echo $p->post_name; ?>').click(function(){
- 				var selected_gallery = $(this).attr("data-id"); 				
- 				$(".btn-gallery-<?php echo $p->post_name; ?>").addClass('gallery-btn-active');
- 				<?php foreach( $productsB as $pb ){ ?>
- 					<?php if( $p->post_name != $pb->post_name ){ ?>
- 						$(".btn-gallery-<?php echo $pb->post_name; ?>").removeClass('gallery-btn-active');
- 					<?php } ?>
- 				<?php } ?>
-
+ 				var selected_gallery = $(this).attr("data-id");  				
+ 				$(".text-size-mobile").removeClass('gallery-btn-active');
+ 				$(this).addClass('gallery-btn-active');				
  				$(".gallery-container").not("." + selected_gallery + "-images-container").fadeOut('fast',function(){
  					$("." + selected_gallery + "-images-container").fadeIn();
  				});
