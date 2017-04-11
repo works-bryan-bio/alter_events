@@ -10,6 +10,7 @@ $grid.imagesLoaded().progress( function() {
 });  
 
 $(function(){
+
 	$(".btn-gallery-food").click(function(){
 		$(".btn-gallery-food").addClass('gallery-btn-active');
 		$(".btn-gallery-style").removeClass('gallery-btn-active');

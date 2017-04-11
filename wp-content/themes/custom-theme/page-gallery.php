@@ -66,6 +66,7 @@ body { font-family: sans-serif; }
 		<?php foreach( $products as $p ){ ?>
 			<div class="gallery-btn-container left center">
 				<a data-id="<?php echo $p->post_name; ?>" class="text-size-mobile gallery-btn-<?php echo $p->post_name; ?> btn-gallery-<?php echo $p->post_name; ?>" href="javascript:void(0);"><?php echo $p->post_title; ?></a>
+
 			</div>
 		<?php } ?>		
 	</div>
