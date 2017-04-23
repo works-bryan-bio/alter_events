@@ -39,8 +39,18 @@ body { font-family: sans-serif; }
 	);
 	$product_categories = get_terms( 'product_cat', $args );		
 ?>
-
-<section id="mast" style="position: fixed; background: none;"><div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;"><img src="<?php bloginfo('template_directory'); ?>/assets/images/gallery-landing/gallery-top.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 1903px; height: 1031.03px; left: 0px; top: -430.516px;"></div></section>
+<section id="mast" style="position: fixed; background: none;">
+	<div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;">
+		<?php 
+			if( has_post_thumbnail( $post->ID ) ){
+				$image_bg = the_post_thumbnail();
+			}else{
+				$image_bg = bloginfo('template_directory') . "/assets/images/gallery-landing/gallery-top.jpg";
+			}					
+		?>
+		<img src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -430.516px;">
+	</div>
+</section>
 <section id="content" role="main">
 <h2 class="page-title"><?php the_title(); ?></h2>
 			
