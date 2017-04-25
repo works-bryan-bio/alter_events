@@ -69,12 +69,11 @@ body { font-family: sans-serif; }
 		?>
 			<div class="col-md-4 left auto-fit gallery-block" style="background-image: url('<?php echo $image; ?>')">
 				<div class="overlay-gallery center hidden">
-					<p class="overlay-title"><?php echo $c->name; ?></p>
-					<?php foreach( $products as $p ){ ?>
-						<h1 class="gallery-text-italic white"><?php echo $p->post_title; ?></h1>
-					<?php } ?>
-					<br/>
-					<a class="black" href="<?php echo $product_url; ?>"><div class="box-transparent-beauty">VIEW</div></a>
+					<div style="position: relative;top: 50%;transform: translateY(-50%);">
+						<h1 class="gallery-text-italic white" style="text-transform: uppercase;"><?php echo $c->name; ?></h1>
+						<br/>
+						<a class="black" href="<?php echo $product_url; ?>"><div class="box-transparent-beauty">VIEW</div></a>
+					</div>
 				</div>
 			</div>
 		<?php } ?>
