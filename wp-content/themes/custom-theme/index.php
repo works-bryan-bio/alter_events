@@ -48,7 +48,7 @@
 			</div>
 			<br style="clear:both;" />
 			<hr style="border-top: 1px solid #909090;" />
-			<h3 class="footer-text">All Rights Reserved. Design and Developed by <span style="color:#00b6dd;">BroProWeb</span></h3>
+			<h3 class="footer-text footer-small">All Rights Reserved. Designed by: <span><a href="#" style="color:#00b6dd;">BroProWeb</a></span></h3>
 		</div>
 
 		<div class="clearfix"></div>

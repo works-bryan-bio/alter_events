@@ -5,7 +5,7 @@
 			if( has_post_thumbnail( $post->ID ) ){
 				$image_bg = the_post_thumbnail();
 			}else{
-				$image_bg = bloginfo('template_directory') . "/assets/images/beauty/beauty-top.jpg";
+				$image_bg = get_template_directory_uri() . "/assets/images/beauty/beauty-top.jpg";
 			}					
 		?>
 		<img src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -430.516px;">

@@ -172,6 +172,9 @@ a:hover, a:active { outline: 0; }
     margin-top: 0px;
     margin-bottom: 20px;
 }
+.menu li:hover{
+  background-color: #bba89a;
+}
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none !important;
@@ -1072,7 +1075,7 @@ h1, h2, h3, h4, h5, h6 { font-weight:bold } /* This helps to identify headings a
   padding-left: 39px;
 }
 .footer-text{
-  font-size: 20px !important;
+  font-size: 18px !important;
   color: #cccaca;
   font-family: helvetica;
 }
@@ -1642,4 +1645,14 @@ input:valid, textarea:valid {
 a.text-size-mobile {
     margin-top: -1px !important;
     display: inline-block;
+}
+.footer-small{
+  font-size: 17px !important;
+}
+.content-small{
+  height: 100px !important;
+  overflow: hidden !important;
+}
+.content-large{
+  height: auto;
 }
