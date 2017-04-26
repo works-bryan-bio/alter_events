@@ -17,17 +17,54 @@
 <article id="post-691" class="post-691 page type-page status-publish hentry">
 <div class="row margin-content">
 	<?php
-			while ( have_posts() ) : the_post();
+		while ( have_posts() ) : the_post();
+			get_template_part( 'template-parts/page/content', 'page' );
+			the_content();
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		endwhile; // End of the loop.
+	?>
+	<div class="owl-carousel owl-theme">
+	<?php $testimonials = $wpdb->get_results("SELECT  ID, post_content, post_title FROM wp_posts WHERE post_type ='wpm-testimonial' AND post_status ='publish'"); ?>
+	<?php foreach( $testimonials as $t ){ ?>
+		<div class="item">
+			<h1><?php echo $t->post_title; ?></h1>				
+			<?php 
+				//Get Post Meta
+				$testimonial_meta  = $wpdb->get_results("SELECT  meta_key, meta_value, post_id FROM wp_postmeta WHERE post_id =" . $t->ID . " AND (meta_key ='client_name' OR meta_key ='company_name' OR meta_key ='email' OR meta_key ='company_website' OR meta_key ='_thumbnail_id')");			
+				$uploads 		   = wp_upload_dir(); 
+				$testimonial_image = $uploads['baseurl'] . "/2017/04/profile-icon-1.png";
 
-				get_template_part( 'template-parts/page/content', 'page' );
-				the_content();
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile; // End of the loop.
 			?>
+			<?php foreach( $testimonial_meta as $tm ){ ?>
+				<?php 
+					if( $tm->meta_key == 'client_name' ){
+						echo "<span>Client Name : " . $tm->meta_value . "</span><br/>";
+					}elseif( $tm->meta_key == 'email'  ){
+						echo "<span>Email : " . $tm->meta_value . "</span><br/>";
+					}elseif( $tm->meta_key == 'company_name' ){
+						echo "<span>Company Name : " . $tm->meta_value . "</span><br/>";
+					}elseif( $tm->meta_key == 'company_website' ){
+						echo "<span>Company Website" . $tm->meta_value . "</span><br/>";
+					}elseif( $tm->meta_key == '_thumbnail_id' ){
+						$thumb_meta_id = $tm->meta_value;
+						$testimonial_thumb_meta = $wpdb->get_results("SELECT  guid FROM wp_postmeta WHERE post_id =" . $thumb_meta_id );
+						foreach( $testimonial_thumb_meta as $thumb ){
+							if( $thumb->meta_key == '_wp_attached_file' ){
+								$testimonial_image = $uploads['baseurl'] . "/" . $thumb->meta_value;		
+							}
+						}
+						
+					}
+				?>
+			<?php } ?>	
+			<img src="<?php echo $testimonial_image; ?>">		
+			<p><?php echo $t->post_content; ?></p>
+		</div>
+	<?php } ?>
+	</div>
 </div>
 </article><!-- #post-## -->
 	

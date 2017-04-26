@@ -87,11 +87,7 @@ if ( post_password_required() ) {
 
 	  'email' =>	    
 	    '<input id="email" name="email" type="text" placeholder="Your email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-	    '" size="30"' . $aria_req . ' /></p>',
-
-	  'url' =>	    
-	    '<input id="url" name="url" type="text" placeholder="Your Website" value="' . esc_attr( $commenter['comment_author_url'] ) .
-	    '" size="30" /></p>',
+	    '" size="30"' . $aria_req . ' /></p>'
 	);
 	
 	$comment_args = array(
@@ -102,7 +98,9 @@ if ( post_password_required() ) {
 		'comment_field' => '<textarea id="comment" placeholder="Your comments" name="comment" aria-required="true"></textarea></p>'		
 	);
 	
+	echo "<div style='text-align:center;'>";
 	comment_form($comment_args);
+	echo "</div>";
 
 	
 	?>

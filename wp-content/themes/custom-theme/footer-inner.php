@@ -35,6 +35,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/assets/bootstrap/js/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php bloginfo('template_directory'); ?>/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/owl.carousel.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/masonry.pkgd.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/imagesloaded.pkgd.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/gallery.js"></script>
@@ -47,6 +48,11 @@ $(document).ready(function(){
   $('.grid').masonry({
     itemSelector: '.grid-item',
     columnWidth: 5
+  });
+  $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true      
   });
   $(".gallery-block").hover(function() {
     $(this).find('.overlay-gallery').removeClass("hidden");

@@ -1549,7 +1549,7 @@ p{
     position: relative;
     margin-bottom:35px !important;
     top: 12px;
-    text-align: left;
+    text-align: center;
 }
 .beauty-image > img{
 
@@ -1578,6 +1578,7 @@ input:valid, textarea:valid {
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    border: 1px solid #e2e2e2;
 }
 .form-submit > input#submit {
     width: 170px;
@@ -1612,7 +1613,7 @@ input:valid, textarea:valid {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.gallery-btn-food{
+.gallery-btn-food, .gallery-btn{
     background-color: #fdfcf8;
     border: 1px solid black;
     color: black;
@@ -1632,7 +1633,7 @@ input:valid, textarea:valid {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.gallery-btn-style:hover, .gallery-btn-beverage:hover, .gallery-btn-food:hover{
+.gallery-btn:hover{
   background-color: black;
 }
 .gallery-btn-active{

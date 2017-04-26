@@ -1,5 +1,10 @@
 <?php get_header(); ?>
-<?php $slider_images = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE post_parent =43"); ?>
+<?php 
+	$slider_data = $wpdb->get_results("SELECT  meta_value FROM wp_postmeta WHERE post_id =43 AND meta_key ='nivo_settings' LIMIT 1"); 
+	$slider_settings   = unserialize($slider_data[0]->meta_value);
+	$slider_images_ids = $slider_settings['manual_image_ids'];
+	$slider_images     = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE id IN(" . $slider_images_ids . ")"); 	
+?>
 <div id="background">
 	<?php $counter = 0; ?>
 	<?php foreach($slider_images as $img_files){ ?>

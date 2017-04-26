@@ -76,9 +76,15 @@ body { font-family: sans-serif; }
 	<div class="image-gallery-btn-container" style="margin-bottom: 80px;margin-left:20px;">
 		<?php foreach( $products as $p ){ ?>
 			<div class="gallery-btn-container left center">
-				<a data-id="<?php echo $p->post_name; ?>" class="text-size-mobile gallery-btn-<?php echo $p->post_name; ?> btn-gallery-<?php echo $p->post_name; ?>" href="javascript:void(0);"><?php echo $p->post_title; ?></a>
+				<a data-id="<?php echo $p->post_name; ?>" class="text-size-mobile gallery-btn gallery-btn-<?php echo $p->post_name; ?> btn-gallery-<?php echo $p->post_name; ?>" href="javascript:void(0);"><?php echo $p->post_title; ?></a>
 			</div>
-		<?php } ?>		
+		<?php } ?>
+			<div class="gallery-btn-container left center">
+				<a data-id="all" class="text-size-mobile gallery-btn gallery-btn-all btn-gallery-all" href="javascript:void(0);">ALL</a>
+			</div>		
+			<div class="gallery-btn-container left center">
+				<a data-id="videos" class="text-size-mobile gallery-btn gallery-btn-videos btn-gallery-videos" href="javascript:void(0);">VIDEOS</a>
+			</div>		
 	</div>
 
 	<?php  $count = 0; foreach( $products as $p ){ ?>
