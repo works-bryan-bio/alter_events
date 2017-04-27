@@ -1008,7 +1008,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; clear: both; }
 .clear { clear: both;}
-
+.tr-row{position: relative;right: 56px;}
 
 
 /* ==|== print styles =======================================================
@@ -1277,7 +1277,10 @@ a.google-icon:hover {
   .text-size-mobile{
     font-size: 15px !important;
   }
-
+  .tr-row{
+    position: relative !important;
+    right: 0px !important
+  }
 }
 @media (max-width: 1215px) {
   .beauty-image > img {
@@ -1657,3 +1660,4 @@ a.text-size-mobile {
 .content-large{
   height: auto;
 }
+

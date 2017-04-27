@@ -50,9 +50,12 @@ $(document).ready(function(){
     columnWidth: 5
   });
   $('.owl-carousel').owlCarousel({
+      items: 1,
       loop:true,
+      autoplay: true,
       margin:10,
-      nav:true      
+      nav:true,
+
   });
   $(".gallery-block").hover(function() {
     $(this).find('.overlay-gallery').removeClass("hidden");

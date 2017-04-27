@@ -1,3 +1,4 @@
+
 <?php get_header('inner'); ?>
 <section id="mast" style="position: fixed; background: none;">
 	<div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;">
@@ -15,9 +16,9 @@
 <h2 class="page-title"><?php the_title(); ?></h2>
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
-<div class="row margin-content">
+<div class="row tr-row">
 	<?php
-		while ( have_posts() ) : the_post();
+		/*while ( have_posts() ) : the_post();
 			get_template_part( 'template-parts/page/content', 'page' );
 			the_content();
 			// If comments are open or we have at least one comment, load up the comment template.
@@ -25,12 +26,13 @@
 				comments_template();
 			endif;
 		endwhile; // End of the loop.
+		*/
 	?>
 	<div class="owl-carousel owl-theme">
 	<?php $testimonials = $wpdb->get_results("SELECT  ID, post_content, post_title FROM wp_posts WHERE post_type ='wpm-testimonial' AND post_status ='publish'"); ?>
-	<?php foreach( $testimonials as $t ){ ?>
+	<?php foreach( $testimonials as $t ){ $client_name = ""; $company_name = ""; ?>
 		<div class="item">
-			<h1><?php echo $t->post_title; ?></h1>				
+					
 			<?php 
 				//Get Post Meta
 				$testimonial_meta  = $wpdb->get_results("SELECT  meta_key, meta_value, post_id FROM wp_postmeta WHERE post_id =" . $t->ID . " AND (meta_key ='client_name' OR meta_key ='company_name' OR meta_key ='email' OR meta_key ='company_website' OR meta_key ='_thumbnail_id')");			
@@ -38,16 +40,16 @@
 				$testimonial_image = $uploads['baseurl'] . "/2017/04/profile-icon-1.png";
 
 			?>
-			<?php foreach( $testimonial_meta as $tm ){ ?>
+			<?php foreach( $testimonial_meta as $tm ){  ?>
 				<?php 
 					if( $tm->meta_key == 'client_name' ){
-						echo "<span>Client Name : " . $tm->meta_value . "</span><br/>";
+						$client_name = $tm->meta_value;
 					}elseif( $tm->meta_key == 'email'  ){
-						echo "<span>Email : " . $tm->meta_value . "</span><br/>";
+						
 					}elseif( $tm->meta_key == 'company_name' ){
-						echo "<span>Company Name : " . $tm->meta_value . "</span><br/>";
+						$company_name = $tm->meta_value;
 					}elseif( $tm->meta_key == 'company_website' ){
-						echo "<span>Company Website" . $tm->meta_value . "</span><br/>";
+					
 					}elseif( $tm->meta_key == '_thumbnail_id' ){
 						$thumb_meta_id = $tm->meta_value;
 						$testimonial_thumb_meta = $wpdb->get_results("SELECT  guid FROM wp_postmeta WHERE post_id =" . $thumb_meta_id );
@@ -60,8 +62,27 @@
 					}
 				?>
 			<?php } ?>	
-			<img src="<?php echo $testimonial_image; ?>">		
-			<p><?php echo $t->post_content; ?></p>
+			<div class="col-md-12" style="padding-left: 0px;">
+				<div class="col-md-6 left" style="text-align: right;padding-left: 0px;">
+					<div class="testimonial-image" style="display: inline-block;">
+						<img width="67" height="63" src="<?php echo $testimonial_image;?>" class="attachment-thumbnail size-thumbnail wp-post-image">
+					</div>
+				</div>
+				<div class="col-md-6 left" style="text-align: left;padding-top:45px !important;padding-left: 0px;">
+				
+					<?php if($client_name != ""){ ?>	
+						<div class="testimonial-name" style="font-size: 18px;font-weight: bold;"><?php echo $client_name; ?></div>
+					<?php } ?>
+					<?php if($company_name != ""){ ?>	
+					<div class="testimonial-company" style=""><?php echo $company_name; ?></div>
+					<?php } ?>
+				</div>
+				<br style="clear:both;" />
+				<div class="testimonial-content">
+					<h3 class="testimonial-heading" style="text-align:center;font-weight: 700;font-size: 24px;font-style: italic;"><?php echo $t->post_title; ?></h3>			
+					<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 80%;margin: 0 auto;margin-top: 30px;"><?php echo $t->post_content; ?></p>
+				</div>
+			</div>
 		</div>
 	<?php } ?>
 	</div>
@@ -70,3 +91,9 @@
 	
 <section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/testimonial/testimonial-bottom.png') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0;"></section>
 <?php get_footer('inner'); ?>
+
+<style type="text/css">
+	#main-content-int #content article{
+		padding-bottom: 0px !important;
+	}
+</style>
