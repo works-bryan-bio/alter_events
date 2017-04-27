@@ -32,11 +32,20 @@ body { font-family: sans-serif; }
 </style>
 <?php 
 	global $wp_query;
-	$args = array(	    
-	    'orderby'    => 'title',
-	    'order'      => 'ASC',
-	    'hide_empty' => false	    
-	);
+	if(isset($_GET['view'])) { 
+		$args = array(	    
+		    'orderby'    => 'title',
+		    'order'      => 'ASC',
+		    'hide_empty' => false   
+		);
+	}else{
+		$args = array(	    
+		    'orderby'    => 'title',
+		    'order'      => 'ASC',
+		    'hide_empty' => false,
+		    'number' => 3     
+		);
+	}
 	$product_categories = get_terms( 'product_cat', $args );		
 ?>
 <section id="mast" style="position: fixed; background: none;">
@@ -52,7 +61,7 @@ body { font-family: sans-serif; }
 	</div>
 </section>
 <section id="content" role="main">
-<h2 class="page-title">Our Events</h2>
+<h2 id="page_title" class="page-title">Our Events</h2>
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
 <div class="row default-theme" style="padding-right: 50px !important;">
@@ -80,7 +89,12 @@ body { font-family: sans-serif; }
 	</div>
 	<br class="clear">
 	<div class="col-md-12 center">
-		<a class="black" href="http://localhost/dov/git/wordpress/alterseventsdev/2017/04/03/ad-mei-mundi-inimicus-ocurreret/"><div class="box-black-beauty">View More</div></a>
+		<?php if(isset($_GET['view'])) { ?>
+			<a class="black" href="<?php echo get_permalink();?>"><div class="box-black-beauty">View Less</div></a>
+		<?php }else{ ?>
+			<a class="black" href="<?php echo get_permalink();?>?view=all#content"><div class="box-black-beauty">View More</div></a>
+		<?php } ?>
+		
 	</div>
 </div>
 </article><!-- #post-## -->

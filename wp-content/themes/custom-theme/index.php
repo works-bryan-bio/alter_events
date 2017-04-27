@@ -59,5 +59,6 @@
 		<div class="clearfix"></div>
 	</div>
 </footer>
+
 <?php get_footer(); ?>
 <?php //get_sidebar(); ?>

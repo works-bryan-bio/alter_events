@@ -47,7 +47,7 @@ body { font-family: sans-serif; }
 <h2 class="page-title"><?php the_title(); ?></h2>
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
-<div class="row default-theme" style="">
+<div id="event-container" class="row default-theme" style="">
 	<h1 class="about-text-1">event name</h1>
 	<div class="col-md-12 gallery-event"> 
 		<p>This is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your paThis is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your place.</p>
@@ -100,10 +100,13 @@ body { font-family: sans-serif; }
 				<div class="grid-sizer"></div>
 				<?php 
 					$count   = 0;
+					$limiter = 0;
 					$product = new WC_product($p->ID);
 		    		$attachment_ids = $product->get_gallery_image_ids();
 		    	?>
+
 		    	<?php foreach( $attachment_ids as $attachment_id ){ ?>
+		    		<?php if($limiter < 6 || isset($_GET['view'])) { ?>	
 			          <?php 
 			          	$image_url = wp_get_attachment_url( $attachment_id );
 			          	if( $count >= 8 ){
@@ -111,14 +114,25 @@ body { font-family: sans-serif; }
 						}
 			          ?>
 			          <div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div>
+			        <?php } ?>
+			        <?php $limiter++; ?>
 			    <?php } ?>				
+			</div>
+			<br class="clear">
+			<div class="col-md-9 center" style="margin-top:80px;margin-bottom: 40px;">
+				<?php if(isset($_GET['view'])) { ?>
+					<a href="<?php echo get_permalink();?>?project=<?= $_GET['project'] ?>&product_selected=<?= $p->post_name; ?>#event-container" class="box-black size-large">View less</a>
+				<?php }else{  ?>
+					<a href="<?php echo get_permalink();?>?project=<?= $_GET['project'] ?>&view=all&product_selected=<?= $p->post_name; ?>#event-container" class="box-black size-large">See More</a>
+				<?php } ?>
+				
 			</div>
 		</div>
 	<?php $count++;} ?>
-	<br class="clear">
+	<!-- <br class="clear">
 	<div class="col-md-9 center" style="margin-top:80px;margin-bottom: 40px;">
 		<a href="#" class="box-black size-large">See More</a>
-	</div>
+	</div> -->
 </div>
 </article><!-- #post-## -->
 
@@ -146,7 +160,11 @@ body { font-family: sans-serif; }
 				  $grid.masonry();
 				}); 		
  			});
-		<?php } ?>	
+		<?php } ?>
+
+		<?php if(isset($_GET['view']) || isset($_GET['product_selected'])) { ?>
+			$(".btn-gallery-<?php echo $_GET['product_selected']; ?>").trigger('click');
+		<?php } ?>
  	});
 	
 </script>
