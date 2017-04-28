@@ -1689,8 +1689,6 @@ input:valid, textarea:valid {
     background-color: #fdfcf8;
     border: 1px solid black;
     color: black;
-    padding-left: 50%;
-    padding-right: 50%;
     font-size: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1699,8 +1697,6 @@ input:valid, textarea:valid {
     background-color: #fdfcf8;
     border: 1px solid black;
     color: black;
-    padding-left: 43%;
-    padding-right: 43%;
     font-size: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1709,8 +1705,6 @@ input:valid, textarea:valid {
     background-color: #fdfcf8;
     border: 1px solid black;
     color: black;
-    padding-left: 36.5%;
-    padding-right: 36.5%;
     font-size: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1723,7 +1717,13 @@ input:valid, textarea:valid {
   color:white;
 }
 .gallery-btn-container{
-  width: 23.700%;
+
+}
+.mrg-150{
+  margin-left: 150px;
+}
+a.gallery-btn {
+    width: 242px;
 }
 a.text-size-mobile {
     margin-top: -1px !important;
