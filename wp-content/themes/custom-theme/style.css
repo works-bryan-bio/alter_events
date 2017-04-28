@@ -246,12 +246,12 @@ a:hover, a:visited, a:link, a:active
     font-weight: bold;
 }
 .quote-input {
-    width: 100% !important;
+    width: 505px !important;
     margin-top: 11px;
     height: 37px;
 }
 .quote-text-input {
-    width: 100% !important;
+    width: 505px !important;
     margin-top: 11px;
     height: 37px;
 }
@@ -1653,8 +1653,8 @@ h4#qqModalLabel {
     padding-left: 40px !important;
     padding-right: 40px !important;
 }
-.wpcf7-text{
-    width: 130% !important;
+input:valid, textarea:valid {
+    width: 100%;
     font-size: 17px;
     padding-left: 10px;
     padding-right: 10px;
@@ -1662,17 +1662,6 @@ h4#qqModalLabel {
     padding-bottom: 5px;
     border: 1px solid #e2e2e2;
 }
-
-.wpcf7-textarea {
-    width: 150% !important;
-    font-size: 17px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border: 1px solid #e2e2e2;
-}
-
 .form-submit > input#submit {
     width: 170px;
     font-size: 15px;
