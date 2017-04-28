@@ -36,7 +36,7 @@
 <!-- QUICK QUOTE -->
 
   <div class="col-md-12">
-    <a href="#quickQuoteModal" data-toggle="modal" class="quote">Quick Quote</a>
+    <a href="#quickQuoteModal" data-toggle="modal" class="quote">Q<br/>u<br/>i<br/>c<br/>k<br/><br/>Q<br/>u<br/>o<br/>t<br/>e</a>
     <div class="modal fade" id="quickQuoteModal" tabindex="-1" role="dialog" aria-labelledby="qqModalLabel">
         <div class="modal-dialog " role="document">
             <div class="modal-content">

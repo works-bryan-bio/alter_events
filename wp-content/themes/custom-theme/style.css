@@ -258,17 +258,18 @@ a:hover, a:visited, a:link, a:active
 .quote{
     color: white;
     float: right;
+    margin-top: 50px;
     background-color: black;
-    padding-top: 26px;
-    padding-bottom: 10px;
-    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
     padding-right: 30px;
-    font-size: 22px;
+    font-size: 18px;
     border-radius: 20px;
     position: fixed;
-    right: 100px;
+    right: -15px;
     top: -15px;
-    font-family: serif;
+    font-family: monospace;
     z-index: 1;
 }
 .quote:hover{
