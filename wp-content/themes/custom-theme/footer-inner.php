@@ -78,8 +78,7 @@ $(document).ready(function(){
       items: 1,
       loop:true,
       autoplay: true,
-      margin:10,
-      nav:true,
+      margin:10     
 
   });
   $(".gallery-block").hover(function() {
