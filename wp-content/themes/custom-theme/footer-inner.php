@@ -31,6 +31,31 @@
     <div id="backTop" style="display: block;"></div>
 </div>
 
+
+
+<!-- QUICK QUOTE -->
+
+  <div class="col-md-12">
+    <a href="#quickQuoteModal" data-toggle="modal" class="quote">Quick Quote</a>
+    <div class="modal fade" id="quickQuoteModal" tabindex="-1" role="dialog" aria-labelledby="qqModalLabel">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>  </button>
+                <h4 class="modal-title" id="qqModalLabel" style="float: right;">Quick Quote</h4>
+              </div>
+
+              <div class="modal-body">
+                <?php echo do_shortcode('[contact-form-7 id="182" title="Free Quote"]'); ?>
+              </div>
+
+            </div>
+        </div><!--/.modal-dialog-->
+    </div><!--/.modal-->
+  </div>
+
+<!-- END QUICK QUOTE -->
+
 <!-- jQuery -->
 <script src="<?php bloginfo('template_directory'); ?>/assets/bootstrap/js/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->

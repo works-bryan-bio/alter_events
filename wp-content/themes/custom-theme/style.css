@@ -245,6 +245,35 @@ a:hover, a:visited, a:link, a:active
     font-size:64px;
     font-weight: bold;
 }
+.quote-input {
+    width: 100% !important;
+    margin-top: 11px;
+    height: 37px;
+}
+.quote-text-input {
+    width: 100% !important;
+    margin-top: 11px;
+    height: 37px;
+}
+.quote{
+    color: white;
+    float: right;
+    background-color: black;
+    padding-top: 26px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 22px;
+    border-radius: 20px;
+    position: fixed;
+    right: 100px;
+    top: -15px;
+    font-family: serif;
+    z-index: 1;
+}
+.quote:hover{
+    background-color: #b93f33;
+}
 @font-face {
     font-family: 'brandon_grotesque_boldregular';
     src: url('fonts/brandon_bld-webfont.eot');
@@ -875,6 +904,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 
 /* for 960px or less */
 @media screen and (max-width: 960px) {
+
   header { position: absolute;}
   
   #main-content-int { padding: 0;}
@@ -1381,6 +1411,7 @@ a.google-icon:hover {
 
 }
 @media (max-width: 960px){
+
   .about-text-1{
     text-align: center !important;
   }
@@ -1429,6 +1460,7 @@ a.google-icon:hover {
 }
 /* for mobile */
 @media (max-width: 720px) {
+    .quote{display:none !important;}
   .phone-number{
     padding-left: 38% !important;
   }
@@ -1574,8 +1606,54 @@ input.wpcf7-form-control.wpcf7-submit {
     padding-left: 40px;
     padding-right: 40px;
 }
+.close {
+    color: white !important;
+    opacity: 1 !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    padding-right: 9px !important;
+    padding-left: 8px !important;
+    font-size: 25px !important;
+    background-color: red !important;
+    border-radius: 30px !important;
+}
+h4#qqModalLabel {
+    text-align: center !important;
+    float: none !important;
+    font-size: 21px !important;
+    color:white !important;
+}
+.modal-header {
+    background-color: #000;
+}
+.submit-quote {
+    width: 115px !important;
+    padding-top: 9px !important;
+    padding-bottom: 7px !important;
+    padding-right: 2px !important;
+    padding-left: 2px !important;
+}
+.modal-footer {
+    background: #e41f1f !important;
+}
+.btn-default {
+    color: #fff !important;
+    background-color: rgba(255, 255, 255, 0) !important;
+    border: none !important;
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+    height: 25px !important;
+    font-size: 18px !important;
+    padding-top: 2px !important;
+}
+.modal-body {
+    padding-top: 20px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
 input:valid, textarea:valid {
-    width: 70%;
+    width: 100%;
     font-size: 17px;
     padding-left: 10px;
     padding-right: 10px;
