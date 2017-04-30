@@ -158,7 +158,7 @@ body { font-family: sans-serif; }
  				var $grid = $('.grid-' + selected_gallery).masonry({
 				  itemSelector: '.grid-item',
 				  percentPosition: true,
-				  columnWidth: 1
+				  columnWidth: 2
 				});
 
 				$grid.imagesLoaded().progress( function() {
