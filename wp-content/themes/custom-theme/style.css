@@ -175,6 +175,10 @@ a:hover, a:active { outline: 0; }
 .menu li:hover{
   background-color: #bba89a;
 }
+.top-80{
+  position: relative;
+  bottom: 80px;
+}
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none !important;
@@ -1465,6 +1469,11 @@ a.google-icon:hover {
   .phone-number{
     padding-left: 38% !important;
   }
+  .top-80{
+    position: relative !important;
+    bottom: 0px !important;
+    top: 20px !important;
+  }
   #main-content-int #content h2.page-title { 
     color: #333;
     font-size: 24px;
@@ -1678,6 +1687,9 @@ input:valid, textarea:valid {
     margin-top: 25px;
     max-width: 1415px;
     text-align: justify;
+}
+.grid-item {
+  width: 25% !important;
 }
 .grid-item > img {
     padding-left: 5px;

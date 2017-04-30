@@ -70,7 +70,8 @@ $(document).ready(function(){
 
   $('.grid').masonry({
     itemSelector: '.grid-item',
-    columnWidth: 5
+    columnWidth: 1,
+    percentPosition: true
   });
   $(".gallery-block").hover(function() {
     $(this).find('.overlay-gallery').removeClass("hidden");
