@@ -74,6 +74,7 @@ $(document).ready(function(){
     itemSelector: '.grid-item',
     columnWidth: 5
   });
+
   $('.owl-carousel').owlCarousel({
       items: 1,
       loop:true,
@@ -81,6 +82,18 @@ $(document).ready(function(){
       margin:10     
 
   });
+
+  var owl = $('.owl-carousel'); 
+  owl.owlCarousel();
+
+  // Custom Navigation Events
+  $(".next").click(function(){
+    owl.trigger('owl.next');
+  })
+  $(".prev").click(function(){
+    owl.trigger('owl.prev');
+  })
+
   $(".gallery-block").hover(function() {
     $(this).find('.overlay-gallery').removeClass("hidden");
   },function(){

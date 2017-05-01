@@ -643,7 +643,7 @@ header p.site_desc { display: none;}
 #access .menu-header ul li { position: relative;}
 #access .menu-header ul li a { color: #efefef; display: block; font: 19px/28px 'helvetica', 'sans-serif'; text-transform: uppercase; padding: 0 35px;line-height: 33px;}
 #access .menu-header ul li a:hover { background: url(images/bg_transp.png) repeat;}
-#access .menu-header ul ul { background: url(images/bg_transp.png) repeat; float: left; position: absolute; left: 213px; top: 0px; display: none; min-width: 160px;}
+#access .menu-header ul ul { background: url(assets/images/bg_transp.png) repeat; float: left; position: absolute; left: 213px; top: 0px; display: none; min-width: 160px;}
 #access .menu-header ul ul li { }
 #access .menu-header ul ul li a { font-size: 15px; padding: 0 20px;}
 

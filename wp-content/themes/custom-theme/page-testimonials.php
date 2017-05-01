@@ -1,4 +1,17 @@
+<style>
+.customNavigation{
+  text-align: center;
+}
 
+.customNavigation a{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+</style>
 <?php get_header('inner'); ?>
 <section id="mast" style="position: fixed; background: none;">
 	<div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;">
@@ -28,6 +41,10 @@
 		endwhile; // End of the loop.
 		*/
 	?>
+	<div class="customNavigation">
+	  <a class="btn prev">Previous</a>
+	  <a class="btn next">Next</a>
+	</div>
 	<div class="owl-carousel owl-theme">
 	<?php $testimonials = $wpdb->get_results("SELECT  ID, post_content, post_title FROM wp_posts WHERE post_type ='wpm-testimonial' AND post_status ='publish'"); ?>
 	<?php foreach( $testimonials as $t ){ $client_name = ""; $company_name = ""; ?>
