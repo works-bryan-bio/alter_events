@@ -91,6 +91,22 @@ a:hover, a:active { outline: 0; }
     width: 445px;
     margin: auto;
 }
+.customNavigation{
+    position: relative;
+    left: 18px;
+    margin-top: 16px;
+}
+.btn-testimonial{
+    cursor: pointer; 
+    color:#869791;
+    font-size: 28px;
+    margin-right: 20px;
+    display: inline-block;
+    margin-top: 75%;
+}
+.btn-testimonial:hover{
+  color:blue !important;
+}
 .auto-fit{
     background-size:     cover;               
     background-repeat:   no-repeat;
@@ -1208,6 +1224,14 @@ a.google-icon:hover {
   }
 }
 @media (max-width: 1450px) {
+  .btn-testimonial{
+      cursor: pointer; 
+      color:#869791;
+      font-size: 28px;
+      margin-right: 20px;
+      display: inline-block;
+      margin-top: 100%;
+  }
   .auto-fit {
     background-size: cover;
     background-repeat: no-repeat;
@@ -1310,7 +1334,22 @@ a.google-icon:hover {
   }
 
 }
+@media (max-width: 1215px) {
+.owl-carousel.owl-theme.left{
+  width: 90% !important;
+}
+
+
+}
 @media (max-width: 1080px) {
+.owl-carousel.owl-theme.left{
+  width: 90% !important;
+}
+  .btn-testimonial{
+    display: none !important;
+  }
+
+
   .beauty-image > img {
     width: 40% !important;
     max-width: none !important;

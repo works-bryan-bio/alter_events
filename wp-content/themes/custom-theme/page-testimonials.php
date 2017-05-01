@@ -41,11 +41,11 @@
 		endwhile; // End of the loop.
 		*/
 	?>
-	<div class="customNavigation">
-	  <a class="btn prev">Previous</a>
-	  <a class="btn next">Next</a>
+
+	<div class="col-md-2 left" style="text-align: right;">
+		  <a class="btn-testimonial prev" style=""><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
 	</div>
-	<div class="owl-carousel owl-theme">
+	<div class="owl-carousel owl-theme left">
 	<?php $testimonials = $wpdb->get_results("SELECT  ID, post_content, post_title FROM wp_posts WHERE post_type ='wpm-testimonial' AND post_status ='publish'"); ?>
 	<?php foreach( $testimonials as $t ){ $client_name = ""; $company_name = ""; ?>
 		<div class="item">
@@ -95,15 +95,23 @@
 					<?php } ?>
 				</div>
 				<br style="clear:both;" />
+
+
 				<div class="testimonial-content">
 					<h3 class="testimonial-heading" style="text-align:center;font-weight: 700;font-size: 24px;font-style: italic;"><?php echo $t->post_title; ?></h3>			
-					<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 80%;margin: 0 auto;margin-top: 30px;"><?php echo $t->post_content; ?></p>
+					<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;"><?php echo $t->post_content; ?></p>
 				</div>
+
 			</div>
 		</div>
 	<?php } ?>
 	</div>
+
+	<div class="col-md-2 left">
+		<a class="btn-testimonial next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+	</div>
 </div>
+
 </article><!-- #post-## -->
 	
 <section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/testimonial/testimonial-bottom.png') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0;"></section>
