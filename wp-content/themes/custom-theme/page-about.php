@@ -8,7 +8,7 @@
 				$image_bg = get_template_directory_uri() . "/assets/images/about/about-top.png";
 			}					
 		?>
-		<img src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -430.516px;">
+		<img src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -265.516px;">
 	</div>
 </section>
 <section id="content" role="main">
@@ -31,5 +31,5 @@
 </div>
 </article><!-- #post-## -->
 	
-<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/about/about-bottom.png') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
+<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/about/about-bottom.png') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; background-position: 0px 296px;"></section>
 <?php get_footer('inner'); ?>

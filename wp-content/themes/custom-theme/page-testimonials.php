@@ -15,7 +15,7 @@
 <section id="content" role="main">
 <h2 class="page-title"><?php the_title(); ?></h2>
 			
-<article id="post-691" class="post-691 page type-page status-publish hentry">
+<article id="post-691" class="post-691 page type-page status-publish hentry" style="margin-top:40px !important;">
 <div class="row tr-row">
 	<?php
 		/*while ( have_posts() ) : the_post();
@@ -63,12 +63,12 @@
 				?>
 			<?php } ?>	
 			<div class="col-md-12" style="padding-left: 0px;">
-				<div class="col-md-6 left" style="text-align: right;padding-left: 0px;">
+				<!--- <div class="col-md-6 left" style="text-align: right;padding-left: 0px;">
 					<div class="testimonial-image" style="display: inline-block;">
-						<img width="67" height="63" src="<?php echo $testimonial_image;?>" class="attachment-thumbnail size-thumbnail wp-post-image">
+						 <img width="67" height="63" src="<?php //echo $testimonial_image;?>" class="attachment-thumbnail size-thumbnail wp-post-image"> 
 					</div>
-				</div>
-				<div class="col-md-6 left" style="text-align: left;padding-top:45px !important;padding-left: 0px;">
+				</div>-->
+				<div class="col-md-12 center" style="text-align: center;padding-top:45px !important;padding-left: 0px;">
 				
 					<?php if($client_name != ""){ ?>	
 						<div class="testimonial-name" style="font-size: 18px;font-weight: bold;"><?php echo $client_name; ?></div>

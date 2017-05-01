@@ -161,12 +161,15 @@ a:hover, a:active { outline: 0; }
     margin-bottom: 22px !important;
 }
 .about-text-1{
-    font-family: 'alters-italic';
+    font-family: sans-serif;
+    text-align: center;
     font-size: 70px;
     letter-spacing: 6px;
     margin: 0px !important;
     position: relative;
     top: 12px;
+    font-weight: bold;
+    line-height:85px;
 }
 .label-contact{
     margin-top: 0px;
@@ -218,6 +221,10 @@ a:hover, a:visited, a:link, a:active
 .box-black-beauty:hover > a{
     color:#ffffff;
 }
+.img-bottom-about{
+  width: 90%;
+  height: 553px;
+}
 .box-black-beauty{
     width: 150px;
     text-align: center;
@@ -239,10 +246,13 @@ a:hover, a:visited, a:link, a:active
     color: white;
     text-decoration: none;
 }
+.margin-left-center{margin-left:58px;}
 .about-text-2{
     margin: 0px !important;
-    font-size:70px;
-    font-weight: bold;
+    font-size:69px;
+    line-height: 100px;
+    font-weight: 400;
+    text-align: center;
 }
 .contact-text-1{
     margin: 0px !important;
@@ -642,7 +652,7 @@ header p.site_desc { display: none;}
 
 /* Main Content */
 #main-content-int #content { background: #fdfcf8; font-family: 'brandon_grotesque_regularRg', Arial, 'sans-serif'; margin: 0; position: relative; z-index: 1;}
-#main-content-int #content article { width: 100%; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top:40px; padding-bottom:40px; position: relative; top: -95px;}
+#main-content-int #content article { width: 100%; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top:0px; padding-bottom:0px; position: relative; top: -95px;}
 #main-content-int #content .menu-section { width: 780px; margin: 0 auto; padding: 0; position: relative; top: -95px;}
 #main-content-int #content .menu-section h2 { text-transform: uppercase;}
 #main-content-int #content .menu-section h3 { border-bottom: 1px solid #CCC; text-transform: uppercase;}
@@ -691,7 +701,6 @@ header p.site_desc { display: none;}
 #main-content-int .imageframe { margin: 0 1.5em 1em 0;}
 #main-content-int .imageframe_shell { padding: 6px;}
 #main-content-int .imageframe_shell img { border: 6px solid #444;}
-
 .page-id-51 #content em { font-size: 14px;}
 
 /* Open table form */
@@ -911,7 +920,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 @media screen and (max-width: 960px) {
 
   header { position: absolute;}
-  
+  .img-bottom-about{width:90% !important;height: 100% !important;}
   #main-content-int { padding: 0;}
   #main-content-int #content h2.page-title { font-size: 75px; top: -84px; width: 90%;}
   #main-content-int #content article { width: 90%;}
@@ -1155,6 +1164,7 @@ a.google-icon:hover {
 .default-theme{
   padding: 20px;margin-left: 40px;
 }
+
 @media (max-width: 1750px) {
   .about-text-1{
     font-size:65px !important;
@@ -1610,6 +1620,7 @@ input.wpcf7-form-control.wpcf7-submit {
     padding-bottom: 5px;
     margin-left: 0px !important;
     background-color: black;
+    width: 100%;
 }
 .size-large{
     font-size: 25px;
@@ -1663,12 +1674,15 @@ h4#qqModalLabel {
     padding-right: 40px !important;
 }
 input:valid, textarea:valid {
-    width: 100%;
+    margin-top:20px;
+    margin-bottom:20px;
+    width: 50%;
+    text-align: center;
     font-size: 17px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     border: 1px solid #e2e2e2;
 }
 .form-submit > input#submit {
@@ -1751,4 +1765,27 @@ a.text-size-mobile {
 .content-large{
   height: auto;
 }
-
+@media (max-width: 1830px) {
+  .img-bottom-about {
+      width: 90.3% !important;
+      height: 553px !important;
+  }
+}
+@media (max-width: 1650px) {
+  .img-bottom-about {
+      width: 90.6% !important;
+      height: 553px !important;
+  }
+}
+@media (max-width: 1550px) {
+  .img-bottom-about {
+      width: 90.9% !important;
+      height: 553px !important;
+  }
+}
+@media (max-width: 1450px) {
+  .img-bottom-about {
+      width: 91.5% !important;
+      height: 553px !important;
+  }
+}
