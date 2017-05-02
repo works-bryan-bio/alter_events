@@ -52,12 +52,12 @@ body { font-family: sans-serif; }
 	<div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;">
 		<?php 
 			if( has_post_thumbnail( $post->ID ) ){
-				$image_bg = the_post_thumbnail();
+				$image_bg = get_template_directory_uri() . "/assets/images/gallery-landing/gallery-top.jpg";
 			}else{
 				$image_bg = get_template_directory_uri() . "/assets/images/gallery-landing/gallery-top.jpg";
 			}					
 		?>
-		<img src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -430.516px;">
+		<img src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -265.516px;">
 	</div>
 </section>
 <section id="content" role="main">
