@@ -1383,6 +1383,9 @@ a.google-icon:hover {
     max-width: 100% !important;
     height: 50% !important;
   }
+  .content-about{
+        height: 100% !important;
+  }
   .about-text-1{
     text-align: center !important;
   }
@@ -1809,6 +1812,9 @@ a.text-size-mobile {
 }
 .content-large{
   height: auto;
+}
+.content-about{
+  height: 1011px;
 }
 @media (max-width: 1830px) {
   .img-bottom-about {

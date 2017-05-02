@@ -13,10 +13,10 @@
 	</div>
 </section>
 <section id="content" role="main">
-<h2 class="page-title"><?php the_title(); ?></h2>
+<h2 class="page-title" style="    height: 95px !important;"><?php the_title(); ?></h2>
 			
-<article id="post-691" class="post-691 page type-page status-publish hentry">
-<div class="row margin-content" style="">
+<article id="post-691" class="content-about">
+<div class="row margin-content" style="padding:0px !important;position: relative !important; top:0px !important;">
 	<?php
 			while ( have_posts() ) : the_post();
 
