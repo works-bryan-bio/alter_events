@@ -238,7 +238,7 @@ a:hover, a:visited, a:link, a:active
     color:#ffffff;
 }
 .img-bottom-about{
-  width: 90%;
+  width: 100%;
   height: 553px;
 }
 .box-black-beauty{
@@ -934,7 +934,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 @media screen and (max-width: 960px) {
 
   header { position: absolute;}
-  .img-bottom-about{width:90% !important;height: 100% !important;}
+
   #main-content-int { padding: 0;}
   #main-content-int #content h2.page-title { font-size: 75px; top: -84px; width: 90%;}
   #main-content-int #content article { width: 90%;}
@@ -1812,13 +1812,10 @@ a.text-size-mobile {
   height: auto;
 }
 .content-about{
-  height: 1011px;
+  height: 1012px;
 }
 @media (max-width: 1830px) {
-  .img-bottom-about {
-      width: 90.3% !important;
-      height: 553px !important;
-  }
+
   .grid-gallery{
    position: relative !important;left: 40px !important;
   }
@@ -1827,25 +1824,16 @@ a.text-size-mobile {
     .grid-gallery{
    position: relative !important;left: 30px !important;
   }
-  .img-bottom-about {
-      width: 90.6% !important;
-      height: 553px !important;
-  }
+
   .grid-gallery{
    position: relative !important;left: 42px !important;
   }
 }
 @media (max-width: 1550px) {
-  .img-bottom-about {
-      width: 90.9% !important;
-      height: 553px !important;
-  }
+
 }
 @media (max-width: 1450px) {
-  .img-bottom-about {
-      width: 91.5% !important;
-      height: 553px !important;
-  }
+
 }
 @media (max-width: 1350px) {
     .grid-gallery{
@@ -1872,4 +1860,105 @@ a.text-size-mobile {
     margin-top: 11px;
     height: 37px;
     text-align: left !important;
+}
+
+@media (max-width: 1600px) {
+  .img-bottom-about {
+      width: 100% !important;
+      height: 530px !important;
+  }
+  .content-about{
+    height: 965px !important;
+  }
+}
+@media (max-width: 1440px) {
+  .img-bottom-about {
+      width: 100% !important;
+      height: 458px !important;
+  }
+  .content-about{
+    height: 821px !important;
+  }
+}
+@media (max-width: 1366px) {
+  .img-bottom-about {
+      width: 100% !important;
+      height: 425px !important;
+  }
+  .content-about{
+    height: 755px !important;
+  }
+  .bg-position-about-bottom{background-position: 0px 156px !important;}
+  .about-text-2 { line-height: 60px !important;}
+}
+@media (max-width: 1280px) {
+  .img-bottom-about {
+      width: 100% !important;
+      height: 380px !important
+  }
+  .content-about{
+    height: 665px !important;
+  }
+  .bg-position-about-bottom{background-position: 0px 156px !important;}
+  .about-text-2 { line-height: 32px !important;    font-size: 41px !important;}
+  .about-text-1 { font-size: 41px !important; }
+  .size-large {font-size: 15px !important;}
+}
+.about-content{padding:0px !important;position: relative !important; top:0px !important;margin-left: 70px;}
+@media (max-width: 1024px) {
+  .about-content {
+    margin-left: 0px !important;
+  }
+  .col-xs-5 {
+    width: 50% !important;
+  }
+  .img-bottom-about {
+      width: 100% !important;
+      height: 380px !important
+  }
+  .content-about{
+    height: 665px !important;
+  }
+  .bg-position-about-bottom{background-position: 0px 156px !important;}
+  .about-text-2 { line-height: 32px !important;    font-size: 41px !important;}
+  .about-text-1 { font-size: 41px !important; }
+  .size-large {font-size: 15px !important;}
+}
+@media (max-width: 1024px) {
+  .about-content {
+    margin-left: 0px !important;
+  }
+  .col-xs-5 {
+    width: 50% !important;
+  }
+  .img-bottom-about {
+      width: 100% !important;
+      height: 358px !important
+  }
+  .content-about{
+    height: 620px !important;
+  }
+  .bg-position-about-bottom{background-position: 0px 156px !important;}
+  .about-text-2 { line-height: 10px !important;    font-size: 25px !important;}
+  .about-text-1 { font-size: 25px !important; }
+  .size-large {font-size: 15px !important;}
+}
+@media (max-width: 900px) {
+  .about-content {
+    margin-left: 0px !important;
+  }
+  .col-xs-5 {
+    width: 100% !important;
+  }
+  .img-bottom-about {
+      width: 100% !important;
+      height: 358px !important
+  }
+  .content-about{
+    height: 100% !important;
+  }
+  .bg-position-about-bottom{background-position: 0px 156px !important;}
+  .about-text-2 { line-height: 10px !important;    font-size: 25px !important;}
+  .about-text-1 { font-size: 25px !important; }
+  .size-large {font-size: 15px !important;}
 }

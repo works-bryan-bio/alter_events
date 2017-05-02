@@ -16,7 +16,7 @@
 <h2 class="page-title" style="    height: 95px !important;"><?php the_title(); ?></h2>
 			
 <article id="post-691" class="content-about">
-<div class="row margin-content" style="padding:0px !important;position: relative !important; top:0px !important;">
+<div class="row margin-content about-content" style="">
 	<?php
 			while ( have_posts() ) : the_post();
 
@@ -32,5 +32,31 @@
 </div>
 </article><!-- #post-## -->
 	
-<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/about/about-bottom.png') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; background-position: 0px 296px;"></section>
+<section id="location" class="bg-position-about-bottom" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/about/about-bottom.png') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; background-position: 0px 296px;"></section>
 <?php get_footer('inner'); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
