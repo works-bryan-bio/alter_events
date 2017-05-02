@@ -100,7 +100,7 @@ body { font-family: sans-serif; }
 </article><!-- #post-## -->
 
 
-<div class="top-80" style="position: relative !important;left: 45px;">
+<div class="top-80 grid-gallery" style="">
 	<?php  $count = 0; foreach( $products as $p ){ ?>
 			<?php 
 				if( $count > 0 ){ 
