@@ -100,7 +100,7 @@ $(document).ready(function(){
     $(this).find('.overlay-gallery').addClass("hidden");
   });
 
-  $(".read-more").click(function(){
+  /*$(".read-more").click(function(){
     var href_text = $(this).text();
     if( href_text == 'Read More' ){
       $(".page-content").removeClass('content-small');
@@ -111,7 +111,7 @@ $(document).ready(function(){
       $(".page-content").addClass('content-small');
       $(this).text('Read More');      
     } 
-  });
+  });*/
 });
 /* <![CDATA[ */
 var $s = {"cp":"1","c":"$","p":"2","t":",","d":".","g":"3","nocache":""};var $cv = {"field":"Your %s is required.","email":"The e-mail address you provided does not appear to be a valid address.","minlen":"The %s you entered is too short. It must be at least %d characters long.","pwdmm":"The passwords you entered do not match. They must match in order to confirm you are correctly entering the password you want to use.","chkbox":"%s must be checked before you can proceed."};var $ct = {"items":"Items","total":"Total"};/* ]]> */

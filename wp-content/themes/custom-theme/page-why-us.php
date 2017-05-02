@@ -22,7 +22,7 @@
 	</div>
 	<br style="clear: both;" /><Br/>
 	<div class="col-md-12 center">
-		<div class="page-content content-small">
+		<div class="page-content">
 		<?php
 		while ( have_posts() ) : the_post();
 
@@ -38,7 +38,7 @@
 		</div>
 	</div>
 	<br style="clear: both;" /><Br/><Br/>
-	<div class="col-md-12 center"><a href="javascript:void(0);" class="read-more">Read More</a></div>	
+	<div class="col-md-12 center"><a href="<?php echo get_permalink(222); ?>" class="read-more">Read More</a></div>	
 </div>
 
 </article><!-- #post-## -->
