@@ -1,129 +1,188 @@
-<?php
-/**
- * The Template for displaying product archives, including the main shop page which is a post type archive
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/archive-product.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     2.0.0
- */
+<?php get_header('inner'); ?>
+<style>
+* { box-sizing: border-box; }
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+/* force scrollbar */
+html { overflow-y: scroll; }
+
+body { font-family: sans-serif; }
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
-get_header( 'shop' ); ?>
+/* ---- .grid-item ---- */
 
-	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 * @hooked WC_Structured_Data::generate_website_data() - 30
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
+.grid-sizer,
+.grid-item {
+  width: 25.333%;
+}
 
-    <header class="woocommerce-products-header">
+.grid-item {
+  float: left;
+}
 
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+</style>
 
-			<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-
-		<?php endif; ?>
-
+<section id="mast" style="position: fixed; background: none;">
+	<div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;">
+		<?php 
+			if( has_post_thumbnail( 21 ) ){
+				$image    = wp_get_attachment_image_src( get_post_thumbnail_id( 21 ), 'single-post-thumbnail' );				
+				$image_bg = $image[0];
+			}else{
+				$image_bg = get_template_directory_uri() . "/assets/gallery/gallery-top.jpg";
+			}					
+		?>
+		<img src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -430.516px;">
+	</div>
+</section>
+<section id="content" role="main">
+<h2 class="page-title"><?php echo get_the_title(21); ?></h2>
+			
+<article id="post-691" class="post-691 page type-page status-publish hentry" style="padding-bottom: 0px !important;">
+	<div id="event-container" class="row mrg-150 default-theme" style="">
+		<h1 class="about-text-1">event name</h1>
+		<div class="col-md-12 gallery-event"> 
+			<p>This is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your paThis is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your place.</p>
+		</div>
+	</div>
 		<?php
-			/**
-			 * woocommerce_archive_description hook.
-			 *
-			 * @hooked woocommerce_taxonomy_archive_description - 10
-			 * @hooked woocommerce_product_archive_description - 10
-			 */
-			do_action( 'woocommerce_archive_description' );
+				while ( have_posts() ) : the_post();
+
+					get_template_part( 'template-parts/page/content', 'page' );
+					the_content();
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+
+				endwhile; // End of the loop.
+		?>
+		<?php 	
+			$keys = parse_url(trim($_SERVER["REQUEST_URI"],"/")); // parse the url
+ 			$path = explode("/", $keys['path']); // splitting the path 			
+ 			$last_item_index = count($path) - 1;
+			$project = $path[$last_item_index];			
+			//Get products
+			$args      = array( 'post_type' => 'product', 'product_cat' => $project );
+			$products  = get_posts( $args );
+			$productsB = get_posts( $args );
 		?>
 
-    </header>
+		<br class="clear"><br/>
+		<div class="image-gallery-btn-container" style="margin-bottom: 80px;margin-left:20px;">
+			<?php foreach( $products as $p ){ ?>
+			<div class="border-black" style="width: 20%;float: left;">
+				<div class="gallery-btn-container left center">
+					<a data-id="<?php echo $p->post_name; ?>" class="text-size-mobile gallery-btn gallery-btn-<?php echo $p->post_name; ?> btn-gallery-<?php echo $p->post_name; ?>" href="javascript:void(0);"><?php echo $p->post_title; ?></a>
+				</div>
+			</div>
+			<?php } ?>
+			<div class="border-black" style="width: 20%;float: left;">
+				<div class="gallery-btn-container left center">
+					<a data-id="all" class="text-size-mobile gallery-btn gallery-btn-all btn-gallery-all" href="javascript:void(0);">ALL</a>
+				</div>	
+			</div>
+			<div class="border-black" style="width: 20%;float: left;">
+				<div class="gallery-btn-container left center">
+					<a data-id="videos" class="text-size-mobile gallery-btn gallery-btn-videos btn-gallery-videos" href="javascript:void(0);">VIDEOS</a>
+				</div>		
+			</div>
+		</div>
 
-		<?php if ( have_posts() ) : ?>
+	
 
-			<?php
-				/**
-				 * woocommerce_before_shop_loop hook.
-				 *
-				 * @hooked woocommerce_result_count - 20
-				 * @hooked woocommerce_catalog_ordering - 30
-				 */
-				do_action( 'woocommerce_before_shop_loop' );
+</article><!-- #post-## -->
+
+
+<div class="top-80 grid-gallery" style="">
+	<?php  $count = 0; foreach( $products as $p ){ ?>
+			<?php 
+				if( $count > 0 ){ 
+					$add_hidden = "style='display: none;'";
+				}else{
+					$add_hidden = '';
+				}
 			?>
+			<div style="background-color: #fdfcf8;" class="col-md-12 <?php echo $p->post_name; ?>-images-container gallery-container left" <?php echo $add_hidden; ?>>
+				<div class="grid grid-<?php echo $p->post_name; ?>">
+					<div class="grid-sizer"></div>
+					<?php 
+						$count   = 0;
+						$limiter = 0;
+						$product = new WC_product($p->ID);
+			    		$attachment_ids = $product->get_gallery_image_ids();
+			    	?>
 
-			<?php woocommerce_product_loop_start(); ?>
+			    	<?php foreach( $attachment_ids as $attachment_id ){ ?>
+			    		<?php if($limiter < 6 || isset($_GET['view'])) { ?>	
+				          <?php 
+				          	$image_url = wp_get_attachment_url( $attachment_id );
+				          	if( $count >= 8 ){
+								$add_class = "hidden";
+							}
+				          ?>
+				          <div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div>
+				        <?php } ?>
+				        <?php $limiter++; ?>
+				    <?php } ?>				
+				</div>
+				<br class="clear">
+				<div class="col-md-12 center" style="margin-top:80px;margin-bottom: 40px;">
+					<?php if(isset($_GET['view'])) { ?>
+						<a href="<?php echo get_permalink();?>?project=<?= $_GET['project'] ?>&product_selected=<?= $p->post_name; ?>#event-container" class="box-black size-large">View less</a>
+					<?php }else{  ?>
+						<a href="<?php echo get_permalink();?>?project=<?= $_GET['project'] ?>&view=all&product_selected=<?= $p->post_name; ?>#event-container" class="box-black size-large">See More</a>
+					<?php } ?>
+					
+				</div>
+			</div>
+		<?php $count++;} ?>
+</div>
 
-				<?php woocommerce_product_subcategories(); ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php
-						/**
-						 * woocommerce_shop_loop hook.
-						 *
-						 * @hooked WC_Structured_Data::generate_product_data() - 10
-						 */
-						do_action( 'woocommerce_shop_loop' );
-					?>
+<br class="clear"/>
+	
+<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/gallery/gallery-bottom.jpg') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
+<?php get_footer('gallery'); ?>
+ <script type="text/javascript">
+ 	$(function(){
 
-					<?php wc_get_template_part( 'content', 'product' ); ?>
+ 		<?php foreach( $products as $p ){ ?>
+ 			$('.btn-gallery-<?php echo $p->post_name; ?>').click(function(){
+ 				var selected_gallery = $(this).attr("data-id");  				
+ 				$(".text-size-mobile").removeClass('gallery-btn-active');
+ 				$(this).addClass('gallery-btn-active');				
+ 				$(".gallery-container").not("." + selected_gallery + "-images-container").fadeOut('fast',function(){
+ 					$("." + selected_gallery + "-images-container").fadeIn();
+ 				});
 
-				<?php endwhile; // end of the loop. ?>
+ 				var $grid = $('.grid-' + selected_gallery).masonry({
+				  itemSelector: '.grid-item',
+				  percentPosition: true,
+				  columnWidth: 2
+				});
 
-			<?php woocommerce_product_loop_end(); ?>
+				$grid.imagesLoaded().progress( function() {
+				  $grid.masonry();
+				}); 		
+ 			});
+		<?php } ?>
 
-			<?php
-				/**
-				 * woocommerce_after_shop_loop hook.
-				 *
-				 * @hooked woocommerce_pagination - 10
-				 */
-				do_action( 'woocommerce_after_shop_loop' );
-			?>
+		<?php if(isset($_GET['view']) || isset($_GET['product_selected'])) { ?>
+			$(".btn-gallery-<?php echo $_GET['product_selected']; ?>").trigger('click');
+		<?php } ?>
 
-		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
 
-			<?php
-				/**
-				 * woocommerce_no_products_found hook.
-				 *
-				 * @hooked wc_no_products_found - 10
-				 */
-				do_action( 'woocommerce_no_products_found' );
-			?>
-
-		<?php endif; ?>
-
-	<?php
-		/**
-		 * woocommerce_after_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
-
-	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
-
-<?php get_footer( 'shop' ); ?>
+ 	});
+	
+</script>
