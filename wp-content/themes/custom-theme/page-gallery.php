@@ -53,6 +53,7 @@ body { font-family: sans-serif; }
 		<div class="col-md-12 gallery-event"> 
 			<p>This is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your paThis is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your place.</p>
 		</div>
+	</div>
 		<?php
 				while ( have_posts() ) : the_post();
 
@@ -76,24 +77,30 @@ body { font-family: sans-serif; }
 		<br class="clear"><br/>
 		<div class="image-gallery-btn-container" style="margin-bottom: 80px;margin-left:20px;">
 			<?php foreach( $products as $p ){ ?>
+			<div class="border-black" style="width: 20%;float: left;">
 				<div class="gallery-btn-container left center">
 					<a data-id="<?php echo $p->post_name; ?>" class="text-size-mobile gallery-btn gallery-btn-<?php echo $p->post_name; ?> btn-gallery-<?php echo $p->post_name; ?>" href="javascript:void(0);"><?php echo $p->post_title; ?></a>
 				</div>
+			</div>
 			<?php } ?>
+			<div class="border-black" style="width: 20%;float: left;">
 				<div class="gallery-btn-container left center">
 					<a data-id="all" class="text-size-mobile gallery-btn gallery-btn-all btn-gallery-all" href="javascript:void(0);">ALL</a>
-				</div>		
+				</div>	
+			</div>
+			<div class="border-black" style="width: 20%;float: left;">
 				<div class="gallery-btn-container left center">
 					<a data-id="videos" class="text-size-mobile gallery-btn gallery-btn-videos btn-gallery-videos" href="javascript:void(0);">VIDEOS</a>
 				</div>		
+			</div>
 		</div>
 
 	
-	</div>
+
 </article><!-- #post-## -->
 
 
-<div class="top-80">
+<div class="top-80" style="position: relative !important;left: 45px;">
 	<?php  $count = 0; foreach( $products as $p ){ ?>
 			<?php 
 				if( $count > 0 ){ 

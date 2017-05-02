@@ -37,7 +37,7 @@ html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10
 
 html, button, input, select, textarea { font-family: sans-serif; color: #333; }
 
-body { margin: 0; font-size: 17px; line-height: 1.6; }
+body { margin: 0; font-size: 17px; line-height: 1.6;background-color: #171717 !important; }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -1742,7 +1742,7 @@ input:valid, textarea:valid {
     text-align: justify;
 }
 .grid-item {
-  width: 25% !important;
+  width: 24% !important;
 }
 .grid-item > img {
     padding-left: 5px;
@@ -1787,15 +1787,18 @@ input:valid, textarea:valid {
 .mrg-150{
   margin-left: 150px;
 }
+.gallery-btn-container{
+  width: 100%;
+}
 a.gallery-btn {
-    width: 242px;
+  width: 100%;
 }
 a.text-size-mobile {
     margin-top: -1px !important;
     display: inline-block;
 }
 .footer-small{
-  font-size: 17px !important;
+  font-size: 15px !important;
 }
 .content-small{
   height: 100px !important;
