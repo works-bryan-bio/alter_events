@@ -275,16 +275,14 @@ a:hover, a:visited, a:link, a:active
     font-size:64px;
     font-weight: bold;
 }
+
 .quote-input {
     width: 505px !important;
     margin-top: 11px;
     height: 37px;
+    text-align: left !important;
 }
-.quote-text-input {
-    width: 505px !important;
-    margin-top: 11px;
-    height: 37px;
-}
+
 .quote{
     color: white;
     float: right;
@@ -1868,4 +1866,10 @@ a.text-size-mobile {
     .grid-gallery{
    position: relative !important;left: 15px !important;
   }
+}
+.quote-text-input{
+    width: 505px !important;
+    margin-top: 11px;
+    height: 37px;
+    text-align: left !important;
 }
