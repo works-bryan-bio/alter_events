@@ -17,7 +17,8 @@
 	<div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;">
 		<?php 
 			if( has_post_thumbnail( $post->ID ) ){
-				$image_bg = the_post_thumbnail();
+				$image    = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );				
+				$image_bg = $image[0];
 			}else{
 				$image_bg = get_template_directory_uri() . "/assets/images/testimonial/testimonial-top.png";
 			}					
