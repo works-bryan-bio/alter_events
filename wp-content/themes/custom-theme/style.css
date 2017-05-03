@@ -239,7 +239,7 @@ a:hover, a:visited, a:link, a:active
 }
 .img-bottom-about{
   width: 100%;
-  height: 553px;
+  height: 554px;
 }
 .box-black-beauty{
     width: 150px;
@@ -778,7 +778,7 @@ footer #partner_logos li { display: inline-block; padding-right: 15px; *float: l
 #backTop { background: url(assets/images/backTop.png) no-repeat; cursor: pointer; display: block; position: fixed; bottom: 100px; left: 50px; text-indent: -9999px; width: 60px; height: 60px; z-index: 10;}
 
 /* Hidden Secret */
-#location { width: 100%; height: 600px; min-height: 600px; *display: none; }
+#location { width: 100%; height: 640px; min-height: 600px; *display: none; }
 @media \0screen { 
 #location { display: none;}
 }

@@ -42,8 +42,7 @@ body { font-family: sans-serif; }
 		$args = array(	    
 		    'orderby'    => 'title',
 		    'order'      => 'ASC',
-		    'hide_empty' => false,
-		    'number' => 3     
+		    'hide_empty' => false		    
 		);
 	}
 	$product_categories = get_terms( 'product_cat', $args );		
@@ -67,8 +66,13 @@ body { font-family: sans-serif; }
 <article id="post-691" class="post-691 page type-page status-publish hentry">
 <div class="row default-theme" style="padding-right: 50px !important;">
 	<div class="row">
-		<?php foreach( $product_categories as $c ){ ?>
-		<?php 
+		<ul class="list-unstyled" id="cp-gallery-list">
+		<?php $count = 1;foreach( $product_categories as $c ){ ?>
+		<?php
+			$add_hidden = ""; 
+			if( $count > 3 ){
+				$add_hidden = "style='display: none;'";
+			}
 			$thumbnail_id = get_woocommerce_term_meta( $c->term_id, 'thumbnail_id', true );
 			$image        = wp_get_attachment_url( $thumbnail_id );
 			$product_url  = add_query_arg('project', $c->slug, get_permalink(21));
@@ -77,6 +81,7 @@ body { font-family: sans-serif; }
 			$args     = array( 'post_type' => 'product', 'product_cat' => $c->slug );
 			$products = get_posts( $args ); 						
 		?>
+		<li <?php echo $add_hidden; ?>>
 			<div class="col-md-4 left auto-fit gallery-block" style="background-image: url('<?php echo $image; ?>')">
 				<div class="overlay-gallery center hidden">
 					<div style="position: relative;top: 50%;transform: translateY(-50%);">
@@ -86,15 +91,17 @@ body { font-family: sans-serif; }
 					</div>
 				</div>
 			</div>
-		<?php } ?>
+		</li>
+		<?php $count++;} ?>
+		</ul>
 	</div>
 	<br class="clear">
 	<div class="col-md-12 center">
-		<?php if(isset($_GET['view'])) { ?>
-			<a class="black" href="<?php echo get_permalink();?>"><div class="box-black-beauty">View Less</div></a>
-		<?php }else{ ?>
-			<a class="black" href="<?php echo get_permalink();?>?view=all#content"><div class="box-black-beauty">View More</div></a>
-		<?php } ?>
+		<?php //if(isset($_GET['view'])) { ?>
+			<a class="black cf-less" href="javascript:void(0)'"><div class="box-black-beauty">View Less</div></a>
+		<?php //}else{ ?>
+			<a class="black cf-more" href="javascript:void(0)"><div class="box-black-beauty">View More</div></a>
+		<?php //} ?>
 		
 	</div>
 </div>

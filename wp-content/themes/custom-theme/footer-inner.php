@@ -70,6 +70,25 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+  $('#cp-gallery-list li:lt(1)').fadeIn();
+
+  $('.cf-less').fadeOut();
+  var items = 28;
+  var shown = 3;
+  $('.cf-more').click(function () {    
+      $('.cf-less').fadeIn();
+      shown = $('#cp-gallery-list li:visible').size() + 3;      
+      if (shown < items) { $('#cp-gallery-list li:lt(' + shown + ')').fadeIn(300); }
+      else {
+          $('#cp-gallery-list li:lt(' + items + ')').fadeIn(300);
+          $('.cf-more').fadeOut();
+      }
+  });
+  $('.cf-less').click(function () {
+      $('#cp-gallery-list li').not(':lt(3)').fadeOut(300);
+      $('.cf-more').fadeIn();
+      $('.cf-less').fadeOut();
+  });
   $('.grid').masonry({
     itemSelector: '.grid-item',
     columnWidth: 5
