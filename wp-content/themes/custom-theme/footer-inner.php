@@ -67,13 +67,22 @@
 
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/plugins.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/b-script.js"></script>
-
+<?php 
+  global $wp_query;
+  $args = array(      
+        'orderby'    => 'title',
+        'order'      => 'ASC',
+        'hide_empty' => false       
+    );
+  $product_categories = get_terms( 'product_cat', $args );
+  $total_categories   = count($product_categories);
+?>
 <script type="text/javascript">
 $(document).ready(function(){
   $('#cp-gallery-list li:lt(1)').fadeIn();
 
   $('.cf-less').fadeOut();
-  var items = 28;
+  var items = <?php echo $total_categories; ?>;
   var shown = 3;
   $('.cf-more').click(function () {    
       $('.cf-less').fadeIn();
