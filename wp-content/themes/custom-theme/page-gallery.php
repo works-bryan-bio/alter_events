@@ -143,7 +143,7 @@ body { font-family: sans-serif; }
 				<br class="clear">
 				<div class="col-md-12 center" style="margin-top:80px;margin-bottom: 40px;">					
 					<a href="javascript:void(0);" class="box-black size-large  cf-less-<?php echo $p->post_name; ?>">View less</a>					
-					<a href="javascript:void(0);" class="box-black size-large cf-more-<?php echo $p->post_name; ?>">See More</a>
+					<!-- <a href="javascript:void(0);" class="box-black size-large cf-more-<?php echo $p->post_name; ?>">See More</a> -->
 				</div>
 			</div>
 		<?php $count++;} ?>

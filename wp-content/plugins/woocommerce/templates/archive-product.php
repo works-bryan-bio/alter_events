@@ -139,11 +139,11 @@ body { font-family: sans-serif; }
 								$add_class = "hidden";
 							}
 
-							if( $count_product_image > 4 ){
-								$add_hidden_style = "style='display: none;'";
+							if( $count_product_image > 3 ){
+								$add_hidden_style = "hidden-display";
 							}
 				          ?>
-				          <li <?php echo $add_hidden_style; ?>><div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div></li>
+				          <li class="<?php echo $add_hidden_style; ?>"><div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div></li>
 				        <?php } ?>
 				        <?php $limiter++; ?>
 				    <?php $count_product_image++;} ?>				
@@ -151,7 +151,7 @@ body { font-family: sans-serif; }
 				</div>
 				<br class="clear">
 				<div class="col-md-12 center" style="margin-top:80px;margin-bottom: 40px;">					
-					<a href="javascript:void(0);" class="box-black size-large  cf-less-<?php echo $p->post_name; ?>">View less</a>					
+					<!-- <a href="javascript:void(0);" class="box-black size-large  cf-less-<?php echo $p->post_name; ?>">View less</a>					 -->
 					<a href="javascript:void(0);" class="box-black size-large cf-more-<?php echo $p->post_name; ?>">See More</a>
 				</div>
 			</div>
@@ -165,72 +165,60 @@ body { font-family: sans-serif; }
 <section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/gallery/gallery-bottom.jpg') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
 <?php get_footer('gallery'); ?>
 <script type="text/javascript">
+	jQuery(window).on('load', function(){
+
+	});
+
  	$(function(){
  		var items = 28;
-  		var shown = 3;
- 		<?php foreach( $products as $p ){ ?>  			
- 			$('.cf-less-<?php echo $p->post_name; ?>').fadeOut();
+  		var shown = 4;
+
+ 		<?php foreach( $products as $p ){ ?>  
+ 			var t = $('.grid-<?php echo $p->post_name; ?>');
+    
+		    t.masonry({
+		        itemSelector:        '.layout-card',
+		        isResizable:        true,
+		        columnWidth: 150
+		    })
+
+			t.on( 'layoutComplete', function( event, items ) {
+			  $('#cp-gallery-list-<?php echo $p->post_name; ?> li.hidden-display').css("display","none");
+			});
+
+ 			//$('.cf-less-<?php echo $p->post_name; ?>').fadeOut();
  			$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(4)').fadeIn();
  			
  			$('.cf-more-<?php echo $p->post_name; ?>').click(function () {    
-		      $('.cf-less-<?php echo $p->post_name; ?>').fadeIn();
+		      //$('.cf-less-<?php echo $p->post_name; ?>').fadeIn();
 		      shown = $('#cp-gallery-list-<?php echo $p->post_name; ?> li:visible').size() + 3;      
-		      if (shown < items) { $('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + shown + ')').fadeIn(300); }
+		      if (shown < items) { 
+		      	$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + shown + ')').fadeIn(300); }
 		      else {
-		          $('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + items + ')').fadeIn(300);
-		          $('.cf-more-<?php echo $p->post_name; ?>').fadeOut();
-		      }
-			  	var $grid = $('.grid-' + selected_gallery).masonry({
-				  itemSelector: '.grid-item',
-				  percentPosition: false,
-				  columnWidth: 3
-				});
-
-				$grid.imagesLoaded().progress( function() {
-				  $grid.masonry();
-				}); 
+		         $('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + items + ')').fadeIn(300);
+		         $('.cf-more-<?php echo $p->post_name; ?>').fadeOut();
+		      }			  	
 		  	});
 
-		  	$('.cf-less-<?php echo $p->post_name; ?>').click(function () {
-		      $('#cp-gallery-list-<?php echo $p->post_name; ?> li').not(':lt(4)').fadeOut(300);
+		  	/*$('.cf-less-<?php echo $p->post_name; ?>').click(function () {
+		      $('#cp-gallery-list-<?php echo $p->post_name; ?> li').not(':lt(4)').fadeOut('fast',function(){
+		      	//$('.grid-<?php echo $p->post_name; ?>').masonry();
+		      });
 		      $('.cf-more-<?php echo $p->post_name; ?>').fadeIn();
 		      $('.cf-less-<?php echo $p->post_name; ?>').fadeOut();
-
-		      	var $grid = $('.grid-' + selected_gallery).masonry({
-				  itemSelector: '.grid-item',
-				  percentPosition: false,
-				  columnWidth: 3
-				});
-
-				$grid.imagesLoaded().progress( function() {
-				  $grid.masonry();
-				}); 
-		  	});
+		  	});*/
 
  			$('.btn-gallery-<?php echo $p->post_name; ?>').click(function(){
  				var selected_gallery = $(this).attr("data-id");  				
  				$(".text-size-mobile").removeClass('gallery-btn-active');
  				$(this).addClass('gallery-btn-active');				
  				$(".gallery-container").not("." + selected_gallery + "-images-container").fadeOut('fast',function(){
- 					$("." + selected_gallery + "-images-container").fadeIn();
- 				});
-
- 				var $grid = $('.grid-' + selected_gallery).masonry({
-				  itemSelector: '.grid-item',
-				  percentPosition: true,
-				  columnWidth: 2
-				});
-
-				$grid.imagesLoaded().progress( function() {
-				  $grid.masonry();
-				}); 		
+ 					$("." + selected_gallery + "-images-container").fadeIn('fast',function(){ 						
+ 						$('.grid-<?php echo $p->post_name; ?>').masonry();
+ 					});
+ 				}); 				
  			}); 			
 		<?php } ?>
-
-		<?php if(isset($_GET['view']) || isset($_GET['product_selected'])) { ?>
-			$(".btn-gallery-<?php echo $_GET['product_selected']; ?>").trigger('click');
-		<?php } ?>
-
-
+		
  	});
 </script>
