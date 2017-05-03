@@ -17,9 +17,7 @@
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
 <div class="row margin-content">
-	<div class="col-md-12 center">
-		<h1 class="contact-text-1"><?php the_title(); ?></h1>
-	</div>
+
 	<br style="clear: both;" /><Br/>
 	<div class="col-md-12 center">
 		<div class="page-content">

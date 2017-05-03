@@ -793,7 +793,7 @@ footer #partner_logos li { display: inline-block; padding-right: 15px; *float: l
 #map_canvas a { color: #333;}
 #map_canvas a:hover { color: #FFAE00;}
 
-#contact-window { color: #fff; margin: 0 auto; position: fixed; bottom: 30%; left: 50%; background: url(assets/images/bg_transp.png) repeat; display: none; margin-top: -169px; margin-left: -240px;}
+#contact-window { color: #fff; margin: 0 auto; position: fixed; bottom: 30%; left: 50%; background: url(assets/images/bg_transp.png) repeat; display: none; margin-top: -169px; margin-left: -170px;}
 #contact-window a.logo { background: url(assets/images/logo.png) no-repeat; border-right: 5px solid #fff; display: block; overflow: hidden; text-indent: -9999px; width: 178px; height: 126px; float: left; margin: 20px; max-width: 40%; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
 #contact-window ul { float: left; margin: 20px 20px 20px 0; padding: 0;}
 #contact-window a { color: #fff;}
@@ -1840,6 +1840,7 @@ a.text-size-mobile {
    position: relative !important;left: 40px !important;
   }
 }
+
 @media (max-width: 1024px) {
     .grid-gallery{
    position: relative !important;left: 30px !important;
@@ -1905,6 +1906,29 @@ a.text-size-mobile {
   .size-large {font-size: 15px !important;}
 }
 .about-content{padding:0px !important;position: relative !important; top:0px !important;margin-left: 70px;}
+@media (max-width: 1176px) {
+  .about-text-1 {
+      font-size: 28px !important;
+  }
+  .about-text-2 {
+      line-height: 10px !important;
+      font-size: 31px !important;
+  }
+
+}
+@media (max-width: 955px) {
+  .about-text-1 {
+      font-size: 28px !important;
+  }
+  h3{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .about-text-2 {
+      line-height: 10px !important;
+      font-size: 31px !important;
+  }
+}
 @media (max-width: 1024px) {
   .about-content {
     margin-left: 0px !important;
@@ -1919,12 +1943,13 @@ a.text-size-mobile {
   .content-about{
     height: 665px !important;
   }
-  .bg-position-about-bottom{background-position: 0px 156px !important;}
+  .bg-position-about-bottom{background-position: 0px 0px !important;}
   .about-text-2 { line-height: 32px !important;    font-size: 41px !important;}
   .about-text-1 { font-size: 41px !important; }
   .size-large {font-size: 15px !important;}
 }
 @media (max-width: 1024px) {
+
   .about-content {
     margin-left: 0px !important;
   }
@@ -1938,7 +1963,6 @@ a.text-size-mobile {
   .content-about{
     height: 620px !important;
   }
-  .bg-position-about-bottom{background-position: 0px 156px !important;}
   .about-text-2 { line-height: 10px !important;    font-size: 25px !important;}
   .about-text-1 { font-size: 25px !important; }
   .size-large {font-size: 15px !important;}
@@ -1950,6 +1974,7 @@ a.text-size-mobile {
   .col-xs-5 {
     width: 100% !important;
   }
+
   .img-bottom-about {
       width: 100% !important;
       height: 358px !important
@@ -1957,8 +1982,63 @@ a.text-size-mobile {
   .content-about{
     height: 100% !important;
   }
+
   .bg-position-about-bottom{background-position: 0px 156px !important;}
   .about-text-2 { line-height: 10px !important;    font-size: 25px !important;}
   .about-text-1 { font-size: 25px !important; }
   .size-large {font-size: 15px !important;}
+}
+@media (max-width: 734px) {
+  .row.margin-content {
+    height: 100% !important;
+    padding-bottom: 44px !important;
+  }
+}
+@media (max-width: 720px) {
+  #main-content-int #content h2.page-title{
+    margin-top: 0px !important;
+  }
+  h2.page-title {
+      padding-top: 35px !important;
+  }
+}
+@media (max-width: 414px) {
+
+  .phone-number {
+      padding-left: 35% !important;
+  }
+  .img-bottom-about {
+    width: 100% !important;
+    height: 267px !important;
+  }
+}
+@media (max-width: 375px) {
+  .phone-number {
+      padding-left: 33% !important;
+  }
+  .img-bottom-about {
+    width: 100% !important;
+    height: 267px !important;
+  }
+}
+@media (max-width: 360px) {
+  .phone-number {
+      padding-left: 33% !important;
+  }
+}
+@media (max-width: 320px) {
+  .phone-number {
+      padding-left: 30% !important;
+  }
+
+}
+@media (max-width: 240px) {
+  .phone-number {
+      padding-left: 23% !important;
+  }
+}
+@media (max-width: 176px) {
+  .phone-number {
+      padding-left: 8% !important;
+  }
 }
