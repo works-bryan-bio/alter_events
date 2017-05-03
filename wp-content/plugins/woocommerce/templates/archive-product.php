@@ -79,13 +79,20 @@ body { font-family: sans-serif; }
 
 		<br class="clear"><br/>
 		<div class="image-gallery-btn-container" style="margin-bottom: 80px;margin-left:20px;">
-			<?php foreach( $products as $p ){ ?>
+			<?php $count=0; foreach( $products as $p ){ ?>
+			<?php 
+				if( $count == 0 ){
+					$add_class_active = 'gallery-btn-active';
+				}else{
+					$add_class_active = '';
+				}
+			?>
 			<div class="border-black" style="width: 20%;float: left;">
 				<div class="gallery-btn-container left center">
-					<a data-id="<?php echo $p->post_name; ?>" class="text-size-mobile gallery-btn gallery-btn-<?php echo $p->post_name; ?> btn-gallery-<?php echo $p->post_name; ?>" href="javascript:void(0);"><?php echo $p->post_title; ?></a>
+					<a data-id="<?php echo $p->post_name; ?>" class="text-size-mobile gallery-btn gallery-btn-<?php echo $p->post_name; ?> btn-gallery-<?php echo $p->post_name; ?> <?php echo $add_class_active; ?>" href="javascript:void(0);"><?php echo $p->post_title; ?></a>
 				</div>
 			</div>
-			<?php } ?>
+			<?php $count++;} ?>
 			<div class="border-black" style="width: 20%;float: left;">
 				<div class="gallery-btn-container left center">
 					<a data-id="all" class="text-size-mobile gallery-btn gallery-btn-all btn-gallery-all" href="javascript:void(0);">ALL</a>
@@ -107,12 +114,12 @@ body { font-family: sans-serif; }
 	<?php  $count = 0; foreach( $products as $p ){ ?>
 			<?php 
 				if( $count > 0 ){ 
-					$add_hidden = "style='display: none;'";
+					$add_hidden = "display: none;";
 				}else{
 					$add_hidden = '';
 				}
 			?>
-			<div style="background-color: #fdfcf8;" class="col-md-12 <?php echo $p->post_name; ?>-images-container gallery-container left" <?php echo $add_hidden; ?>>
+			<div style="background-color: #fdfcf8; <?php echo $add_hidden; ?>" class="col-md-12 <?php echo $p->post_name; ?>-images-container gallery-container left">
 				<div class="grid grid-<?php echo $p->post_name; ?>">
 					<div class="grid-sizer"></div>
 					<?php 
