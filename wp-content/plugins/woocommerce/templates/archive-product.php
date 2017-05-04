@@ -132,8 +132,7 @@ body { font-family: sans-serif; }
 			    		$attachment_ids = $product->get_gallery_image_ids();
 			    	?>
 					<ul class="list-unstyled" id="cp-gallery-list-<?php echo $p->post_name; ?>">
-			    	<?php $count_product_image = 1;foreach( $attachment_ids as $attachment_id ){ ?>
-			    		<?php if($limiter < 6 || isset($_GET['view'])) { ?>	
+			    	<?php $count_product_image = 1;foreach( $attachment_ids as $attachment_id ){ ?>			    		
 				          <?php 
 				          	$image_url = wp_get_attachment_url( $attachment_id );
 				          	$add_hidden_style = "";
@@ -146,8 +145,7 @@ body { font-family: sans-serif; }
 								$add_hidden_style = "style='display:none;'";
 							}
 				          ?>
-				          <li <?php echo $add_hidden_style; ?>><div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div></li>
-				        <?php } ?>
+				          <li <?php echo $add_hidden_style; ?>><div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div></li>				        
 				        <?php $limiter++; ?>
 				    <?php $count_product_image++;} ?>				
 				    </ul>		
@@ -157,7 +155,42 @@ body { font-family: sans-serif; }
 					<a href="javascript:void(0);" class="box-black size-large cf-more-<?php echo $p->post_name; ?>">See More</a>
 				</div>
 			</div>
-		<?php $count++;} ?>
+	<?php $count++;} ?>
+
+	<!-- All Photos -->
+		<div style="background-color: #fdfcf8;display: none;" class="col-md-12 all-images-container gallery-container left">
+			<div class="grid grid-all">
+			<div class="grid-sizer"></div>			
+				<ul class="list-unstyled" id="cp-gallery-list-all-photos">
+				<?php  $count_product_image = 1; foreach( $products as $p ){ ?>
+					<?php 				
+						$limiter = 0;
+						$product = new WC_product($p->ID);
+			    		$attachment_ids = $product->get_gallery_image_ids();
+			    	?>
+			    		<?php $count_product_image = 1;foreach( $attachment_ids as $attachment_id ){ ?>			    			
+				          <?php 
+				          	$image_url = wp_get_attachment_url( $attachment_id );
+				          	$add_hidden_style = "";
+
+				          	if( $count >= 8 ){
+								$add_class = "hidden";
+							}
+
+							if( $count_product_image > 3 ){
+								$add_hidden_style = "style='display:none;'";
+							}
+				          ?>
+				          <li <?php echo $add_hidden_style; ?>><div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div></li>					       						       	
+			    		<?php } ?>
+				<?php } ?>				
+				</ul>
+			</div>
+			<br class="clear">
+			<div class="col-md-12 center" style="margin-top:80px;margin-bottom: 40px;display:block;">										
+				<a href="javascript:void(0);" class="box-black size-large cf-more-all-photos">See More</a>
+			</div>
+		</div>
 </div>
 <br class="clear"/>
 	
@@ -167,6 +200,30 @@ body { font-family: sans-serif; }
  	$(function(){
  		var items = 28;
   		var shown = 4;
+
+  		$('#cp-gallery-list-all-photos li:lt(4)').fadeIn();
+
+  		$('.btn-gallery-all').click(function(){
+			var selected_gallery = $(this).attr("data-id");  				
+			$(".text-size-mobile").removeClass('gallery-btn-active');
+			$(this).addClass('gallery-btn-active');				
+			$(".gallery-container").not("." + selected_gallery + "-images-container").fadeOut('fast',function(){
+				$("." + selected_gallery + "-images-container").fadeIn('fast',function(){ 	
+					setTimeout(function(){ $('.grid-all').masonry();  }, 400);
+				});
+			}); 				
+		}); 	
+
+		$('.cf-more-all-photos').click(function () {    		      
+	      shown = $('#cp-gallery-list-all-photos li:visible').size() + 3;      
+	      if (shown < items) { 
+	      	$('#cp-gallery-list-all-photos li:lt(' + shown + ')').fadeIn(300); }
+	      else {
+	         $('#cp-gallery-list-all-photos li:lt(' + items + ')').fadeIn(300);
+	         $('.cf-more-all-photos').fadeOut();
+	      }			      	
+	      $('.grid-all').masonry();		  	
+	  	});
 
  		<?php foreach( $products as $p ){ ?>  
  			var t = $('.grid-<?php echo $p->post_name; ?>');
@@ -199,8 +256,7 @@ body { font-family: sans-serif; }
  						setTimeout(function(){ $('.grid-<?php echo $p->post_name; ?>').masonry();  }, 400);
  					});
  				}); 				
- 			}); 			
+ 			});
 		<?php } ?>
-		
  	});
 </script>
