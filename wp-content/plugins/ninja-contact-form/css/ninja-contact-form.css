@@ -959,7 +959,7 @@ label[for=ncf_subscriber] {
 }
 
 #ncf_sidebar textarea {
-    height: 168px;
+    height: 108px;
     padding-top: 12px !important;
     display: block;
 }
@@ -1229,7 +1229,7 @@ label[for=ncf_subscriber] {
 }
 
 #ncf_sidebar .wpcf7-form-control-wrap textarea {
-    min-height: 150px;
+    min-height: 100px;
 }
 
 #ncf_sidebar .ncf_select_wrap {
