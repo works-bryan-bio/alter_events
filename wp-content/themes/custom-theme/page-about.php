@@ -32,7 +32,7 @@
 </div>
 </article><!-- #post-## -->
 	
-<section id="location" class="bg-position-about-bottom" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/about/about-bottom.png') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; background-position: 0px 296px;"></section>
+<section id="location" class="" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/about/about-bottom.png') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; background-position: 0px 0px;"></section>
 <?php get_footer('inner'); ?>
 
 
