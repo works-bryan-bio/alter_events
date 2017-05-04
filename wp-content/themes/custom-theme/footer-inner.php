@@ -77,6 +77,7 @@
   $product_categories = get_terms( 'product_cat', $args );
   $total_categories   = count($product_categories);
 ?>
+<?php wp_footer(); ?>
 <script type="text/javascript">
 $(document).ready(function(){
   $('#cp-gallery-list li:lt(1)').fadeIn();
@@ -144,5 +145,6 @@ $(document).ready(function(){
 /* <![CDATA[ */
 var $s = {"cp":"1","c":"$","p":"2","t":",","d":".","g":"3","nocache":""};var $cv = {"field":"Your %s is required.","email":"The e-mail address you provided does not appear to be a valid address.","minlen":"The %s you entered is too short. It must be at least %d characters long.","pwdmm":"The passwords you entered do not match. They must match in order to confirm you are correctly entering the password you want to use.","chkbox":"%s must be checked before you can proceed."};var $ct = {"items":"Items","total":"Total"};/* ]]> */
 </script>
+
 </body>
 </html>
