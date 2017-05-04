@@ -29,6 +29,9 @@ body { font-family: sans-serif; }
   display: block;
   max-width: 100%;
 }
+.gallery-container{
+	min-height: 700px;	
+}
 </style>
 
 <section id="mast" style="position: fixed; background: none;">
@@ -140,35 +143,27 @@ body { font-family: sans-serif; }
 							}
 
 							if( $count_product_image > 3 ){
-								$add_hidden_style = "hidden-display";
+								$add_hidden_style = "style='display:none;'";
 							}
 				          ?>
-				          <li class="<?php echo $add_hidden_style; ?>"><div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div></li>
+				          <li <?php echo $add_hidden_style; ?>><div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div></li>
 				        <?php } ?>
 				        <?php $limiter++; ?>
 				    <?php $count_product_image++;} ?>				
 				    </ul>		
 				</div>
 				<br class="clear">
-				<div class="col-md-12 center" style="margin-top:80px;margin-bottom: 40px;">					
-					<!-- <a href="javascript:void(0);" class="box-black size-large  cf-less-<?php echo $p->post_name; ?>">View less</a>					 -->
+				<div class="col-md-12 center" style="margin-top:80px;margin-bottom: 40px;display:block;">										
 					<a href="javascript:void(0);" class="box-black size-large cf-more-<?php echo $p->post_name; ?>">See More</a>
 				</div>
 			</div>
 		<?php $count++;} ?>
 </div>
-
-
-
 <br class="clear"/>
 	
 <section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/gallery/gallery-bottom.jpg') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
 <?php get_footer('gallery'); ?>
 <script type="text/javascript">
-	jQuery(window).on('load', function(){
-
-	});
-
  	$(function(){
  		var items = 28;
   		var shown = 4;
@@ -178,43 +173,30 @@ body { font-family: sans-serif; }
     
 		    t.masonry({
 		        itemSelector:        '.layout-card',
-		        isResizable:        true,
+		        animate:        true,
 		        columnWidth: 150
 		    })
-
-			t.on( 'layoutComplete', function( event, items ) {
-			  $('#cp-gallery-list-<?php echo $p->post_name; ?> li.hidden-display').css("display","none");
-			});
-
- 			//$('.cf-less-<?php echo $p->post_name; ?>').fadeOut();
+ 			
  			$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(4)').fadeIn();
  			
- 			$('.cf-more-<?php echo $p->post_name; ?>').click(function () {    
-		      //$('.cf-less-<?php echo $p->post_name; ?>').fadeIn();
+ 			$('.cf-more-<?php echo $p->post_name; ?>').click(function () {    		      
 		      shown = $('#cp-gallery-list-<?php echo $p->post_name; ?> li:visible').size() + 3;      
 		      if (shown < items) { 
 		      	$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + shown + ')').fadeIn(300); }
 		      else {
 		         $('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + items + ')').fadeIn(300);
 		         $('.cf-more-<?php echo $p->post_name; ?>').fadeOut();
-		      }			  	
+		      }			      	
+		      $('.grid-<?php echo $p->post_name; ?>').masonry();		  	
 		  	});
-
-		  	/*$('.cf-less-<?php echo $p->post_name; ?>').click(function () {
-		      $('#cp-gallery-list-<?php echo $p->post_name; ?> li').not(':lt(4)').fadeOut('fast',function(){
-		      	//$('.grid-<?php echo $p->post_name; ?>').masonry();
-		      });
-		      $('.cf-more-<?php echo $p->post_name; ?>').fadeIn();
-		      $('.cf-less-<?php echo $p->post_name; ?>').fadeOut();
-		  	});*/
 
  			$('.btn-gallery-<?php echo $p->post_name; ?>').click(function(){
  				var selected_gallery = $(this).attr("data-id");  				
  				$(".text-size-mobile").removeClass('gallery-btn-active');
  				$(this).addClass('gallery-btn-active');				
  				$(".gallery-container").not("." + selected_gallery + "-images-container").fadeOut('fast',function(){
- 					$("." + selected_gallery + "-images-container").fadeIn('fast',function(){ 						
- 						$('.grid-<?php echo $p->post_name; ?>').masonry();
+ 					$("." + selected_gallery + "-images-container").fadeIn('fast',function(){ 	
+ 						setTimeout(function(){ $('.grid-<?php echo $p->post_name; ?>').masonry();  }, 400);
  					});
  				}); 				
  			}); 			
