@@ -37,7 +37,7 @@ html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10
 
 html, button, input, select, textarea { font-family: sans-serif; color: #333; }
 
-body { margin: 0; font-size: 17px; line-height: 1.6;background-color: #171717 !important; }
+body { margin: 0; font-size: 17px; line-height: 1.6;background-color: #fff7d7 !important; }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -2041,4 +2041,39 @@ a.text-size-mobile {
   .phone-number {
       padding-left: 8% !important;
   }
+}
+.nks_cc_trigger_tabs.ncf_tab.ncf_label_visible.nks_metro {
+    display: block;
+    top: 35% !important;
+}
+.ncf_sidebar_cont_scrollable {
+    
+}
+textarea.wpcf7-form-control.wpcf7-textarea.quote-text-input {
+    color: black !important;
+    margin-top: 15px !important;
+
+}
+input.wpcf7-form-control.wpcf7-text.quote-input{
+    color: black !important;
+    margin-top: 15px !important;
+
+}
+textarea.wpcf7-form-control.wpcf7-textarea.quote-text-input {
+    height: 110px !important;
+}
+input.wpcf7-form-control.wpcf7-submit.submit-quote {
+    border: 0px !important;
+    font-size: 20px !important;
+    height: 37px !important;
+}
+#ncf_sidebar.ncf_up_style_theme_custom .ncf_userpic img {
+    border-radius: 0px !important;
+}
+span.ncf_user_firstname {
+    margin-top: 28px !important;
+    font-weight: bold !important;
+}
+div#ncf-body-bg {
+    height: 100% !important;
 }
