@@ -125,7 +125,7 @@ body { font-family: sans-serif; }
 						$product = new WC_product($p->ID);
 			    		$attachment_ids = $product->get_gallery_image_ids();
 			    	?>
-
+			    	<ul class="list-unstyled" id="cp-gallery-list-<?php echo $p->post_name; ?>">
 			    	<?php foreach( $attachment_ids as $attachment_id ){ ?>
 			    		<?php if($limiter < 6 || isset($_GET['view'])) { ?>	
 				          <?php 
@@ -134,19 +134,16 @@ body { font-family: sans-serif; }
 								$add_class = "hidden";
 							}
 				          ?>
-				          <div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div>
+				          <li><div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div></li>
 				        <?php } ?>
 				        <?php $limiter++; ?>
 				    <?php } ?>				
+				    </ul>
 				</div>
 				<br class="clear">
-				<div class="col-md-12 center" style="margin-top:80px;margin-bottom: 40px;">
-					<?php if(isset($_GET['view'])) { ?>
-						<a href="<?php echo get_permalink();?>?project=<?= $_GET['project'] ?>&product_selected=<?= $p->post_name; ?>#event-container" class="box-black size-large">View less</a>
-					<?php }else{  ?>
-						<a href="<?php echo get_permalink();?>?project=<?= $_GET['project'] ?>&view=all&product_selected=<?= $p->post_name; ?>#event-container" class="box-black size-large">See More</a>
-					<?php } ?>
-					
+				<div class="col-md-12 center" style="margin-top:80px;margin-bottom: 40px;">					
+					<a href="javascript:void(0);" class="box-black size-large  cf-less-<?php echo $p->post_name; ?>">View less</a>					
+					<a href="javascript:void(0);" class="box-black size-large cf-more-<?php echo $p->post_name; ?>">See More</a>
 				</div>
 			</div>
 		<?php $count++;} ?>
@@ -158,10 +155,26 @@ body { font-family: sans-serif; }
 	
 <section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/gallery/gallery-bottom.jpg') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
 <?php get_footer('gallery'); ?>
- <script type="text/javascript">
+<script type="text/javascript">
  	$(function(){
+ 		var items = 28;
+  		var shown = 3;
+ 		<?php foreach( $products as $p ){ ?> 
+ 			$('.cf-more-<?php echo $p->post_name; ?>').click(function () {    
+		      $('.cf-less-<?php echo $p->post_name; ?>').fadeIn();
+		      shown = $('#cp-gallery-list-<?php echo $p->post_name; ?> li:visible').size() + 3;      
+		      if (shown < items) { $('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + shown + ')').fadeIn(300); }
+		      else {
+		          $('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + items + ')').fadeIn(300);
+		          $('.cf-more-<?php echo $p->post_name; ?>').fadeOut();
+		      }
+		  	});
+		  	$('.cf-less-<?php echo $p->post_name; ?>').click(function () {
+		      $('#cp-gallery-list-<?php echo $p->post_name; ?> li').not(':lt(3)').fadeOut(300);
+		      $('.cf-more-<?php echo $p->post_name; ?>').fadeIn();
+		      $('.cf-less-<?php echo $p->post_name; ?>').fadeOut();
+		  	});
 
- 		<?php foreach( $products as $p ){ ?>
  			$('.btn-gallery-<?php echo $p->post_name; ?>').click(function(){
  				var selected_gallery = $(this).attr("data-id");  				
  				$(".text-size-mobile").removeClass('gallery-btn-active');
@@ -188,5 +201,4 @@ body { font-family: sans-serif; }
 
 
  	});
-	
 </script>
