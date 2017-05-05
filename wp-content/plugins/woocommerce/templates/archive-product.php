@@ -114,7 +114,8 @@ body { font-family: sans-serif; }
 
 
 <div class="top-80 grid-gallery" style="">
-	<?php  $count = 0; foreach( $products as $p ){ ?>
+	<?php  $product_images_count = array(); $total_product_images; $count = 0; ?>
+	<?php foreach( $products as $p ){ ?>
 			<?php 
 				if( $count > 0 ){ 
 					$add_hidden = "display: none;";
@@ -130,9 +131,11 @@ body { font-family: sans-serif; }
 						$limiter = 0;
 						$product = new WC_product($p->ID);
 			    		$attachment_ids = $product->get_gallery_image_ids();
+			    		$product_images_count[$p->ID] = count($attachment_ids) - 1;
 			    	?>
 					<ul class="list-unstyled" id="cp-gallery-list-<?php echo $p->post_name; ?>">
-			    	<?php $count_product_image = 1;foreach( $attachment_ids as $attachment_id ){ ?>			    		
+			    	<?php $count_product_image = 0;?>
+			    	<?php foreach( $attachment_ids as $attachment_id ){ ?>			    		
 				          <?php 
 				          	$image_url = wp_get_attachment_url( $attachment_id );
 				          	$add_hidden_style = "";
@@ -147,7 +150,7 @@ body { font-family: sans-serif; }
 				          ?>
 				          <li <?php echo $add_hidden_style; ?>><div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div></li>				        
 				        <?php $limiter++; ?>
-				    <?php $count_product_image++;} ?>				
+				    <?php $count_product_image++; $total_product_images++;} ?>				
 				    </ul>		
 				</div>
 				<br class="clear">
@@ -155,7 +158,7 @@ body { font-family: sans-serif; }
 					<a href="javascript:void(0);" class="box-black size-large cf-more-<?php echo $p->post_name; ?>">See More</a>
 				</div>
 			</div>
-	<?php $count++;} ?>
+	<?php $count++;} ?>		
 
 	<!-- All Photos -->
 		<div style="background-color: #fdfcf8;display: none;" class="col-md-12 all-images-container gallery-container left">
@@ -198,7 +201,7 @@ body { font-family: sans-serif; }
 <?php get_footer('gallery'); ?>
 <script type="text/javascript">
  	$(function(){
- 		var items = 28;
+ 		var total_items = <?php echo $total_product_images; ?>;
   		var shown = 4;
 
   		$('#cp-gallery-list-all-photos li:lt(4)').fadeIn();
@@ -210,17 +213,23 @@ body { font-family: sans-serif; }
 			$(this).addClass('gallery-btn-active');				
 			$(".gallery-container").not("." + selected_gallery + "-images-container").fadeOut('fast',function(){
 				$("." + selected_gallery + "-images-container").fadeIn('fast',function(){ 	
-					setTimeout(function(){ $('.grid-all').masonry();$('.cf-more-all-photos').fadeIn();  }, 400);
+					setTimeout(function(){ 
+						$('.grid-all').masonry();
+						if( !$('.cf-more-all-photos').hasClass('shown-all') ){
+							$('.cf-more-all-photos').fadeIn();  
+						}						
+					}, 1);
 				});
 			}); 				
 		}); 	
 
 		$('.cf-more-all-photos').click(function () {    		      
 	      shown = $('#cp-gallery-list-all-photos li:visible').size() + 3;      
-	      if (shown < items) { 
+	      if (shown < total_items) { 
 	      	$('#cp-gallery-list-all-photos li:lt(' + shown + ')').fadeIn(300); }
 	      else {
-	         $('#cp-gallery-list-all-photos li:lt(' + items + ')').fadeIn(300);
+	         $('#cp-gallery-list-all-photos li:lt(' + total_items + ')').fadeIn(300);
+	         $('.cf-more-all-photos').addClass('shown-all');
 	         $('.cf-more-all-photos').fadeOut();
 	      }			      	
 	      $('.grid-all').masonry();		  	
@@ -228,7 +237,7 @@ body { font-family: sans-serif; }
 
  		<?php foreach( $products as $p ){ ?>  
  			var t = $('.grid-<?php echo $p->post_name; ?>');
-    
+    		var items = <?php echo $product_images_count[$p->ID]; ?>;
 		    t.masonry({
 		        itemSelector:        '.layout-card',
 		        animate:        true,
@@ -243,6 +252,7 @@ body { font-family: sans-serif; }
 		      	$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + shown + ')').fadeIn(300); }
 		      else {
 		         $('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + items + ')').fadeIn(300);
+		         $('.cf-more-<?php echo $p->post_name; ?>').addClass('shown-all');
 		         $('.cf-more-<?php echo $p->post_name; ?>').fadeOut();
 		      }			      	
 		      $('.grid-<?php echo $p->post_name; ?>').masonry();		  	
@@ -255,7 +265,12 @@ body { font-family: sans-serif; }
  				$(this).addClass('gallery-btn-active');				
  				$(".gallery-container").not("." + selected_gallery + "-images-container").fadeOut('fast',function(){
  					$("." + selected_gallery + "-images-container").fadeIn('fast',function(){ 	
- 						setTimeout(function(){ $('.grid-<?php echo $p->post_name; ?>').masonry();$('.cf-more-<?php echo $p->post_name; ?>').fadeIn();  }, 400);
+ 						setTimeout(function(){ 
+ 							$('.grid-<?php echo $p->post_name; ?>').masonry();
+ 							if( !$('.cf-more-<?php echo $p->post_name; ?>').hasClass('shown-all') ){
+								$('.cf-more-<?php echo $p->post_name; ?>').fadeIn();  
+							} 							
+ 						}, 1);
  					});
  				}); 				
  			});
