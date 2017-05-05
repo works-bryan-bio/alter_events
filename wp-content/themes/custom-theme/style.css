@@ -798,7 +798,7 @@ footer #partner_logos li { display: inline-block; padding-right: 15px; *float: l
 #contact-window ul { float: left; margin: 20px 20px 20px 0; padding: 0;}
 #contact-window a { color: #fff;}
 #contact-window a:hover { color: #ccc;}
-
+.gallery-container{width:97% !important;}
 /* --- Awwwards Ribbons --- */
 
 /* Base */
@@ -2081,4 +2081,26 @@ div#ncf-body-bg {
     width: 155px !important;
     height: 112px !important;
     margin-left: 50% !important;
+}
+label.quote-header {
+    font-size: 19px !important;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 22px !important;
+    padding-top: 0px !important;
+}
+#ncf_sidebar input[type=text], #ncf_sidebar input[type=email], #ncf_sidebar input[type=date], #ncf_sidebar input[type=tel], #ncf_sidebar .ncf_select_wrap, #ncf_sidebar textarea{
+    height: 40px !important;
+    padding: 6px 12px 8px 12px !important;
+}
+#ncf_sidebar.ncf_minimalistic .ncf_sidebar_header{
+    height: 220px !important;
+}
+.ncf_sidebar_content {
+    position: relative !important;
+    bottom: 50px !important;
+}
+.ncf_sidebar_content {
+    position: relative !important;
+    bottom: 105px !important;
 }
