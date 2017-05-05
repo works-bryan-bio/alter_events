@@ -2104,3 +2104,9 @@ label.quote-header {
     position: relative !important;
     bottom: 105px !important;
 }
+#ncf_sidebar.ncf_minimalistic a.ncf_button, #ncf_sidebar.ncf_flat input[type=submit], #ncf_sidebar.ncf_minimalistic input[type=submit] {
+    box-shadow: 0 2px 0px 2px #ab957f !important;
+}
+#ncf_sidebar.ncf_minimalistic input[type=submit], #ncf_sidebar.ncf_aerial input[type=submit] {
+    background-color: #c1ac96 !important;
+}
