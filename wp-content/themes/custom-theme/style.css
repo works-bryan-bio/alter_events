@@ -2077,3 +2077,8 @@ span.ncf_user_firstname {
 div#ncf-body-bg {
     height: 100% !important;
 }
+.ncf_userpic > img {
+    width: 155px !important;
+    height: 112px !important;
+    margin-left: 50% !important;
+}
