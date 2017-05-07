@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/owl.theme.css"/>
 	<?php wp_head(); ?>
 </head>
-<body class="page-template page-template-onecolumn-page page-template-onecolumn-page-php page page-id-15 desktop chrome" style="display: block !important;overflow-y: scroll !important;">
+<body class="page-template page-template-onecolumn-page page-template-onecolumn-page-php page page-id-15 desktop chrome">
 <div id="main-content-int">
 	<?php 
 		$header_menu_items = wp_get_nav_menu_items('HEADER');
