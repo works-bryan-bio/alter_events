@@ -985,7 +985,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
   
   #ribbon { display: none;}
   
-  #main-content-int { padding: 0; display: block; position: relative;}
+  #main-content-int { padding: 0; display: block; position: relative;  overflow:hidden !important;}
   #main-content-int #content { margin: 0 auto; width: 100%;}
   #main-content-int #content article { width: 90%; top: 0;}
 
@@ -2115,4 +2115,7 @@ label.quote-header {
 }
 form#contact_us_form > div > input[type="submit"] {
     text-align: center !important;
+}
+.gallery-container.left {
+    width: 96% !important;
 }

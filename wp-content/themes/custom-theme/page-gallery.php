@@ -33,7 +33,7 @@ body { font-family: sans-serif; }
   max-width: 100%;
 }
 .gallery-container{
-	min-height: 700px;	
+	min-height: 400px;	
 }
 </style>
 
@@ -123,7 +123,7 @@ body { font-family: sans-serif; }
 					$add_hidden = '';
 				}
 			?>
-			<div style="background-color: #fdfcf8; <?php echo $add_hidden; ?>" class="col-md-12 <?php echo $p->post_name; ?>-images-container gallery-container left">
+			<div style="background-color: #fdfcf8; padding: 0px !important;margin-left: 10px; <?php echo $add_hidden; ?>" class="col-md-12 <?php echo $p->post_name; ?>-images-container gallery-container left">
 				<div class="grid grid-<?php echo $p->post_name; ?>">
 					<div class="grid-sizer"></div>
 					<?php 
@@ -241,7 +241,7 @@ body { font-family: sans-serif; }
 		    t.masonry({
 		        itemSelector:        '.layout-card',
 		        animate:        true,
-		        columnWidth: 150
+		        columnWidth: 10
 		    })
  			
  			$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(4)').fadeIn();
