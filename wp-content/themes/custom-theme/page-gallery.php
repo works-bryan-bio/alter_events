@@ -21,9 +21,12 @@ body { font-family: sans-serif; }
   width: 25.333%;
 }
 
+
 .grid-item {
   float: left;
 }
+
+
 
 .grid-item img {
   display: block;

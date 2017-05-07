@@ -7,6 +7,8 @@ html { overflow-y: scroll; }
 
 body { font-family: sans-serif; }
 
+
+
 /* clear fix */
 .grid:after {
   content: '';

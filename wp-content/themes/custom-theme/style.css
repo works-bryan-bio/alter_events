@@ -37,7 +37,7 @@ html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10
 
 html, button, input, select, textarea { font-family: sans-serif; color: #333; }
 
-body { margin: 0; font-size: 17px; line-height: 1.6;background-color: #fff7d7 !important; }
+body { margin: 0; font-size: 17px; line-height: 1.6;background-color: #fff7d7 !important;  overflow-y: visible !important; display: block !important;  }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -1717,13 +1717,16 @@ input:valid, textarea:valid {
     margin-top:20px;
     margin-bottom:20px;
     width: 50%;
-    text-align: center;
+    text-align: left;
     font-size: 17px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
     border: 1px solid #e2e2e2;
+}
+textarea#comment{
+  text-align: center;
 }
 .form-submit > input#submit {
     width: 170px;
@@ -2109,4 +2112,7 @@ label.quote-header {
 }
 #ncf_sidebar.ncf_minimalistic input[type=submit], #ncf_sidebar.ncf_aerial input[type=submit] {
     background-color: #c1ac96 !important;
+}
+form#contact_us_form > div > input[type="submit"] {
+    text-align: center !important;
 }
