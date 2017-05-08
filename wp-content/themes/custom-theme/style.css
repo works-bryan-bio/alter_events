@@ -1746,7 +1746,8 @@ textarea#comment{
     text-align: justify;
 }
 .grid-item {
-  width: 24% !important;
+  width: calc( ( 100% - 100px ) / 3 ) !important;
+  /*width: 24% !important;*/
 }
 .grid-gallery{
   position: relative !important;left: 47px;
