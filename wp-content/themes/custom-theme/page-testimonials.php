@@ -1,4 +1,12 @@
+<?php get_header('inner'); ?>
 <style>
+* { box-sizing: border-box; }
+
+/* force scrollbar */
+html { overflow-y: scroll; }
+
+body { font-family: sans-serif; }
+
 .customNavigation{
   text-align: center;
 }
@@ -12,7 +20,7 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 </style>
-<?php get_header('inner'); ?>
+
 <section id="mast" style="position: fixed; background: none;">
 	<div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;">
 		<?php 

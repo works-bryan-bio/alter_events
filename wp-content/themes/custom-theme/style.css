@@ -2119,3 +2119,9 @@ form#contact_us_form > div > input[type="submit"] {
 .gallery-container.left {
     width: 96% !important;
 }
+#ncf_sidebar .ncf_sidebar_cont_scrollable{
+      overflow-y: hidden !important;
+}
+div#ncf-overlay-wrapper {
+    visibility: hidden !important;
+}

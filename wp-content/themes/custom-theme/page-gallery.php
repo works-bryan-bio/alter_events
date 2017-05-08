@@ -3,7 +3,7 @@
 * { box-sizing: border-box; }
 
 /* force scrollbar */
-html { overflow-y: scroll; }
+html { overflow-y: hidden !important;}
 
 body { font-family: sans-serif; }
 
