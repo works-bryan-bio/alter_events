@@ -3,7 +3,7 @@
 * { box-sizing: border-box; }
 
 /* force scrollbar */
-html { overflow-y: hidden !important;}
+
 
 body { font-family: sans-serif; }
 
@@ -81,7 +81,7 @@ body { font-family: sans-serif; }
 		?>
 
 		<br class="clear"><br/>
-		<div class="image-gallery-btn-container" style="margin-bottom: 80px;margin-left:20px;">
+		<div class="image-gallery-btn-container" style="margin-bottom: 40px;margin-left:20px;">
 			<?php $count=0; foreach( $products as $p ){ ?>
 			<?php 
 				if( $count == 0 ){
@@ -123,7 +123,7 @@ body { font-family: sans-serif; }
 					$add_hidden = '';
 				}
 			?>
-			<div style="background-color: #fdfcf8; padding: 0px !important;margin-left: 10px; <?php echo $add_hidden; ?>" class="col-md-12 <?php echo $p->post_name; ?>-images-container gallery-container left">
+			<div style="width: 100% !important;background-color: #fdfcf8; padding: 0px !important;margin-left: 3px; <?php echo $add_hidden; ?>" class="col-md-12 <?php echo $p->post_name; ?>-images-container gallery-container left">
 				<div class="grid grid-<?php echo $p->post_name; ?>">
 					<div class="grid-sizer"></div>
 					<?php 
@@ -161,7 +161,7 @@ body { font-family: sans-serif; }
 	<?php $count++;} ?>		
 
 	<!-- All Photos -->
-		<div style="background-color: #fdfcf8;display: none;" class="col-md-12 all-images-container gallery-container left">
+		<div style="width: 100% !important;background-color: #fdfcf8;display: none;margin-left: 3px;" class="col-md-12 all-images-container gallery-container left no-space">
 			<div class="grid grid-all">
 			<div class="grid-sizer"></div>			
 				<ul class="list-unstyled" id="cp-gallery-list-all-photos">
@@ -241,7 +241,7 @@ body { font-family: sans-serif; }
 		    t.masonry({
 		        itemSelector:        '.layout-card',
 		        animate:        true,
-		        columnWidth: 10
+		        columnWidth: 1
 		    })
  			
  			$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(4)').fadeIn();

@@ -16,7 +16,7 @@
 <h2 class="page-title"><?php the_title(); ?></h2>
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
-<div class="row margin-content">
+<div class="row">
 <?php 
 	$args = array( 'posts_per_page' => 6, 'offset'=> 1, 'category' => 3 );
     $beautyPosts = get_posts( $args );   

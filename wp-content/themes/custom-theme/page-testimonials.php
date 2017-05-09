@@ -51,7 +51,7 @@ body { font-family: sans-serif; }
 		*/
 	?>
 
-	<div class="col-md-2 left" style="text-align: right;">
+	<div class="col-md-2 left-button left" style="text-align: right;">
 		  <a class="btn-testimonial prev" style=""><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
 	</div>
 	<div class="owl-carousel owl-theme left">
@@ -116,7 +116,7 @@ body { font-family: sans-serif; }
 	<?php } ?>
 	</div>
 
-	<div class="col-md-2 left">
+	<div class="col-md-2 right-button left">
 		<a class="btn-testimonial next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
 	</div>
 </div>
