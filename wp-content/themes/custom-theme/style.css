@@ -2100,7 +2100,7 @@ form#contact_us_form > div > input[type="submit"] {
 text-align: center;
 }
 .gallery-container.left {
-    width: 96% !important;
+    width: 100% !important;
 }
 #ncf_sidebar .ncf_sidebar_cont_scrollable{
       overflow-y: hidden !important;
