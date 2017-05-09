@@ -144,7 +144,7 @@ body { font-family: sans-serif; }
 								$add_class = "hidden";
 							}
 
-							if( $count_product_image > 3 ){
+							if( $count_product_image > 5 ){
 								$add_hidden_style = "style='display:none;'";
 							}
 				          ?>
@@ -180,7 +180,7 @@ body { font-family: sans-serif; }
 								$add_class = "hidden";
 							}
 
-							if( $count_product_image > 3 ){
+							if( $count_product_image > 5 ){
 								$add_hidden_style = "style='display:none;'";
 							}
 				          ?>
@@ -202,7 +202,7 @@ body { font-family: sans-serif; }
 <script type="text/javascript">
  	$(function(){
  		var total_items = <?php echo $total_product_images; ?>;
-  		var shown = 4;
+  		var shown = 5;
 
   		$('#cp-gallery-list-all-photos li:lt(4)').fadeIn();
 
@@ -244,7 +244,7 @@ body { font-family: sans-serif; }
 		        columnWidth: 1
 		    })
  			
- 			$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(4)').fadeIn();
+ 			$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(5)').fadeIn();
  			
  			$('.cf-more-<?php echo $p->post_name; ?>').click(function () {    		      
 		      shown = $('#cp-gallery-list-<?php echo $p->post_name; ?> li:visible').size() + 3;      
