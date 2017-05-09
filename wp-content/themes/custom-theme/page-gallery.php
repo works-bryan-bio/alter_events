@@ -73,7 +73,10 @@ body { font-family: sans-serif; }
 				endwhile; // End of the loop.
 		?>
 		<?php 	
-			$project = $_GET['project'];
+			$keys = parse_url(trim($_SERVER["REQUEST_URI"],"/")); // parse the url
+ 			$path = explode("/", $keys['path']); // splitting the path 			
+ 			$last_item_index = count($path) - 1;
+			$project = $path[$last_item_index];			
 			//Get products
 			$args      = array( 'post_type' => 'product', 'product_cat' => $project );
 			$products  = get_posts( $args );
@@ -81,11 +84,12 @@ body { font-family: sans-serif; }
 		?>
 
 		<br class="clear"><br/>
-		<div class="image-gallery-btn-container" style="margin-bottom: 40px;margin-left:20px;">
+		<div class="image-gallery-btn-container" style="margin-bottom: 80px;margin-left:20px;">
 			<?php $count=0; foreach( $products as $p ){ ?>
 			<?php 
 				if( $count == 0 ){
-					$add_class_active = 'gallery-btn-active';
+					//$add_class_active = 'gallery-btn-active';
+					$add_class_active = '';
 				}else{
 					$add_class_active = '';
 				}
@@ -98,7 +102,7 @@ body { font-family: sans-serif; }
 			<?php $count++;} ?>
 			<div class="border-black" style="width: 20%;float: left;">
 				<div class="gallery-btn-container left center">
-					<a data-id="all" class="text-size-mobile gallery-btn gallery-btn-all btn-gallery-all" href="javascript:void(0);">ALL</a>
+					<a data-id="all" class="text-size-mobile gallery-btn gallery-btn-all btn-gallery-all gallery-btn-active" href="javascript:void(0);">ALL</a>
 				</div>	
 			</div>
 			<div class="border-black" style="width: 20%;float: left;">
@@ -120,10 +124,10 @@ body { font-family: sans-serif; }
 				if( $count > 0 ){ 
 					$add_hidden = "display: none;";
 				}else{
-					$add_hidden = '';
+					$add_hidden = 'display: none;';
 				}
 			?>
-			<div style="width: 100% !important;background-color: #fdfcf8; padding: 0px !important;margin-left: 3px; <?php echo $add_hidden; ?>" class="col-md-12 <?php echo $p->post_name; ?>-images-container gallery-container left">
+			<div style="background-color: #fdfcf8; <?php echo $add_hidden; ?>" class="col-md-12 <?php echo $p->post_name; ?>-images-container gallery-container left">
 				<div class="grid grid-<?php echo $p->post_name; ?>">
 					<div class="grid-sizer"></div>
 					<?php 
@@ -140,15 +144,11 @@ body { font-family: sans-serif; }
 				          	$image_url = wp_get_attachment_url( $attachment_id );
 				          	$add_hidden_style = "";
 
-				          	if( $count >= 8 ){
-								$add_class = "hidden";
-							}
-
 							if( $count_product_image > 5 ){
 								$add_hidden_style = "style='display:none;'";
 							}
 				          ?>
-				          <li <?php echo $add_hidden_style; ?>><div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div></li>				        
+				          <li <?php echo $add_hidden_style; ?>><div class="grid-item"><img src="<?php echo $image_url; ?>" /></div></li>				        
 				        <?php $limiter++; ?>
 				    <?php $count_product_image++; $total_product_images++;} ?>				
 				    </ul>		
@@ -161,7 +161,7 @@ body { font-family: sans-serif; }
 	<?php $count++;} ?>		
 
 	<!-- All Photos -->
-		<div style="width: 100% !important;background-color: #fdfcf8;display: none;margin-left: 3px;" class="col-md-12 all-images-container gallery-container left no-space">
+		<div style="background-color: #fdfcf8;" class="col-md-12 all-images-container gallery-container left">
 			<div class="grid grid-all">
 			<div class="grid-sizer"></div>			
 				<ul class="list-unstyled" id="cp-gallery-list-all-photos">
@@ -171,20 +171,16 @@ body { font-family: sans-serif; }
 						$product = new WC_product($p->ID);
 			    		$attachment_ids = $product->get_gallery_image_ids();
 			    	?>
-			    		<?php $count_product_image = 1;foreach( $attachment_ids as $attachment_id ){ ?>			    			
+			    		<?php foreach( $attachment_ids as $attachment_id ){ ?>			    			
 				          <?php 
 				          	$image_url = wp_get_attachment_url( $attachment_id );
 				          	$add_hidden_style = "";
 
-				          	if( $count >= 8 ){
-								$add_class = "hidden";
-							}
-
-							if( $count_product_image > 5 ){
+							if( $count_product_image > 10 ){
 								$add_hidden_style = "style='display:none;'";
 							}
 				          ?>
-				          <li <?php echo $add_hidden_style; ?>><div class="grid-item <?php echo $add_class; ?>"><img src="<?php echo $image_url; ?>" /></div></li>					       						       	
+				          <li <?php echo $add_hidden_style; ?>><div class="grid-item"><img src="<?php echo $image_url; ?>" /></div></li>					       						       	
 			    		<?php $count_product_image++;} ?>
 				<?php } ?>				
 				</ul>
@@ -202,9 +198,9 @@ body { font-family: sans-serif; }
 <script type="text/javascript">
  	$(function(){
  		var total_items = <?php echo $total_product_images; ?>;
-  		var shown = 5;
+  		var shown = 10;
 
-  		$('#cp-gallery-list-all-photos li:lt(4)').fadeIn();
+  		$('#cp-gallery-list-all-photos li:lt(5)').fadeIn();
 
   		$('.btn-gallery-all').click(function(){
 			var selected_gallery = $(this).attr("data-id");  				
@@ -236,18 +232,17 @@ body { font-family: sans-serif; }
 	  	});
 
  		<?php foreach( $products as $p ){ ?>  
- 			var t = $('.grid-<?php echo $p->post_name; ?>');
-    		var items = <?php echo $product_images_count[$p->ID]; ?>;
+ 			var t = $('.grid-<?php echo $p->post_name; ?>');    		 		
 		    t.masonry({
 		        itemSelector:        '.layout-card',
-		        animate:        true,
-		        columnWidth: 1
+		        animate:        true		        
 		    })
  			
  			$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(5)').fadeIn();
  			
- 			$('.cf-more-<?php echo $p->post_name; ?>').click(function () {    		      
-		      shown = $('#cp-gallery-list-<?php echo $p->post_name; ?> li:visible').size() + 3;      
+ 			$('.cf-more-<?php echo $p->post_name; ?>').click(function () {    
+ 			  var items = <?php echo $product_images_count[$p->ID]; ?>;   		      
+		      shown = $('#cp-gallery-list-<?php echo $p->post_name; ?> li:visible').size() + 3;  		      
 		      if (shown < items) { 
 		      	$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + shown + ')').fadeIn(300); }
 		      else {
