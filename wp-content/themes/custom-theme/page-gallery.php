@@ -56,7 +56,7 @@ body { font-family: sans-serif; }
 <article id="post-691" class="post-691 page type-page status-publish hentry" style="padding-bottom: 0px !important;">
 	<div id="event-container" class="row mrg-150 default-theme" style="">
 		<h1 class="about-text-1">event name</h1>
-		<div class="col-md-12 gallery-event"> 
+		<div class="col-md-12 gallery-event center" style="max-width:100% !important;"> 
 			<p>This is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your paThis is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your place.</p>
 		</div>
 	</div>
