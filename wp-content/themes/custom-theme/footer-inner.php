@@ -7,7 +7,7 @@
             <div id="footer-menu" style="text-align: center;width: 100%;">
               <div class="col-md-12">
                 <div class="col-md-9 left">
-                  <h3 class="footer-text"><strong><span style="color:#cdcdcd;">ADDRESS</span></strong> 500 terry Francois StreeSan Francisco, CA 94158 | <strong><span style="color:#cdcdcd;">TEL</span></strong> 123-456-7890</h3>
+                  <h3 class="footer-text"><strong><span style="color:#cdcdcd;">ADDRESS</span></strong> 3 strelisk Ct #401a, Monroe NY 10950 | <strong><span style="color:#cdcdcd;">TEL</span></strong> <a href="tel:+8455377291">845-537-7291</a></h3>
                 </div>
                 <div class="col-md-1 left">
                   <a href="#" class="facebook-icon"><i class="fa fa-facebook font-large" aria-hidden="true"></i></a>

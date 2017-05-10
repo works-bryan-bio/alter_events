@@ -41,13 +41,13 @@ jQuery(document).ready(function ($) {
 	
 	function backgroundSlideshow() {
 		looper = setInterval(function() {
-			$('.current-photo').removeClass('current-photo').fadeOut(2000, 'easeInOutQuad');
+			$('.current-photo').removeClass('current-photo').fadeOut(1000, 'easeInOutQuad');
 			
 			if(current_photo == total_photos - 1) current_photo = 0;
 			else current_photo++;
 			
-			$photo.eq(current_photo).addClass('current-photo').css('display','none').fadeIn(2000, 'easeInOutQuad');
-		}, 6000);
+			$photo.eq(current_photo).addClass('current-photo').css('display','none').fadeIn(1000, 'easeInOutQuad');
+		}, 4000);
 	}
 	
 	// ----------------------------------------------------------

@@ -24,10 +24,10 @@
 		<div class="col-md-5 left" style="">
 			<div class="col-md-12" style="padding-left: 35%;">
 				<h3 class="label-contact" style="font-weight: bold;">ALTERS EVENT</h3>
-				<h3 class="label-contact" style="font-weight: lighter;">Address: 500 terry Francois Street</h3>
-				<h3 class="label-contact" style="font-weight: lighter;">San Francisco, CA 941s58</h3>
-				<h3 class="label-contact" style="font-weight: lighter;">Tel: 123-456-7890</h3>
-				<h3 class="label-contact" style="font-weight: lighter;">Email: nfo@altersevent@gmail.com</h3>
+				<h3 class="label-contact" style="font-weight: lighter;">Address: 3 strelisk Ct #401a</h3>
+				<h3 class="label-contact" style="font-weight: lighter;">Monroe NY 10950</h3>
+				<h3 class="label-contact" style="font-weight: lighter;">Tel: <a href="tel:+8455377291">845-537-7291</a></h3>
+				<h3 class="label-contact" style="font-weight: lighter;">Email: <a href="mailto:Altersevents@gmail.com">Altersevents@gmail.com</a></h3>
 				<div class="col-md-12 social-icon-contact" style="padding-left: 0px !important;">
 					<div class="col-md-1 left" style="padding-left: 0px !important;">
 	                  <a href="#" class="facebook-icon black"><i class="fa fa-facebook font-large" aria-hidden="true"></i></a>
