@@ -154,6 +154,8 @@ a:hover, a:active { outline: 0; }
 
 .beauty-text-title{
     font-size: 21px;
+    margin-top: 8px !important;
+    margin-bottom: 0px !important;
 }
 .text-detail-beauty{
     font-style: italic;
@@ -254,6 +256,7 @@ input.max-width.input-contact{
     margin-top: 20px;
     color: black;
     text-decoration: none;
+    margin-top: 12px !important;
 }
 .box-black{
     width: 300px;
@@ -726,7 +729,7 @@ header p.site_desc { display: none;}
 #main-content-int #otForm a.OT_ExtLink { margin: 10px auto;}
 
 /* Gift Card Form */
-#main-content-int .wpcf7-form input { font-size: 13px;}
+#main-content-int .wpcf7-form input { font-size: 17px;}
 #main-content-int .wpcf7-form h3 { border-bottom: 1px solid #ccc;}
 #main-content-int .wpcf7-form p { margin: 10px 0;}
 #main-content-int .wpcf7-form #delivery-options .wpcf7-list-item { display: block;}
@@ -1661,7 +1664,7 @@ textarea.wpcf7-form-control.wpcf7-textarea.max-width.input-contact {
     position: relative;
     top: 0px;
     height: 135px;
-    font-size: 14px;
+    font-size: 17px;
 }
 input.wpcf7-form-control.wpcf7-submit {
     padding-left: 20px;
@@ -2093,7 +2096,9 @@ label.quote-header {
     box-shadow: 0 2px 0px 2px #ab957f !important;
 }
 #ncf_sidebar.ncf_minimalistic input[type=submit], #ncf_sidebar.ncf_aerial input[type=submit] {
-    background-color: #c1ac96 !important;
+    background-color: #000000 !important;
+        box-shadow: none !important;
+        width: 100% !important;
 }
 form#contact_us_form > div > input[type="submit"] {
 text-align: center;
@@ -2150,15 +2155,26 @@ div#ncf-overlay-wrapper {
     width: 100% !important;
 }
 input#form-submit {
-    width: 91px !important;
+    width: 100%;
     font-size: 18px !important;
     padding-top: 8px !important;
     padding-bottom: 8px !important;
-    float: right !important;
+    text-align: center;
 }
-.nks_cc_trigger_tabs .ncf-tab-icon:after{
-      background-color: rgb(0, 0, 0) !important;
-}
+
 a:hover, a:focus{
   color:#337ab7 !important;
+}
+i.fa.ncf-icon-mail-1.fa-stack-1x.fa-inverse {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+i.fa.ncf-icon-square.fa-stack-2x {
+    display: none !important;
+}
+span.fa-stack.ncf-tab-icon.fa-lg.fa-2x {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+}
+.nks_cc_trigger_tabs.ncf_tab.ncf_label_visible.nks_metro {
+    background-color: rgba(0, 0, 0, 0.4) !important;
 }
