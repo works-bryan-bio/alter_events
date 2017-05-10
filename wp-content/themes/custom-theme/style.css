@@ -2076,6 +2076,10 @@ label.quote-header {
     margin-bottom: 30px;
     line-height: 22px !important;
     padding-top: 0px !important;
+    color: white !important;
+}
+p > label {
+    color: white !important;
 }
 #ncf_sidebar input[type=text], #ncf_sidebar input[type=email], #ncf_sidebar input[type=date], #ncf_sidebar input[type=tel], #ncf_sidebar .ncf_select_wrap, #ncf_sidebar textarea{
     height: 40px !important;
@@ -2177,4 +2181,10 @@ span.fa-stack.ncf-tab-icon.fa-lg.fa-2x {
 }
 .nks_cc_trigger_tabs.ncf_tab.ncf_label_visible.nks_metro {
     background-color: rgba(0, 0, 0, 0.4) !important;
+}
+.ncf_form_wrapper.ncf_form_1.ncf_default_form {
+    background-color: rgba(0, 0, 0, 0.47) !important;
+}
+.ncf_sidebar_cont {
+    background: none !important;
 }
