@@ -2181,3 +2181,11 @@ span.fa-stack.ncf-tab-icon.fa-lg.fa-2x {
 div#ncf_sidebar {
     background: rgb(75, 75, 74) !important;
 }
+#ncf_sidebar.ncf_minimalistic input[type=text], #ncf_sidebar.ncf_minimalistic input[type=email], #ncf_sidebar.ncf_minimalistic input[type=date], #ncf_sidebar.ncf_minimalistic input[type=tel], #ncf_sidebar.ncf_minimalistic .ncf_select_wrap, #ncf_sidebar.ncf_minimalistic textarea {
+    box-shadow: none !important;
+}
+.p-gallery{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
