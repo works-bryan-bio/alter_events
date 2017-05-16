@@ -20,8 +20,8 @@
 	<div class="col-md-12 center content">
 	</div>
 	<div class="col-md-12">
-		<div class="col-md-5 left" style="">
-			<div class="col-md-12" style="padding-left: 35%;">
+		<div class="col-md-6 left" style="">
+			<div class="col-md-12" style="padding-left: 1%;">
 				<h2 class="contact-text-1 uppercase center" style="text-align: center;margin-bottom: 40px !important;">Alters Event</h2>
 				<br/>
 				<h3 class="label-contact center" style="font-weight: lighter;">Address: 3 strelisk Ct #401a</h3>
@@ -44,7 +44,7 @@
 	        </div>
 		</div>
 
-		<div class="col-md-6 left" style="">
+		<div class="col-md-5 left" style="">
 				<h2 class="contact-text-1 uppercase center" style="text-align: center;">Get in touch</h2>
 				<br/><br/>
 				<?php 
