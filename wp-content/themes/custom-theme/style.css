@@ -661,7 +661,7 @@ header p.site_desc { display: none;}
 /* Main Menu */
 #access .menu-header { width: 213px;}
 #access .menu-header ul li { position: relative;}
-#access .menu-header ul li a { color: #efefef; display: block; font: 19px/28px 'helvetica', 'sans-serif'; text-transform: uppercase; padding: 0 35px;line-height: 33px;}
+#access .menu-header ul li a { color: #efefef; display: block; font: 17px/28px 'helvetica', 'sans-serif'; text-transform: uppercase; padding: 0 35px;line-height: 33px;}
 #access .menu-header ul li a:hover { background: url(images/bg_transp.png) repeat;}
 #access .menu-header ul ul { background: url(assets/images/bg_transp.png) repeat; float: left; position: absolute; left: 213px; top: 0px; display: none; min-width: 160px;}
 #access .menu-header ul ul li { }
@@ -2082,7 +2082,7 @@ label.quote-header {
     padding: 6px 12px 8px 12px !important;
 }
 #ncf_sidebar.ncf_minimalistic .ncf_sidebar_header{
-    height: 220px !important;
+    height: 126px !important;
 }
 .ncf_sidebar_content {
     position: relative !important;
@@ -2188,4 +2188,7 @@ div#ncf_sidebar {
     width: 90%;
     margin: 0 auto;
     text-align: center;
+}
+.menu-item a:hover{
+  color:#2f2d30 !important;
 }

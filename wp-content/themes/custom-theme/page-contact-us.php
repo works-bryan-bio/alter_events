@@ -80,5 +80,38 @@
 </div>
 </article><!-- #post-## -->
 	
-<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/contact/contact-bottom.jpg') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
+<section id="location"></section>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyChZmDn0hp-VnrzRQK9IKjJeYPTDYWKIE8&sensor=false"></script>
+
+<script type="text/javascript">
+
+// The latitude and longitude of your business / place
+var position = [41.337654, -74.174450];
+
+function showGoogleMaps() {
+
+    var latLng = new google.maps.LatLng(position[0], position[1]);
+
+    var mapOptions = {
+        zoom: 16, // initialize zoom level - the max value is 21
+        streetViewControl: false, // hide the yellow Street View pegman
+        scaleControl: true, // allow users to zoom the Google Map
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: latLng
+    };
+
+    map = new google.maps.Map(document.getElementById('location'),
+        mapOptions);
+
+    // Show the default red marker at the location
+    marker = new google.maps.Marker({
+        position: latLng,
+        map: map,
+        draggable: false,
+        animation: google.maps.Animation.DROP
+    });
+}
+
+google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+</script>
 <?php get_footer('inner'); ?>

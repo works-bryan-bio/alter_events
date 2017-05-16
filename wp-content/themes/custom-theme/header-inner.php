@@ -26,7 +26,7 @@
 		$header_menu_items = wp_get_nav_menu_items('HEADER');
 	?>
 	<header id="header" role="banner" style="display: block;">
-		<h1><a href="" title="Alters Events" rel="home"><img style="margin: 0 auto 0px !important;" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-alter.png" class="logo" alt="Sweet Basil"></a></h1>
+		<h1><a href="<?php echo get_home_url(); ?>" title="Alters Events" rel="home"><img style="margin: 0 auto 0px !important;" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-alter.png" class="logo" alt="Sweet Basil"></a></h1>
 		<span class="phone-number">845.537.7291</span>
 		<p class="site_desc">Alters Events.</p>
 		<nav id="access" role="navigation" style="padding-top: 20px;">
