@@ -15,7 +15,7 @@
 <section id="content" role="main">
 <h2 class="page-title"><?php the_title(); ?></h2>
 			
-<article id="post-691" class="post-691 page type-page status-publish hentry">
+<article id="post-691" class="post-691 page type-page status-publish hentry" style="padding-top: 52px;">
 <div class="row">
 <?php 
 	$args = array( 'posts_per_page' => 6, 'offset'=> 1, 'category' => 3 );

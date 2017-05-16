@@ -1646,6 +1646,7 @@ p{
 }
 .content-blog-beauty > p{
     font-size: 21px;
+    text-align: justify;
 }
 #reply-title{
     font-family: 'alters-italic';
@@ -1743,7 +1744,7 @@ textarea#comment{
   text-align: center;
 }
 .form-submit > input#submit {
-    width: 170px;
+    width: 148px;
     font-size: 15px;
     padding: 12px;
     background-color: black;
@@ -2096,9 +2097,9 @@ label.quote-header {
     box-shadow: 0 2px 0px 2px #ab957f !important;
 }
 #ncf_sidebar.ncf_minimalistic input[type=submit], #ncf_sidebar.ncf_aerial input[type=submit] {
-    background-color: #000000 !important;
-        box-shadow: none !important;
-        width: 100% !important;
+    background-color: black !important;
+    box-shadow: none !important;
+    width: 100% !important;
 }
 form#contact_us_form > div > input[type="submit"] {
 text-align: center;
@@ -2161,10 +2162,14 @@ input#form-submit {
     padding-bottom: 8px !important;
     text-align: center;
 }
+a.text-size-mobile:hover, a.box-black.size-large.cf-more-all-photos:hover{
+  color: white !important;
+}
 
 a:hover, a:focus{
-  color:#337ab7 !important;
+  color:#527eff !important;
 }
+
 i.fa.ncf-icon-mail-1.fa-stack-1x.fa-inverse {
     background-color: rgba(0, 0, 0, 0.5) !important;
 }
