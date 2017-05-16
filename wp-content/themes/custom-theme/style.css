@@ -65,7 +65,9 @@ a:hover, a:active { outline: 0; }
 /* =============================================================================
    Fonts - @font-face
    ========================================================================== */
-
+.uppercase{
+  text-transform: uppercase !important; 
+}
 @font-face {
     font-family: 'alters';
     src: url(assets/fonts/BELL.ttf);
@@ -278,7 +280,7 @@ input.max-width.input-contact{
 }
 .contact-text-1{
     margin: 0px !important;
-    font-size:64px;
+    font-size:50px;
     font-weight: bold;
 }
 
@@ -775,7 +777,7 @@ footer #social ul li img { max-width: 17px !important;}
 footer #partner_logos { float: left; padding-top: 10px;}
 footer #partner_logos ul { padding: 0;}
 footer #partner_logos li { display: inline-block; padding-right: 15px; *float: left;}
-
+.social-icon-contact{margin-bottom:70px;padding-left:33% !important;}
 #nav-above { /* float: left;  */margin: 30px 0;}
 #nav-above a { background: #F0A735; font-size: 12px; padding: 4px; color: #fff; text-transform: uppercase;}
 #nav-below { margin: 50px 0;}
@@ -1344,7 +1346,7 @@ a.google-icon:hover {
 .owl-carousel.owl-theme.left{
   width: 90% !important;
 }
-
+.social-icon-contact{margin-bottom:16px;padding-left:29% !important;}
 }
 
 @media (max-width: 1080px) {
@@ -1388,8 +1390,9 @@ a.google-icon:hover {
     height: 50% !important;
   }
   .social-icon-contact{
-    margin-bottom:70px !important;
-
+    margin-bottom:16px !important;
+    padding-left: 39% !important;
+    padding-bottom: 95px !important;
   }
   .content-about{
         height: 100% !important;
@@ -1523,6 +1526,13 @@ a.google-icon:hover {
   }
 
 }
+@media (max-width: 790px) {
+  .social-icon-contact{
+    margin-bottom:16px !important;
+    padding-left: 34% !important;
+    padding-bottom: 95px !important;
+  }
+}
 /* for mobile */
 @media (max-width: 720px) {
   .row{padding-bottom: 50px !important;}
@@ -1530,6 +1540,7 @@ a.google-icon:hover {
   .phone-number{
     padding-left: 38% !important;
   }
+
   .top-80{
     position: relative !important;
     bottom: 0px !important;
@@ -1614,13 +1625,30 @@ a.google-icon:hover {
     padding-top: 65px !important;
     margin-bottom: 7px !important;
   }
+  .social-icon-contact{
+    margin-bottom:16px !important;
+    padding-left: 30% !important;
+    padding-bottom: 95px !important;
+  }
 }
 @media (max-width: 480px){
   .testimonial-inner {
     padding-left: 20px !important;
     padding-right: 30px !important;
   }
+  .social-icon-contact{
+    margin-bottom:16px !important;
+    padding-left: 24% !important;
+    padding-bottom: 95px !important;
+  }
 }
+@media (max-width: 410px){
+  .social-icon-contact{
+    margin-bottom:16px !important;
+    padding-left: 30px !important;
+    padding-bottom: 95px !important;
+  }
+  }
 .current_page_item{
   background-color: #BBA89A;
 }

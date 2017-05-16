@@ -18,33 +18,35 @@
 <article id="post-691" class="post-691 page type-page status-publish hentry">
 <div class="row">
 	<div class="col-md-12 center content">
-		<h2 class="contact-text-1" style="text-align: center;">Get in touch</h2>
 	</div>
 	<div class="col-md-12">
 		<div class="col-md-5 left" style="">
 			<div class="col-md-12" style="padding-left: 35%;">
-				<h3 class="label-contact" style="font-weight: bold;">ALTERS EVENT</h3>
-				<h3 class="label-contact" style="font-weight: lighter;">Address: 3 strelisk Ct #401a</h3>
-				<h3 class="label-contact" style="font-weight: lighter;">Monroe NY 10950</h3>
-				<h3 class="label-contact" style="font-weight: lighter;">Tel: <a href="tel:+8455377291">845-537-7291</a></h3>
-				<h3 class="label-contact" style="font-weight: lighter;">Email: <a href="mailto:Altersevents@gmail.com">Altersevents@gmail.com</a></h3>
-				<div class="col-md-12 social-icon-contact" style="padding-left: 0px !important;">
-					<div class="col-md-1 left" style="padding-left: 0px !important;">
-	                  <a href="#" class="facebook-icon black"><i class="fa fa-facebook font-large" aria-hidden="true"></i></a>
+				<h2 class="contact-text-1 uppercase center" style="text-align: center;margin-bottom: 40px !important;">Alters Event</h2>
+				<br/>
+				<h3 class="label-contact center" style="font-weight: lighter;">Address: 3 strelisk Ct #401a</h3>
+				<h3 class="label-contact center" style="font-weight: lighter;">Monroe NY 10950</h3>
+				<h3 class="label-contact center" style="font-weight: lighter;">Tel: <a href="tel:+8455377291">845-537-7291</a></h3>
+				<h3 class="label-contact center" style="font-weight: lighter;">Email: <a href="mailto:Altersevents@gmail.com">Altersevents@gmail.com</a></h3>
+				<div class="col-md-12">
+					<div class="social-icon-contact">
+						<div class="col-md-1 left" style="padding-left: 0px !important;">
+		                  <a href="#" class="facebook-icon black"><i class="fa fa-facebook font-large" aria-hidden="true"></i></a>
+		                </div>
+		                <div class="col-md-1 left" style="padding-left: 0px !important;margin-left:20px;">
+		                  <a href="" class="twitter-icon black"><i class="fa fa-twitter font-large" aria-hidden="true"></i></a>
+		                </div>
+		                <div class="col-md-1 left" style="padding-left: 0px !important;margin-left:20px;">
+		                  <a href="" class="google-icon black"><i class="fa fa-google-plus font-large" aria-hidden="true"></i></a>
+		                </div>
 	                </div>
-	                <div class="col-md-1 left" style="padding-left: 0px !important;margin-left:20px;">
-	                  <a href="" class="twitter-icon black"><i class="fa fa-twitter font-large" aria-hidden="true"></i></a>
-	                </div>
-	                <div class="col-md-1 left" style="padding-left: 0px !important;margin-left:20px;">
-	                  <a href="" class="google-icon black"><i class="fa fa-google-plus font-large" aria-hidden="true"></i></a>
-	                </div>
-
 	            </div>
 	        </div>
 		</div>
 
-		<div class="col-md-5 left">
-
+		<div class="col-md-6 left" style="">
+				<h2 class="contact-text-1 uppercase center" style="text-align: center;">Get in touch</h2>
+				<br/><br/>
 				<?php 
 					while ( have_posts() ) : the_post();
 
