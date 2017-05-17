@@ -32,7 +32,76 @@
 			</div>             
 		</nav><!-- #mobile-access -->
 	</header>	
-	<section id="content-home" role="main"></section>
+	<section id="content-home" role="main">
+		<div class="owl-carousel owl-theme left">
+		<?php 
+			$featured_testimonials = $wpdb->get_results("SELECT object_id FROM wp_term_relationships WHERE term_taxonomy_id=34");
+			$featured_ids = array();
+			foreach( $featured_testimonials as $ft ){
+				$featured_ids[$ft->object_id] = $ft->object_id;				
+			} 			
+			$testimonials = $wpdb->get_results("SELECT  ID, post_content, post_title FROM wp_posts WHERE ID IN(" . implode(",", $featured_ids) . ")"); 
+		?>
+		<?php foreach( $testimonials as $t ){ $client_name = ""; $company_name = ""; ?>
+			<div class="item">
+						
+				<?php 
+					//Get Post Meta
+					$testimonial_meta  = $wpdb->get_results("SELECT  meta_key, meta_value, post_id FROM wp_postmeta WHERE post_id =" . $t->ID . " AND (meta_key ='client_name' OR meta_key ='company_name' OR meta_key ='email' OR meta_key ='company_website' OR meta_key ='_thumbnail_id')");			
+					$uploads 		   = wp_upload_dir(); 
+					$testimonial_image = $uploads['baseurl'] . "/2017/04/profile-icon-1.png";
+
+				?>
+				<?php foreach( $testimonial_meta as $tm ){  ?>
+					<?php 
+						if( $tm->meta_key == 'client_name' ){
+							$client_name = $tm->meta_value;
+						}elseif( $tm->meta_key == 'email'  ){
+							
+						}elseif( $tm->meta_key == 'company_name' ){
+							$company_name = $tm->meta_value;
+						}elseif( $tm->meta_key == 'company_website' ){
+						
+						}elseif( $tm->meta_key == '_thumbnail_id' ){
+							$thumb_meta_id = $tm->meta_value;
+							$testimonial_thumb_meta = $wpdb->get_results("SELECT  guid FROM wp_postmeta WHERE post_id =" . $thumb_meta_id );
+							foreach( $testimonial_thumb_meta as $thumb ){
+								if( $thumb->meta_key == '_wp_attached_file' ){
+									$testimonial_image = $uploads['baseurl'] . "/" . $thumb->meta_value;		
+								}
+							}
+							
+						}
+					?>
+				<?php } ?>	
+				<div class="col-md-12" style="padding-left: 0px;">
+					<!--- <div class="col-md-6 left" style="text-align: right;padding-left: 0px;">
+						<div class="testimonial-image" style="display: inline-block;">
+							 <img width="67" height="63" src="<?php //echo $testimonial_image;?>" class="attachment-thumbnail size-thumbnail wp-post-image"> 
+						</div>
+					</div>-->
+					<div class="col-md-12 center" style="text-align: center;padding-top:45px !important;padding-left: 0px;">
+					
+						<?php if($client_name != ""){ ?>	
+							<div class="testimonial-name" style="font-size: 18px;font-weight: bold;"><?php echo $client_name; ?></div>
+						<?php } ?>
+						<?php if($company_name != ""){ ?>	
+						<div class="testimonial-company" style=""><?php echo $company_name; ?></div>
+						<?php } ?>
+					</div>
+					<br style="clear:both;" />
+
+
+					<div class="testimonial-content">
+						<h3 class="testimonial-heading" style="text-align:center;font-weight: 700;font-size: 24px;font-style: italic;"><?php echo $t->post_title; ?></h3>			
+						<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;"><?php echo $t->post_content; ?></p>
+					</div>
+
+				</div>
+			</div>
+		<?php } ?>
+		</div>
+	</section>
 </div><!-- #main-content-int -->
 <footer id="footer-home" role="contentinfo">
 	<div id="footer-inner-wrap">
