@@ -54,7 +54,7 @@ body { font-family: sans-serif; }
 	<div class="col-md-2 left-button left" style="text-align: right;">
 		  <a class="btn-testimonial prev" style=""><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
 	</div>
-	<div class="owl-carousel owl-theme left">
+	<div class="owl-carousel owl-theme testimonial-container left">
 	<?php $testimonials = $wpdb->get_results("SELECT  ID, post_content, post_title FROM wp_posts WHERE post_type ='wpm-testimonial' AND post_status ='publish'"); ?>
 	<?php foreach( $testimonials as $t ){ $client_name = ""; $company_name = ""; ?>
 		<div class="item">
@@ -108,7 +108,7 @@ body { font-family: sans-serif; }
 
 				<div class="testimonial-content">
 					<h3 class="testimonial-heading" style="text-align:center;font-weight: 700;font-size: 24px;font-style: italic;"><?php echo $t->post_title; ?></h3>			
-					<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;"><?php echo $t->post_content; ?></p>
+					<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;">"<?php echo $t->post_content; ?>"</p>
 				</div>
 
 			</div>

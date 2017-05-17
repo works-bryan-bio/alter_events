@@ -33,7 +33,10 @@
 		</nav><!-- #mobile-access -->
 	</header>	
 	<section id="content-home" role="main">
-		<div class="owl-carousel owl-theme left">
+	<div class="block-5 testimonial-home hidden">
+
+
+		<div class="owl-carousel owl-theme padding-owl left" style="width: 100% !important;padding-bottom: 40px !important;">
 		<?php 
 			$featured_testimonials = $wpdb->get_results("SELECT object_id FROM wp_term_relationships WHERE term_taxonomy_id=34");
 			$featured_ids = array();
@@ -74,32 +77,29 @@
 						}
 					?>
 				<?php } ?>	
-				<div class="col-md-12" style="padding-left: 0px;">
+				<div class="col-md-12 no-space">
 					<!--- <div class="col-md-6 left" style="text-align: right;padding-left: 0px;">
 						<div class="testimonial-image" style="display: inline-block;">
 							 <img width="67" height="63" src="<?php //echo $testimonial_image;?>" class="attachment-thumbnail size-thumbnail wp-post-image"> 
 						</div>
 					</div>-->
-					<div class="col-md-12 center" style="text-align: center;padding-top:45px !important;padding-left: 0px;">
-					
-						<?php if($client_name != ""){ ?>	
-							<div class="testimonial-name" style="font-size: 18px;font-weight: bold;"><?php echo $client_name; ?></div>
-						<?php } ?>
-						<?php if($company_name != ""){ ?>	
-						<div class="testimonial-company" style=""><?php echo $company_name; ?></div>
-						<?php } ?>
-					</div>
-					<br style="clear:both;" />
-
-
 					<div class="testimonial-content">
-						<h3 class="testimonial-heading" style="text-align:center;font-weight: 700;font-size: 24px;font-style: italic;"><?php echo $t->post_title; ?></h3>			
-						<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;"><?php echo $t->post_content; ?></p>
+						<?php if($client_name != ""){ ?>	
+							<p style="text-align: center;font-style: italic;font-size: 17px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"
+							<?php echo mb_strimwidth($t->post_content, 0, 90, '...');?> - <?php echo $client_name; ?>"</p>
+						<?php } else { ?>		
+							<p style="text-align: center;font-style: italic;font-size: 17px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"<?php echo mb_strimwidth($t->post_content, 0, 90, '...');?>"</p>
+						<?php } ?>
 					</div>
 
 				</div>
 			</div>
 		<?php } ?>
+		</div>
+
+		<div class="col-md-12 center">
+			<a href="<?php echo get_permalink(50); ?>" class="read-more" style="font-size: 17px !important;">See More</a>
+		</div>
 		</div>
 	</section>
 </div><!-- #main-content-int -->

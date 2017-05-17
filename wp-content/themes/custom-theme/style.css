@@ -151,7 +151,7 @@ a:hover, a:active { outline: 0; }
     width:100%;
 }
 .white{
-    color: white;
+    color: white !important;
 }
 
 .beauty-text-title{
@@ -606,6 +606,9 @@ display: inline-block;
     margin: 3px;
     text-transform: uppercase;
 }
+.padding-owl{
+  padding-right: 20px;padding-left: 20px;
+}
 .banner_link:hover {
     background: #ffae00;
     border: none;
@@ -614,7 +617,18 @@ display: inline-block;
     margin:3px;
     text-transform: uppercase;
 }
-   
+.testimonial-home {
+    background-color: rgba(0, 0, 0, 0.42);
+    position: absolute;
+    float: right !important;
+    top:460px;
+    right: 50px;
+    margin-bottom: 30px !important;
+    padding-bottom: 40px !important;
+}
+.block-5{
+  width: 43.366667%;
+}   
 /* Loader */
 #loading { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #211f1f; overflow: hidden; z-index: 666;}
 #loading #loading-message { position: absolute; top: 50%; left: 50%; width: 300px;height: 100px; margin-left: -150px; margin-top: -150px;}
@@ -975,6 +989,9 @@ only screen and (min-device-pixel-ratio: 1.5) {
 
 /* for 720px or less */
 @media screen and (max-width: 720px) {
+  .block-5{
+    width: 60% !important;
+  }
   #loading #loading-message { position: absolute; top: 30px; left: 0; width: inherit;height: inherit; margin-left: 0; margin-top: 0;}
   #loading #loading-message .logo { width: 25%; display: block; margin: 0 auto;}
   #loading #loading-message p { font: 12px/22px 'brandon_grotesque_regularRg', Arial, 'sans-serif';}
@@ -1157,6 +1174,9 @@ h1, h2, h3, h4, h5, h6 { font-weight:bold } /* This helps to identify headings a
   padding-right: 75px;
   font-size: 24px;
 }
+.read-more:hover{
+  color: white !important;
+}
 .font-large{
   font-size: 39px !important;
   padding-top: 10px;
@@ -1200,6 +1220,56 @@ a.google-icon:hover {
     font-size: 22px !important;
   }
 }
+@media (max-width: : 1920px), screen and (max-height: 1200px) {
+  .testimonial-home {
+      position: absolute !important;
+      top:800px !important;
+      margin-bottom: 30px !important;
+  }
+} 
+
+@media (max-width: : 1920px), screen and (max-height: 1080px) {
+  .testimonial-home {
+      position: absolute !important;
+      top:700px !important;
+      margin-bottom: 30px !important;
+  }
+} 
+@media (max-width: : 1680px), screen and (max-height: 1050px) {
+  .testimonial-home {
+      position: absolute !important;
+      top:600px !important;
+      margin-bottom: 30px !important;
+  }
+}
+@media (max-width: : 1440px), screen and (max-height: 900px) {
+  .testimonial-home {
+      position: absolute !important;
+      top:500px !important;
+      margin-bottom: 30px !important;
+  }
+} 
+@media (max-width: : 1280px), screen and (max-height: 800px) {
+  .testimonial-home {
+      position: absolute !important;
+      top:400px !important;
+      margin-bottom: 30px !important;
+  }
+} 
+@media (max-width: : 1024px), screen and (max-height: 768px) {
+  .testimonial-home {
+      position: absolute !important;
+      top:400px !important;
+      margin-bottom: 30px !important;
+  }
+}
+@media (max-width: : 1024px), screen and (max-height: 600px) {
+  .testimonial-home {
+      position: absolute !important;
+      top:200px !important;
+      margin-bottom: 30px !important;
+  }
+}
 @media (max-width: 1660px) {
   .about-text-1{
     font-size:60px !important;
@@ -1210,6 +1280,7 @@ a.google-icon:hover {
   h3{
     font-size: 20px !important;
   }
+
 }
 @media (max-width: 1560px) {
   .about-text-1{
@@ -1230,6 +1301,7 @@ a.google-icon:hover {
     max-width: none !important;
     height: 80% !important;
   }
+
 }
 @media (max-width: 1450px) {
   .btn-testimonial{
@@ -1240,6 +1312,7 @@ a.google-icon:hover {
       display: block;
       margin-top: 100%;
   }
+
   .auto-fit {
     background-size: cover;
     background-repeat: no-repeat;
@@ -1342,7 +1415,11 @@ a.google-icon:hover {
   }
 
 }
+
 @media (max-width: 1215px) {
+.padding-owl{
+    padding-right: 0px !important;padding-left: 0px !important;
+}
 .owl-carousel.owl-theme.left{
   width: 90% !important;
 }
@@ -1383,6 +1460,8 @@ a.google-icon:hover {
   }
 
 }
+
+
 @media (max-width: 991px){
   .beauty-image > img {
     width: 100% !important;
@@ -1527,6 +1606,7 @@ a.google-icon:hover {
 
 }
 @media (max-width: 790px) {
+
   .social-icon-contact{
     margin-bottom:16px !important;
     padding-left: 34% !important;
@@ -1535,6 +1615,10 @@ a.google-icon:hover {
 }
 /* for mobile */
 @media (max-width: 720px) {
+
+  .block-5{
+      width: 70% !important;   
+  }
   .row{padding-bottom: 50px !important;}
   .quote{display:none !important;}
   .phone-number{
@@ -1881,6 +1965,7 @@ a.text-size-mobile {
     height: 965px !important;
   }
 }
+
 @media (max-width: 1440px) {
   .img-bottom-about {
       width: 100% !important;
@@ -1901,6 +1986,7 @@ a.text-size-mobile {
   .bg-position-about-bottom{background-position: 0px 156px !important;}
   .about-text-2 { line-height: 60px !important;}
 }
+
 @media (max-width: 1280px) {
   .img-bottom-about {
       width: 100% !important;
@@ -1939,6 +2025,7 @@ a.text-size-mobile {
   }
 }
 @media (max-width: 1024px) {
+
   .about-content {
     margin-left: 0px !important;
   }
@@ -2061,7 +2148,7 @@ a.text-size-mobile {
 }
 .nks_cc_trigger_tabs.ncf_tab.ncf_label_visible.nks_metro {
     display: block;
-    top: 35% !important;
+    top: 30% !important;
 }
 .ncf_sidebar_cont_scrollable {
     
@@ -2149,9 +2236,13 @@ div#ncf-overlay-wrapper {
   span.glyphicon.glyphicon-chevron-right{
     display: none !important;
   }
+  .testimonial-container{
+    position: relative !important;
+    left: 0px !important;
+  }
   .col-md-2.left-button.left{ display: none !important; }
   .col-md-2.right-button.left{ display: none !important; }
-    .owl-carousel.owl-theme.left{
+    .testimonial-container{
       position: relative !important;
       left: 5% !important;
     }

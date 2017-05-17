@@ -2,6 +2,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/assets/bootstrap/js/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php bloginfo('template_directory'); ?>/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/owl.carousel.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/masonry.pkgd.min.js"></script>
 
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/plugins.js"></script>
@@ -13,6 +14,14 @@ jQuery(document).ready(function ($) {
                           $('#mast_cat').anystretch("<?php bloginfo('template_directory'); ?>/assets/images/home/slides/1.png", {speed: 180, elPosition: 'fixed'});
         $('#mast_error').anystretch("<?php bloginfo('template_directory'); ?>/assets/images/home/slides/1.png", {speed: 180, elPosition: 'fixed'});
                           $('#location-ie').anystretch("<?php bloginfo('template_directory'); ?>/assets/images/home/slides/1.png", {speed: 180, elPosition: 'relative', positionY: 'bottom', positionX: 'left'});
+                          $('.owl-carousel').owlCarousel({
+                            items: 1,
+                            loop:true,
+                            autoplay: true,
+                            margin:10,
+                            autoHeight:true     
+                         });   
+                         $(".testimonial-home").removeClass('hidden');
 });
 </script>
       <script type="text/javascript">
@@ -26,6 +35,7 @@ jQuery(document).ready(function ($) {
           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();     
       </script>
+
 <?php wp_footer(); ?>
 </body>
 </html>
