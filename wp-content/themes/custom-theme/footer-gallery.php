@@ -12,7 +12,7 @@
         <div class="f-md-8 text-left left no-space">
           <h3 class="footer-text left"><strong><span style="color:#cdcdcd;"><a href="mailto:altersevents@gmail.com">altersevents@gmail.com</a></span></strong></h3>
           <h3 class="footer-text left"><span class="footer-divider left">&nbsp;|&nbsp;</span></h3>
-          <h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> 123-456-7890</h3>
+          <h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> 845-537-7291</h3>
         </div>
         <div class="f-md-3 left no-space footer-social">
           <div class="f-md-4 left">

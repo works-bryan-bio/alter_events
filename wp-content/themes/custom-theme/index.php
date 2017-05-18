@@ -85,8 +85,8 @@
 					</div>-->
 					<div class="testimonial-content">
 						<?php if($client_name != ""){ ?>	
-							<p style="text-align: center;font-style: italic;font-size: 17px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"
-							<?php echo mb_strimwidth($t->post_content, 0, 70, '...');?> - <?php echo $client_name; ?>"</p>
+							<p style="text-align: center;font-style: italic;font-size: 17px;font-weight: 400;padding-right: 10px;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"
+							<?php echo mb_strimwidth($t->post_content, 0, 40, '...');?> - <?php echo $client_name; ?>"</p>
 						<?php } else { ?>		
 							<p style="text-align: center;font-style: italic;font-size: 17px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"<?php echo mb_strimwidth($t->post_content, 0, 90, '...');?>"</p>
 						<?php } ?>
@@ -110,7 +110,7 @@
 				<div class="f-md-8 left no-space">
 					<h3 class="footer-text left"><strong><span style="color:#cdcdcd;"><a href="mailto:altersevents@gmail.com">altersevents@gmail.com</a></span></strong></h3>
 					<h3 class="footer-text left"><span class="footer-divider left">&nbsp;|&nbsp;</span></h3>
-					<h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> 123-456-7890</h3>
+					<h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> 845-537-7291</h3>
 				</div>
 				<div class="f-md-3 left no-space footer-social">
 					<div class="f-md-4 left">
