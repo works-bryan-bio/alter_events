@@ -20,7 +20,7 @@
 
 	<br style="clear: both;" /><Br/>
 	<div class="col-md-12 center">
-		<div class="page-content">
+		<div class="page-content" id="blog-content">
 		<?php
 		while ( have_posts() ) : the_post();
 

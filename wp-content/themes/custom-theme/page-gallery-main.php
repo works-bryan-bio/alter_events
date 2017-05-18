@@ -100,9 +100,9 @@ body { font-family: sans-serif; }
 	<br class="clear">
 	<div class="col-md-12 center">
 		<?php //if(isset($_GET['view'])) { ?>
-			<a class="black cf-less" href="javascript:void(0)'"><div class="box-black-beauty">View Less</div></a>
+			<a class="black cf-less" href="javascript:void(0)'"><div class="box-black-gallery">View Less</div></a>
 		<?php //}else{ ?>
-			<a class="black cf-more" href="javascript:void(0)"><div class="box-black-beauty">View More</div></a>
+			<a class="black cf-more" href="javascript:void(0)"><div class="box-black-gallery">View More</div></a>
 		<?php //} ?>
 		
 	</div>

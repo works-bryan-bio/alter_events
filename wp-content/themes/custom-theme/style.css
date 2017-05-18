@@ -37,7 +37,7 @@ html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10
 
 html, button, input, select, textarea { font-family: sans-serif; color: #333; }
 
-body { margin: 0; font-size: 17px; line-height: 1.6;background-color: #fff7d7 !important;  overflow-y: visible !important; display: block !important;  }
+body { margin: 0; font-size: 17px; line-height: 1.6;background-color: #fdfcf8 !important;  overflow-y: visible !important; display: block !important;  }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -68,6 +68,7 @@ a:hover, a:active { outline: 0; }
 .uppercase{
   text-transform: uppercase !important; 
 }
+.homepage-content{min-height: 600px !important;}
 @font-face {
     font-family: 'alters';
     src: url(assets/fonts/BELL.ttf);
@@ -223,6 +224,9 @@ a:hover, a:visited, a:link, a:active
 .box-black-beauty:hover {
     color: white;
 }
+.box-black-gallery:hover {
+    color: white;
+}
 input.max-width.input-contact{
     font-size: 16px;
     margin-bottom: 15px !important;
@@ -236,6 +240,11 @@ input.max-width.input-contact{
     border: 1px solid black; 
 
 }
+.box-black-gallery:hover{
+    background-color: #111111;
+    border: 1px solid black; 
+
+}
 .box-transparent-beauty:hover{
     background-color: black;
     border: 2px solid white; 
@@ -244,11 +253,26 @@ input.max-width.input-contact{
 .box-black-beauty:hover > a{
     color:#ffffff;
 }
+.box-black-gallery:hover > a{
+    color:#ffffff;
+}
 .img-bottom-about{
   width: 100%;
   height: 554px;
 }
 .box-black-beauty{
+    width: 150px;
+    text-align: center;
+    background-color: #fdfcf8;
+    border: 1px solid black; 
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: black;
+    text-decoration: none;
+    margin-top: 12px !important;
+}
+.box-black-gallery{
     width: 150px;
     text-align: center;
     background-color: #fdfcf8;
@@ -954,7 +978,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 
 /* for 960px or less */
 @media screen and (max-width: 960px) {
-
+  .home-only{display: none !important;}
   header { position: absolute;}
 
   #main-content-int { padding: 0;}
@@ -973,7 +997,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
   
   #backTop { left: -9999px;}
   
-  footer { background: #333;}
+  footer { background: rgba(51, 51, 51, 0.88);}
   footer #footer-inner-wrap { width: 100%;}
   footer #menu-footer-menu { padding: 0;}
   footer #menu-footer-menu li { padding-left: 18px;}
@@ -1048,21 +1072,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
   .one_half,.one_third,.two_third,.three_fourth,.one_fourth,.one_fifth,.two_fifth,.three_fifth,.four_fifth,.one_sixth,.five_sixth{ position:relative; margin:10px 0; float:none; width: 90%;}
   
   #shopp #cart th, #shopp #cart td { display: block;}
-  
-  #footer-home { display: none;}
-  footer { background: #201f1f; position: relative;}
-  footer #footer-inner-wrap { width: 100%; text-align: center;}
-  footer #footer-menu { float: none;}
-  footer #menu-footer-menu { padding: 0 0 10px;}
-  footer #menu-footer-menu li { padding: 0 7px;}
-  footer .credit { float: none;}
-  footer .copyright { float: none;}
-  footer #social { float: none; padding: 10px 0;}
-  footer #social ul li { display: inline; padding: 0 4px;}
-  footer #social ul li img { max-width: 20px;}
-  footer #partner_logos { float: none;}
-  footer #partner_logos li { padding: 0 8px;}
-  footer #partner_logos li img { max-width: 45px;}
+
 }
 
 
@@ -1168,14 +1178,27 @@ h1, h2, h3, h4, h5, h6 { font-weight:bold } /* This helps to identify headings a
 .read-more{
   color: white;
   background-color: black;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 75px;
-  padding-right: 75px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
   font-size: 24px;
 }
 .read-more:hover{
   color: white !important;
+}
+.text-left{
+  text-align: left;
+}
+.f-md-8{
+  width: 70%;
+}
+.f-md-4{
+  width: 33% !important;
+}
+.f-md-3{
+  width: 30%;
+
 }
 .font-large{
   font-size: 39px !important;
@@ -1223,7 +1246,7 @@ a.google-icon:hover {
 @media (max-width: : 1920px), screen and (max-height: 1200px) {
   .testimonial-home {
       position: absolute !important;
-      top:800px !important;
+      top:740px !important;
       margin-bottom: 30px !important;
   }
 } 
@@ -1463,6 +1486,47 @@ a.google-icon:hover {
 
 
 @media (max-width: 991px){
+
+  .any.stretch > img{
+    width:630px !important;
+  }
+  #main-content-int #mast {
+      position: relative !important;
+      width: 100% !important;
+      height: 287px !important;
+  }
+  #blog-content > p{    
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    text-align: justify !important;
+  }
+  .box-black-gallery{
+    margin-top: 0px !important;    
+    margin-left: 30% !important;
+    position: relative !important;
+    bottom: 37px !important;
+  }
+  #main-content-int #content{
+    padding-bottom: 190px !important; 
+  }
+  .footer-divider{display: none !important; }
+   h3.footer-text.left {
+      width: 100% !important;
+      margin-bottom: 5px !important;
+      margin-top: 1px !important;
+  }
+  .f-md-8{
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .f-md-3{
+    width: 100% !important;
+    text-align: center !important;
+    padding-left: 35% !important;
+  }
+  .f-md-4{
+    width: 13% !important;
+  }
   .beauty-image > img {
     width: 100% !important;
     max-width: 100% !important;
@@ -1770,9 +1834,7 @@ p{
     top: 12px;
     text-align: center;
 }
-.beauty-image > img{
 
-}
 textarea.wpcf7-form-control.wpcf7-textarea.max-width.input-contact {
     position: relative;
     top: 0px;
@@ -2099,12 +2161,35 @@ a.text-size-mobile {
   }
 }
 @media (max-width: 720px) {
+
+  .f-md-3{
+    width: 100% !important;
+    text-align: center !important;
+    padding-left: 29% !important;
+  }
+  .f-md-4{
+    width: 20% !important;
+  }
   #main-content-int #content h2.page-title{
     margin-top: 0px !important;
   }
   h2.page-title {
       padding-top: 35px !important;
   }
+}
+@media (max-width: 560px) {
+  .beauty-image > img{
+      width: 75% !important;
+      margin-left: 6% !important;
+  }
+
+}
+@media (max-width: 444px) {
+  .beauty-image > img{
+      width: 55% !important;
+      margin-left: 7% !important;
+  }
+
 }
 @media (max-width: 414px) {
 
@@ -2114,6 +2199,14 @@ a.text-size-mobile {
   .img-bottom-about {
     width: 100% !important;
     height: 267px !important;
+  }
+  .f-md-3{
+    width: 100% !important;
+    text-align: center !important;
+    padding-left: 23% !important;
+  }
+  .f-md-4{
+    width: 23% !important;
   }
 }
 @media (max-width: 375px) {
@@ -2315,4 +2408,8 @@ div#ncf_sidebar {
 }
 .menu-item a:hover{
   color:#2f2d30 !important;
+}
+
+.nks_cc_trigger_tabs.ncf_tab.ncf_label_visible.nks_metro {
+    width: 48px !important;
 }

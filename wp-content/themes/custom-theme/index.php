@@ -5,7 +5,7 @@
 	$slider_images_ids = $slider_settings['manual_image_ids'];
 	$slider_images     = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE id IN(" . $slider_images_ids . ")"); 	
 ?>
-<div id="background">
+<div id="background" style="min-height: 600px !important;">
 	<?php $counter = 0; ?>
 	<?php foreach($slider_images as $img_files){ ?>
 		<?php $counter += 1; if($counter == 1){ ?>
@@ -86,7 +86,7 @@
 					<div class="testimonial-content">
 						<?php if($client_name != ""){ ?>	
 							<p style="text-align: center;font-style: italic;font-size: 17px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"
-							<?php echo mb_strimwidth($t->post_content, 0, 90, '...');?> - <?php echo $client_name; ?>"</p>
+							<?php echo mb_strimwidth($t->post_content, 0, 70, '...');?> - <?php echo $client_name; ?>"</p>
 						<?php } else { ?>		
 							<p style="text-align: center;font-style: italic;font-size: 17px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"<?php echo mb_strimwidth($t->post_content, 0, 90, '...');?>"</p>
 						<?php } ?>
@@ -98,26 +98,30 @@
 		</div>
 
 		<div class="col-md-12 center">
-			<a href="<?php echo get_permalink(50); ?>" class="read-more" style="font-size: 17px !important;">See More</a>
+			<a href="<?php echo get_permalink(50); ?>" class="read-more" style="font-size: 15px !important;">See More</a>
 		</div>
 		</div>
 	</section>
 </div><!-- #main-content-int -->
-<footer id="footer-home" role="contentinfo">
+<footer id="footer-home" class="home-only" role="contentinfo">
 	<div id="footer-inner-wrap">
 		<div id="footer-menu" style="text-align: center;width: 100%;">
 			<div class="col-md-12">
-				<div class="col-md-9 left">
-					<h3 class="footer-text"><strong><span style="color:#cdcdcd;"><a href="mailto:altersevents@gmail.com">altersevents@gmail.com</a></span></strong> 500 terry Francois StreeSan Francisco, CA 94158 | <strong><span style="color:#cdcdcd;">TEL</span></strong> 123-456-7890</h3>
+				<div class="f-md-8 left no-space">
+					<h3 class="footer-text left"><strong><span style="color:#cdcdcd;"><a href="mailto:altersevents@gmail.com">altersevents@gmail.com</a></span></strong></h3>
+					<h3 class="footer-text left"><span class="footer-divider left">&nbsp;|&nbsp;</span></h3>
+					<h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> 123-456-7890</h3>
 				</div>
-				<div class="col-md-1 left">
-					<a href="#" class="facebook-icon"><i class="fa fa-facebook font-large" aria-hidden="true"></i></a>
-				</div>
-				<div class="col-md-1 left">
-					<a href="" class="twitter-icon"><i class="fa fa-twitter font-large" aria-hidden="true"></i></a>
-				</div>
-				<div class="col-md-1 left">
-					<a href="" class="google-icon"><i class="fa fa-google-plus font-large" aria-hidden="true"></i></a>
+				<div class="f-md-3 left no-space footer-social">
+					<div class="f-md-4 left">
+						<a href="#" class="facebook-icon"><i class="fa fa-facebook font-large" aria-hidden="true"></i></a>
+					</div>
+					<div class="f-md-4 left">
+						<a href="" class="twitter-icon"><i class="fa fa-twitter font-large" aria-hidden="true"></i></a>
+					</div>
+					<div class="f-md-4 left">
+						<a href="" class="google-icon"><i class="fa fa-google-plus font-large" aria-hidden="true"></i></a>
+					</div>
 				</div>
 			</div>
 			<br style="clear:both;" />

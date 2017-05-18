@@ -4,7 +4,7 @@
 <h2 class="page-title" id="hdr"><?php the_title(); ?></h2>
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
-<div class="row">
+<div class="row" id="blog-content">
 	<br style="clear: both;" /><Br/><Br/>
 
 	<?php
