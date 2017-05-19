@@ -18,6 +18,30 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/bootstrap/css/bootstrap.css"/>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/font-awesome.css"/>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/owl.carousel.css"/>
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/pushy.css"/>
 	<?php wp_head(); ?>
 </head>
 <body class="page-template page-template-onecolumn-page page-template-onecolumn-page-php page page-id-15 desktop chrome">
+        <!-- Pushy Menu -->
+        <nav class="pushy pushy-left" data-focus="#first-link">
+    	<?php 
+			$menuargs = array(
+				"theme_location" => "primary",
+				"menu_class" => "s-menu",
+				"menu_id" => "mobile-menu",
+			);
+			$items = wp_get_nav_menu_items( 'mobile-menu', $menuargs); 
+		?> 
+            <div class="pushy-content">
+                <ul>
+               		<?php foreach( $items as $item ){ ?>
+	                    <li class="pushy-submenu">
+	                        <a id="first-link" style="text-transform: uppercase;" href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
+	                    </li>
+                    <?php } ?>	
+                </ul>
+            </div>
+        </nav>
+        <!-- Site Overlay -->
+        <div class="site-overlay"></div>
+<div id="container" style="">

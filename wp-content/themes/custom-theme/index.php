@@ -5,7 +5,8 @@
 	$slider_images_ids = $slider_settings['manual_image_ids'];
 	$slider_images     = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE id IN(" . $slider_images_ids . ")"); 	
 ?>
-<div id="background" style="min-height: 600px !important;">
+
+<div id="background" style="min-height: 1200px;">
 	<?php $counter = 0; ?>
 	<?php foreach($slider_images as $img_files){ ?>
 		<?php $counter += 1; if($counter == 1){ ?>
@@ -16,6 +17,7 @@
 	<?php } ?>
 </div>
 <div id="main-content">
+
 	<header id="header" role="banner" style="display: block;">
 		<h1><a href="" title="Alters Events" rel="home"><img style="margin: 0 auto 0px !important;" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-alter.png" class="logo" alt="Alters Events"></a></h1>
 		<span class="phone-number">845.537.7291</span>
@@ -32,9 +34,21 @@
 			</div>             
 		</nav><!-- #mobile-access -->
 	</header>	
+
+	<header id="mobile-menu">
+		<div class="col-sm-12 no-space">
+			<div class="col-sm-4 left">
+				 <button class="menu-btn">&#9776;</button>
+			</div>
+			<div class="col-sm-5 left no-space">
+				<a href="" title="Alters Events" rel="home"><img style="margin: 0 auto 0px !important;width: 90px;" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-alter.png" alt="Alters Events"></a>
+			</div>
+			
+		</div>
+	</header>
+
 	<section id="content-home" role="main">
 	<div class="block-5 testimonial-home hidden">
-
 
 		<div class="owl-carousel owl-theme padding-owl left" style="width: 100% !important;padding-bottom: 40px !important;">
 		<?php 
@@ -85,10 +99,10 @@
 					</div>-->
 					<div class="testimonial-content">
 						<?php if($client_name != ""){ ?>	
-							<p style="text-align: center;font-style: italic;font-size: 17px;font-weight: 400;padding-right: 10px;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"
+							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;padding-right: 10px;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"
 							<?php echo mb_strimwidth($t->post_content, 0, 40, '...');?> - <?php echo $client_name; ?>"</p>
 						<?php } else { ?>		
-							<p style="text-align: center;font-style: italic;font-size: 17px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"<?php echo mb_strimwidth($t->post_content, 0, 90, '...');?>"</p>
+							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"<?php echo mb_strimwidth($t->post_content, 0, 90, '...');?>"</p>
 						<?php } ?>
 					</div>
 
