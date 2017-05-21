@@ -44,7 +44,7 @@ body { font-family: sans-serif; }
 				$image    = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );				
 				$image_bg = $image[0];
 			}else{
-				$image_bg = get_template_directory_uri() . "/assets/gallery/gallery-top.jpg";
+				$image_bg = get_template_directory_uri() . "/assets/images/gallery/gallery-top.jpg";
 			}					
 		?>
 		<img src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -430.516px;">
