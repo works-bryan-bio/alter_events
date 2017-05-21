@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/pushy.css"/>	
 	<?php wp_head(); ?>
 </head>
-<body class="page-template page-template-onecolumn-page page-template-onecolumn-page-php page page-id-15 desktop chrome">
+<body id="container" class="page-template page-template-onecolumn-page page-template-onecolumn-page-php page page-id-15 desktop chrome">
         <!-- Pushy Menu -->
         <nav class="pushy pushy-left" data-focus="#first-link">
     	<?php 
@@ -44,4 +44,3 @@
         </nav>
         <!-- Site Overlay -->
         <div class="site-overlay"></div>
-<div id="container" style="">

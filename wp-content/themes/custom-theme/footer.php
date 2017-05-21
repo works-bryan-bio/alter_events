@@ -1,4 +1,4 @@
-</div>
+
 <!-- jQuery -->
 <script src="<?php bloginfo('template_directory'); ?>/assets/bootstrap/js/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->

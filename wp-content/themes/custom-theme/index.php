@@ -6,16 +6,18 @@
 	$slider_images     = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE id IN(" . $slider_images_ids . ")"); 	
 ?>
 
-<div id="background" style="min-height: 1200px;">
-	<?php $counter = 0; ?>
-	<?php foreach($slider_images as $img_files){ ?>
-		<?php $counter += 1; if($counter == 1){ ?>
-			<div class="bg-photo" style="display: block;background-image: url('<?php echo $img_files->guid; ?>')"></div>
-		<?php } else{ ?>
-			<div class="bg-photo" style="display: none;background-image: url('<?php echo $img_files->guid; ?>')"></div>
+	<div id="background" style="">
+		<?php $counter = 0; ?>
+		<?php foreach($slider_images as $img_files){ ?>
+			<?php $counter += 1; if($counter == 1){ ?>
+				<img class="bg-photo" style="display: block;" src="<?php echo $img_files->guid; ?>">
+
+			<?php } else{ ?>
+				<img class="bg-photo" style="display: none;" src="<?php echo $img_files->guid; ?>">
+			<?php } ?>
 		<?php } ?>
-	<?php } ?>
-</div>
+	</div>
+
 <div id="main-content">
 
 	<header id="header" role="banner" style="display: block;">
@@ -48,9 +50,9 @@
 	</header>
 
 	<section id="content-home" role="main">
-	<div class="block-5 testimonial-home hidden">
+	<div class="block-5 testimonial-home hidden" style="padding-bottom: 30px !important;">
 
-		<div class="owl-carousel owl-theme padding-owl left" style="width: 100% !important;padding-bottom: 40px !important;">
+		<div class="owl-carousel owl-theme left" style="width: 100% !important;padding-bottom: 22px !important;">
 		<?php 
 			$featured_testimonials = $wpdb->get_results("SELECT object_id FROM wp_term_relationships WHERE term_taxonomy_id=34");
 			$featured_ids = array();
@@ -102,7 +104,7 @@
 							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;padding-right: 10px;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"
 							<?php echo mb_strimwidth($t->post_content, 0, 40, '...');?> - <?php echo $client_name; ?>"</p>
 						<?php } else { ?>		
-							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"<?php echo mb_strimwidth($t->post_content, 0, 90, '...');?>"</p>
+							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"<?php echo mb_strimwidth($t->post_content, 0, 40, '...');?>"</p>
 						<?php } ?>
 					</div>
 
