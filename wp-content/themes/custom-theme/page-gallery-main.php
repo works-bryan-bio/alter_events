@@ -59,14 +59,14 @@ body { font-family: sans-serif; }
 				$image_bg = get_template_directory_uri() . "/assets/images/gallery-landing/gallery-top.jpg";
 			}			
 		?>
-		<img src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -168.516px;">
+		<img class="img-banner-top" src="<?php echo $image_bg; ?>">
 	</div>
 </section>
 <section id="content" role="main">
 <h2 id="page_title" class="page-title">Our Events</h2>
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
-<div class="row default-theme" style="padding-right: 50px !important;">
+<div class="row" style="padding-right: 50px !important;position: relative;top: 40px;">
 	<div class="row">
 		<ul class="list-unstyled" id="cp-gallery-list">
 		<?php $count = 1;foreach( $product_categories as $c ){ ?>
@@ -108,5 +108,5 @@ body { font-family: sans-serif; }
 	</div>
 </div>
 </article><!-- #post-## -->
-<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/gallery-landing/gallery-bottom.jpg') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
+<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/gallery-landing/gallery-bottom-main.png') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
 <?php get_footer('inner'); ?>

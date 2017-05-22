@@ -25,8 +25,8 @@
 	//close menu w/ esc key
 	$(document).keyup(function(e) {
 		//check if esc key is pressed
+		/*
 		if (e.keyCode == 27) {
-
 			//check if menu is open
 			if( body.hasClass(pushyOpenLeft) || body.hasClass(pushyOpenRight) ){
 				if(cssTransforms3d){
@@ -44,6 +44,7 @@
 			}
 
 		}   
+		*/
 	});
 
 	function togglePushy(){
@@ -95,6 +96,7 @@
 	}
 
 	function closePushyFallback(){
+
 		//animate menu position based on CSS class
 		if( pushy.hasClass(pushyLeft) ){
 			body.removeClass(pushyOpenLeft);
@@ -167,13 +169,14 @@
 
 		//toggle menu
 		menuBtn.on('click', function(){
-				 
+				 	
 			$('.nks_cc_trigger_tabs.ncf_tab.ncf_label_visible.nks_metro').css("display", "none");
 			$('nav.pushy.pushy-left').css("transform", "matrix(1, 0, 0, 1, 0, 0)");
 			togglePushy();("display", "none");
 		});
 		//close menu when clicking site overlay
 		siteOverlay.on('click', function(){
+			$('.menu-home-container').removeClass("menu-slide");
 			$('.nks_cc_trigger_tabs.ncf_tab.ncf_label_visible.nks_metro').css("display", "block");
 			$('nav.pushy.pushy-left').css("transform", "matrix(1, 0, 0, 1, -200, 0)");
 			togglePushy();

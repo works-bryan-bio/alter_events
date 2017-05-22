@@ -38,7 +38,7 @@
 	</header>	
 
 	<header id="mobile-menu">
-		<div class="col-sm-12 no-space">
+		<div class="col-sm-12 no-space menu-home-container">
 			<div class="col-sm-4 left">
 				 <button class="menu-btn">&#9776;</button>
 			</div>

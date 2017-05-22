@@ -48,7 +48,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.colorbox-min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){  
-  $(".gallery-zoom-image").colorbox();
+  $(".gallery-zoom-image").colorbox({maxWidth:'95%', maxHeight:'95%'});
   $('.grid').masonry({
     itemSelector: '.grid-item',
     columnWidth: 1,

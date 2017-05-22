@@ -41,5 +41,5 @@
 
 </article><!-- #post-## -->
 	
-<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/why-us/why-us-bottom.jpg') no-repeat center center;background-size:cover; background-attachment: fixed; bottom: 0; left: 0; "></section>
+<section id="location" style="background: url('<?php bloginfo('template_directory'); ?>/assets/images/why-us/why-us-bottom-2.JPG') no-repeat center center;background-size:cover;background-position-y: 0px; background-attachment: fixed; bottom: 0; left: 0; "></section>
 <?php get_footer('inner'); ?>

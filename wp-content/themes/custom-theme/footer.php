@@ -24,6 +24,9 @@ jQuery(document).ready(function ($) {
                             autoHeight:true     
                          });   
                          $(".testimonial-home").removeClass('hidden');
+                         $('.menu-btn').on('click', function(){
+                              $('.menu-home-container').addClass("menu-slide");
+                         });
 });
 </script>
       <script type="text/javascript">
