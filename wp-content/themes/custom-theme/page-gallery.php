@@ -148,7 +148,7 @@ body { font-family: sans-serif; }
 								$add_hidden_style = "style='display:none;'";
 							}
 				          ?>
-				          <li <?php echo $add_hidden_style; ?>><div class="grid-item"><img src="<?php echo $image_url; ?>" /></div></li>				        
+				          <li <?php echo $add_hidden_style; ?>><div class="grid-item"><a class="gallery-zoom-image" href="<?php echo $image_url; ?>"><img src="<?php echo $image_url; ?>" /></a></div></li>				        
 				        <?php $limiter++; ?>
 				    <?php $count_product_image++; $total_product_images++;} ?>				
 				    </ul>		
@@ -180,7 +180,7 @@ body { font-family: sans-serif; }
 								$add_hidden_style = "style='display:none;'";
 							}
 				          ?>
-				          <li <?php echo $add_hidden_style; ?>><div class="grid-item"><img src="<?php echo $image_url; ?>" /></div></li>					       						       	
+				          <li <?php echo $add_hidden_style; ?>><div class="grid-item"><a class="gallery-zoom-image" href="<?php echo $image_url; ?>"><img src="<?php echo $image_url; ?>" /></a></div></li>					       						       	
 			    		<?php $count_product_image++;} ?>
 				<?php } ?>				
 				</ul>

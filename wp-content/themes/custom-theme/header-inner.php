@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/owl.carousel.css"/>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/owl.theme.css"/>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/pushy.css"/>
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/colorbox.css"/>
 	<?php wp_head(); ?>
 </head>
 <body class="page-template page-template-onecolumn-page page-template-onecolumn-page-php page page-id-15 desktop chrome">

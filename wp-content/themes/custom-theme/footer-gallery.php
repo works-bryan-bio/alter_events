@@ -1,9 +1,7 @@
-        <div id="contact-window" class="" style="display: none;padding-top: 30px;padding-bottom: 30px;padding-left: 50px;padding-right: 50px;text-align: center;">
-          <h1><a href="" title="Alters Events" rel="home"><img style="margin: 0 auto 0px !important;" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-alter.png" class="logo" alt="Sweet Basil"></a></h1>
-          <span class="" style="font: 21px/28px 'brandon_grotesque_regularRg', Arial, 'sans-serif';color: #ececec;">845.537.7291</span>
-        </div>
-
-
+<div id="contact-window" class="" style="display: none;padding-top: 30px;padding-bottom: 30px;padding-left: 50px;padding-right: 50px;text-align: center;">
+  <h1><a href="" title="Alters Events" rel="home"><img style="margin: 0 auto 0px !important;" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-alter.png" class="logo" alt="Sweet Basil"></a></h1>
+  <span class="" style="font: 21px/28px 'brandon_grotesque_regularRg', Arial, 'sans-serif';color: #ececec;">845.537.7291</span>
+</div>
 
 <footer id="footer-home" role="contentinfo">
   <div id="footer-inner-wrap">
@@ -47,9 +45,10 @@
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/plugins.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/b-script.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/pushy.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.colorbox-min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){  
-
+  $(".gallery-zoom-image").colorbox();
   $('.grid').masonry({
     itemSelector: '.grid-item',
     columnWidth: 1,
