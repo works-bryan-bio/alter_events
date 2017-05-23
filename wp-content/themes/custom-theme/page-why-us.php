@@ -9,7 +9,7 @@
 				$image_bg = get_template_directory_uri() . "/assets/images/why-us/why-us-top.jpg";
 			}					
 		?>
-		<img class="img-banner-top" src="<?php echo $image_bg; ?>">
+		<img class="img-banner-top banner-inner" src="<?php echo $image_bg; ?>">
 	</div>
 </section>
 <section id="content" role="main">

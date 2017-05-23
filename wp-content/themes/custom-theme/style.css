@@ -1528,6 +1528,7 @@ a.google-icon:hover {
   }
 }
 @media (max-width: 1215px) {
+  
   .beauty-image > img {
     width: 60% !important;
     max-width: none !important;
@@ -1540,7 +1541,7 @@ a.google-icon:hover {
 }
 
 @media (max-width: 991px){
-   #main-content-int #content h2.page-title { font-size: 65px; top: -84px; width: 100%;margin-bottom:40px;}
+   #main-content-int #content h2.page-title { font-size: 30px; top: -33px; width: 100%;margin-bottom:40px;}
   .any.stretch > img{
     width:700px !important;
   }
@@ -2207,7 +2208,12 @@ a.text-size-mobile {
   }
 }
 @media (max-width: 720px) {
-
+  img.banner-inner {
+      position: absolute !important;
+      top: 0px !important;
+      left: 0px !important;
+      height: 340px !important;
+  }
   .f-md-3{
     width: 100% !important;
     text-align: center !important;
@@ -2238,7 +2244,12 @@ a.text-size-mobile {
 
 }
 @media (max-width: 414px) {
-
+  img.banner-inner {
+      position: absolute !important;
+      top: 0px !important;
+      left: 0px !important;
+      height: 265px !important;
+  }
   .phone-number {
       padding-left: 35% !important;
   }

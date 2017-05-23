@@ -1,5 +1,12 @@
 <?php get_header('inner'); ?>
-<section id="mast" style="position: fixed; background: none;"><div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;"><img class="img-banner-top" src="<?php bloginfo('template_directory'); ?>/assets/images/why-us/why-us-top.jpg"></div></section>
+<section id="mast" style="position: fixed; background: none;">
+	<div style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: 1; margin: 0px; padding: 0px; height: 100%; width: 100%;">
+		<img class="img-banner-top banner-inner" src="<?php bloginfo('template_directory'); ?>/assets/images/why-us/why-us-top.jpg">
+	</div>
+</section>
+
+
+
 <section id="content" role="main">
 <h2 class="page-title" id="hdr"><?php the_title(); ?></h2>
 			

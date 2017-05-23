@@ -9,7 +9,7 @@
 				$image_bg = get_template_directory_uri() . "/assets/images/beauty/beauty-tips-top-min.png";
 			}					
 		?>
-		<img class="img-banner-top" src="<?php echo $image_bg; ?>">
+		<img class="img-banner-top banner-inner" src="<?php echo $image_bg; ?>">
 	</div>
 </section>
 <section id="content" role="main">
