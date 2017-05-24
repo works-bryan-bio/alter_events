@@ -66,7 +66,7 @@ body { font-family: sans-serif; }
 <h2 id="page_title" class="page-title">Our Events</h2>
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry">
-<div class="row" style="padding-right: 50px !important;position: relative;top: 40px;">
+<div class="row" style="position: relative;top: 40px;">
 	<div class="row">
 		<ul class="list-unstyled" id="cp-gallery-list">
 		<?php $count = 1;foreach( $product_categories as $c ){ ?>
@@ -98,11 +98,11 @@ body { font-family: sans-serif; }
 		</ul>
 	</div>
 	<br class="clear">
-	<div class="col-md-12 center">
+	<div class="col-md-12 center" style="margin-top:20px;">
 		<?php //if(isset($_GET['view'])) { ?>
-			<a class="black cf-less" href="javascript:void(0)'"><div class="box-black-gallery">View Less</div></a>
+			<a class="black cf-less view-more-button" href="javascript:void(0)'">View Less</a>
 		<?php //}else{ ?>
-			<a class="black cf-more" href="javascript:void(0)"><div class="box-black-gallery">View More</div></a>
+			<a class="black cf-more view-more-button" href="javascript:void(0)">View More</a>
 		<?php //} ?>
 		
 	</div>

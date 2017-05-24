@@ -3,21 +3,19 @@
 	$slider_data = $wpdb->get_results("SELECT  meta_value FROM wp_postmeta WHERE post_id =43 AND meta_key ='nivo_settings' LIMIT 1"); 
 	$slider_settings   = unserialize($slider_data[0]->meta_value);
 	$slider_images_ids = $slider_settings['manual_image_ids'];
-	$slider_images     = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE id IN(" . $slider_images_ids . ")"); 	
-?>
+		$slider_images     = $wpdb->get_results("SELECT  guid FROM wp_posts WHERE id IN(" . $slider_images_ids . ")"); 	
+	?>
 
 	<div id="background" style="">
-		<?php $counter = 0; ?>
-		<?php foreach($slider_images as $img_files){ ?>
+			<?php $counter = 0; ?>
+			<?php foreach($slider_images as $img_files){ ?>
 			<?php $counter += 1; if($counter == 1){ ?>
-				<img class="bg-photo" style="display: block;" src="<?php echo $img_files->guid; ?>">
-
+				<div class="bg-photo" style="display: block; background: url('<?php echo $img_files->guid; ?>') no-repeat center center;background-size: contain;"></div>
 			<?php } else{ ?>
-				<img class="bg-photo" style="display: none;" src="<?php echo $img_files->guid; ?>">
+				<div class="bg-photo" style="display: none; background: url('<?php echo $img_files->guid; ?>') no-repeat center center;background-size: contain;"></div>
 			<?php } ?>
 		<?php } ?>
 	</div>
-
 <div id="main-content">
 
 	<header id="header" role="banner" style="display: block;">
@@ -101,10 +99,10 @@
 					</div>-->
 					<div class="testimonial-content">
 						<?php if($client_name != ""){ ?>	
-							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;padding-right: 10px;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"
-							<?php echo mb_strimwidth($t->post_content, 0, 40, '...');?> - <?php echo $client_name; ?>"</p>
+							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;padding-right: 10px;width: 100%;margin: 0 auto;margin-top: 30px;" class="testimonial-text-home white">"
+							<?php echo mb_strimwidth($t->post_content, 0, 35, '...');?> - <?php echo $client_name; ?>"</p>
 						<?php } else { ?>		
-							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="white">"<?php echo mb_strimwidth($t->post_content, 0, 40, '...');?>"</p>
+							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="testimonial-text-home white">"<?php echo mb_strimwidth($t->post_content, 0, 35, '...');?>"</p>
 						<?php } ?>
 					</div>
 
@@ -119,34 +117,33 @@
 		</div>
 	</section>
 </div><!-- #main-content-int -->
-<footer id="footer-home" class="home-only" role="contentinfo">
-	<div id="footer-inner-wrap">
-		<div id="footer-menu" style="text-align: center;width: 100%;">
-			<div class="col-md-12">
-				<div class="f-md-8 left no-space">
-					<h3 class="footer-text left"><strong><span style="color:#cdcdcd;"><a href="mailto:altersevents@gmail.com">altersevents@gmail.com</a></span></strong></h3>
-					<h3 class="footer-text left"><span class="footer-divider left">&nbsp;|&nbsp;</span></h3>
-					<h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> 845-537-7291</h3>
-				</div>
-				<div class="f-md-3 left no-space footer-social">
-					<div class="f-md-4 left">
-						<a href="#" class="facebook-icon"><i class="fa fa-facebook font-large" aria-hidden="true"></i></a>
-					</div>
-					<div class="f-md-4 left">
-						<a href="" class="twitter-icon"><i class="fa fa-twitter font-large" aria-hidden="true"></i></a>
-					</div>
-					<div class="f-md-4 left">
-						<a href="" class="google-icon"><i class="fa fa-google-plus font-large" aria-hidden="true"></i></a>
-					</div>
-				</div>
-			</div>
-			<br style="clear:both;" />
-			<hr style="border-top: 1px solid #909090;" />
-			<h3 class="footer-text footer-small">All Rights Reserved. Designed by: <span><a href="#" style="color:#00b6dd;">BroProWeb</a></span></h3>
-		</div>
-
-		<div class="clearfix"></div>
-	</div>
+<footer id="footer-home" role="contentinfo">
+      <div id="footer-inner-wrap">
+        <div id="footer-menu" style="text-align: center;width: 100%;">
+          <div class="col-md-12">
+            <div class="f-md-8 text-left left no-space">
+              <h3 class="footer-text left"><strong><span style="color:#cdcdcd;"><a href="mailto:altersevents@gmail.com">altersevents@gmail.com</a></span></strong></h3>
+              <h3 class="footer-text divider-f left"><span class="footer-divider left">&nbsp;|&nbsp;</span></h3>
+              <h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> 845-537-7291</h3>
+            </div>
+            <div class="f-md-3 left no-space footer-social" style="margin-bottom: 10px;">
+              <div class="f-md-4 left">
+                <a href="#" class="facebook-icon"><i class="fa fa-facebook font-large" aria-hidden="true"></i></a>
+              </div>
+              <div class="f-md-4 left">
+                <a href="" class="twitter-icon"><i class="fa fa-twitter font-large" aria-hidden="true"></i></a>
+              </div>
+              <div class="f-md-4 left">
+                <a href="" class="google-icon"><i class="fa fa-google-plus font-large" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+  
+          <hr style="clear:both;border-top: 1px solid #909090;" />
+          <h3 class="footer-text footer-small">All Rights Reserved. Designed by: <span><a href="#" style="color:#00b6dd;">BroProWeb</a></span></h3>
+        </div>
+        <div class="clearfix"></div>
+      </div>
 </footer>
 
 <?php get_footer(); ?>

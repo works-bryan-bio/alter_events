@@ -2,7 +2,7 @@
           <h1><a href="" title="Alters Events" rel="home"><img style="margin: 0 auto 0px !important;" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-alter.png" class="logo" alt="Sweet Basil"></a></h1>
           <span class="" style="font: 21px/28px 'brandon_grotesque_regularRg', Arial, 'sans-serif';color: #ececec;">845.537.7291</span>
         </div>
-          <footer id="footer-home" role="contentinfo">
+        <footer id="footer-home" role="contentinfo">
               <div id="footer-inner-wrap">
                 <div id="footer-menu" style="text-align: center;width: 100%;">
                   <div class="col-md-12">
@@ -11,7 +11,7 @@
                       <h3 class="footer-text divider-f left"><span class="footer-divider left">&nbsp;|&nbsp;</span></h3>
                       <h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> 845-537-7291</h3>
                     </div>
-                    <div class="f-md-3 left no-space footer-social">
+                    <div class="f-md-3 left no-space footer-social" style="margin-bottom: 10px;">
                       <div class="f-md-4 left">
                         <a href="#" class="facebook-icon"><i class="fa fa-facebook font-large" aria-hidden="true"></i></a>
                       </div>
@@ -23,8 +23,8 @@
                       </div>
                     </div>
                   </div>
-                  <br style="clear:both;" />
-                  <hr style="border-top: 1px solid #909090;" />
+          
+                  <hr style="clear:both;border-top: 1px solid #909090;" />
                   <h3 class="footer-text footer-small">All Rights Reserved. Designed by: <span><a href="#" style="color:#00b6dd;">BroProWeb</a></span></h3>
                 </div>
                 <div class="clearfix"></div>
