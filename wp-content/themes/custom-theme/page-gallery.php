@@ -56,8 +56,10 @@ body { font-family: sans-serif; }
 <article id="post-691" class="post-691 page type-page status-publish hentry" style="padding-bottom: 0px !important;">
 	<div id="event-container" class="row" style="">
 		<h1 class="about-text-1">event name</h1>
-		<div class="col-md-12 gallery-event center" style="max-width:100% !important;"> 
-			<p class="p-gallery">This is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your paThis is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your place.</p>
+		<div class="col-md-12 no-space center" style="max-width:100% !important;"> 
+			<div class="container-blog" style="margin-top:30px;padding-bottom: 0px !important;">
+				<p>This is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your paThis is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your place.</p>
+			</div>
 		</div>
 	</div>
 		<?php
@@ -220,13 +222,12 @@ body { font-family: sans-serif; }
 		}); 	
 
 		$('.cf-more-all-photos').click(function () {    		      
-	      shown = $('#cp-gallery-list-all-photos li:visible').size() + 6;      
+	      shown = $('#cp-gallery-list-all-photos li:visible').size() + 3;      
 	      if (shown < total_items) { 
 	      	$('#cp-gallery-list-all-photos li:lt(' + shown + ')').fadeIn(300); }
 	      else {
 	         $('#cp-gallery-list-all-photos li:lt(' + total_items + ')').fadeIn(300);
 	         $('.cf-more-all-photos').addClass('shown-all');
-	         $('.gallery-container').addClass('hide-transparent');
 	         $('.cf-more-all-photos').fadeOut();
 	      }			      	
 	      $('.grid-all').masonry();		  	
@@ -243,7 +244,7 @@ body { font-family: sans-serif; }
  			
  			$('.cf-more-<?php echo $p->post_name; ?>').click(function () {    
  			  var items = <?php echo $product_images_count[$p->ID]; ?>;   		      
-		      shown = $('#cp-gallery-list-<?php echo $p->post_name; ?> li:visible').size() + 6;  		      
+		      shown = $('#cp-gallery-list-<?php echo $p->post_name; ?> li:visible').size() + 3;  		      
 		      if (shown < items) { 
 		      	$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + shown + ')').fadeIn(300); }
 		      else {

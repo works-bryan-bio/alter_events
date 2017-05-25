@@ -3,7 +3,7 @@
   <span class="" style="font: 21px/28px 'brandon_grotesque_regularRg', Arial, 'sans-serif';color: #ececec;">845.537.7291</span>
 </div>
 
-<footer id="footer-home" role="contentinfo">
+<footer id="footer-home" class="footer-inner" role="contentinfo">
       <div id="footer-inner-wrap">
         <div id="footer-menu" style="text-align: center;width: 100%;">
           <div class="col-md-12">

@@ -1581,25 +1581,57 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
-.container {
+ .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
+.container-blog{
+  padding-right: 25px;
+  padding-left: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media (min-width: 768px) {
+  .container-blog {
+    width: 750px;
+  }
   .container {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
+  .container-blog {
+    width: 970px;
+    padding-bottom: 40px;
+  }
   .container {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
+  .container-blog {
+    width: 1170px;
+  }
   .container {
     width: 1170px;
+  }
+}
+@media (min-width: 1300px) {
+  .container-blog {
+    width: 1270px;
+  }
+}
+@media (min-width: 1400px) {
+  .container-blog {
+    width: 1370px;
+  }
+}
+@media (min-width: 1480px) {
+  .container-blog {
+    width: 1420px;
   }
 }
 .container-fluid {

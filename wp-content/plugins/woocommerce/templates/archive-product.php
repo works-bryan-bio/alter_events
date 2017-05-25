@@ -3,7 +3,7 @@
 * { box-sizing: border-box; }
 
 /* force scrollbar */
-html { overflow-y: scroll; }
+
 
 body { font-family: sans-serif; }
 
@@ -21,40 +21,57 @@ body { font-family: sans-serif; }
   width: 25.333%;
 }
 
+
 .grid-item {
   float: left;
 }
+
+
 
 .grid-item img {
   display: block;
   max-width: 100%;
 }
 .gallery-container{
-	min-height: 700px;	
+	min-height: 400px;	
 }
 </style>
 
 <section id="mast" style="position: fixed; background: none;">
 	<div class="any stretch" style="left: 0px; top: 0px; position: absolute; overflow: hidden; z-index: -999998; margin: 0px; padding: 0px; height: 100%; width: 100%;">
 		<?php 
-			if( has_post_thumbnail( 21 ) ){
-				$image    = wp_get_attachment_image_src( get_post_thumbnail_id( 21 ), 'single-post-thumbnail' );				
+			if( has_post_thumbnail( $post->ID ) ){
+				$image    = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );				
 				$image_bg = $image[0];
 			}else{
-				$image_bg = get_template_directory_uri() . "/assets/gallery/gallery-top.jpg";
+				$image_bg = get_template_directory_uri() . "/assets/images/gallery/gallery-top.jpg";
 			}					
 		?>
-		<img src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -430.516px;">
+		<img class="banner-inner" src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 1031.03px; left: 0px; top: -430.516px;">
 	</div>
 </section>
 <section id="content" role="main">
-<h2 class="page-title"><?php echo get_the_title(21); ?></h2>
+<h2 class="page-title">	
+	<?php 	
+		$keys = parse_url(trim($_SERVER["REQUEST_URI"],"/")); // parse the url
+		$path = explode("/", $keys['path']); // splitting the path 			
+		$last_item_index = count($path) - 1;
+		$project = $path[$last_item_index];			
+		//Get products
+		$args      = array( 'post_type' => 'product', 'product_cat' => $project );
+		$products  = get_posts( $args );
+		$productsB = get_posts( $args );
+		echo str_replace("-", " ", $project);
+	?>
+</h2>
 			
 <article id="post-691" class="post-691 page type-page status-publish hentry" style="padding-bottom: 0px !important;">
-	<div id="event-container" class="row default-theme" style="">
+	<div id="event-container" class="row" style="">
 		<h1 class="about-text-1">event name</h1>
-		<div class="col-md-12 gallery-event center" style="max-width:100% !important;"> 
-			<p>This is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your paThis is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your place.</p>
+		<div class="col-md-12 no-space center" style="max-width:100% !important;"> 
+			<div class="container-blog" style="margin-top:30px;padding-bottom: 0px !important;">
+				<p>This is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your paThis is your About section. It’s a great space to tell your story and to describe who you are and what you do. If you're a business, talk about how you started and tell the story of your place.</p>
+			</div>
 		</div>
 	</div>
 		<?php
@@ -69,17 +86,6 @@ body { font-family: sans-serif; }
 
 				endwhile; // End of the loop.
 		?>
-		<?php 	
-			$keys = parse_url(trim($_SERVER["REQUEST_URI"],"/")); // parse the url
- 			$path = explode("/", $keys['path']); // splitting the path 			
- 			$last_item_index = count($path) - 1;
-			$project = $path[$last_item_index];			
-			//Get products
-			$args      = array( 'post_type' => 'product', 'product_cat' => $project );
-			$products  = get_posts( $args );
-			$productsB = get_posts( $args );
-		?>
-
 		<br class="clear"><br/>
 		<div class="image-gallery-btn-container" style="margin-bottom: 80px;margin-left:20px;">
 			<?php $count=0; foreach( $products as $p ){ ?>
@@ -145,7 +151,7 @@ body { font-family: sans-serif; }
 								$add_hidden_style = "style='display:none;'";
 							}
 				          ?>
-				          <li <?php echo $add_hidden_style; ?>><div class="grid-item"><img src="<?php echo $image_url; ?>" /></div></li>				        
+				          <li <?php echo $add_hidden_style; ?>><div class="grid-item"><a class="gallery-zoom-image" href="<?php echo $image_url; ?>"><img src="<?php echo $image_url; ?>" /></a></div></li>				        
 				        <?php $limiter++; ?>
 				    <?php $count_product_image++; $total_product_images++;} ?>				
 				    </ul>		
@@ -177,7 +183,7 @@ body { font-family: sans-serif; }
 								$add_hidden_style = "style='display:none;'";
 							}
 				          ?>
-				          <li <?php echo $add_hidden_style; ?>><div class="grid-item"><img src="<?php echo $image_url; ?>" /></div></li>					       						       	
+				          <li <?php echo $add_hidden_style; ?>><div class="grid-item"><a class="gallery-zoom-image" href="<?php echo $image_url; ?>"><img src="<?php echo $image_url; ?>" /></a></div></li>					       						       	
 			    		<?php $count_product_image++;} ?>
 				<?php } ?>				
 				</ul>
@@ -217,12 +223,13 @@ body { font-family: sans-serif; }
 		}); 	
 
 		$('.cf-more-all-photos').click(function () {    		      
-	      shown = $('#cp-gallery-list-all-photos li:visible').size() + 3;      
+	      shown = $('#cp-gallery-list-all-photos li:visible').size() + 6;      
 	      if (shown < total_items) { 
 	      	$('#cp-gallery-list-all-photos li:lt(' + shown + ')').fadeIn(300); }
 	      else {
 	         $('#cp-gallery-list-all-photos li:lt(' + total_items + ')').fadeIn(300);
 	         $('.cf-more-all-photos').addClass('shown-all');
+	         $('.gallery-container').addClass('hide-transparent');
 	         $('.cf-more-all-photos').fadeOut();
 	      }			      	
 	      $('.grid-all').masonry();		  	
@@ -239,7 +246,7 @@ body { font-family: sans-serif; }
  			
  			$('.cf-more-<?php echo $p->post_name; ?>').click(function () {    
  			  var items = <?php echo $product_images_count[$p->ID]; ?>;   		      
-		      shown = $('#cp-gallery-list-<?php echo $p->post_name; ?> li:visible').size() + 3;  		      
+		      shown = $('#cp-gallery-list-<?php echo $p->post_name; ?> li:visible').size() + 6;  		      
 		      if (shown < items) { 
 		      	$('#cp-gallery-list-<?php echo $p->post_name; ?> li:lt(' + shown + ')').fadeIn(300); }
 		      else {
