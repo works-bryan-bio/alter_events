@@ -38,7 +38,7 @@
 		</div>
 	</div>
 	<br style="clear: both;" /><Br/><Br/>
-	<div class="col-md-12 center"><a href="<?php echo get_permalink(222); ?>#hdr" class="read-more">Read More</a></div>	
+	<!-- <div class="col-md-12 center"><a href="<?php echo get_permalink(222); ?>#hdr" class="read-more">Read More</a></div>	 -->
 </div>
 
 </article><!-- #post-## -->

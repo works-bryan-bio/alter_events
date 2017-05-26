@@ -200,6 +200,7 @@ body { font-family: sans-serif; }
 <?php get_footer('gallery'); ?>
 <script type="text/javascript">
  	$(function(){
+ 		$(".gallery-zoom-image").colorbox({maxWidth:'95%', maxHeight:'95%'});
  		var total_items = <?php echo $total_product_images; ?>;
   		var shown = 10;
 
