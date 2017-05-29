@@ -37,7 +37,7 @@
 			</div>
 		</div>
 	</div>
-	<br style="clear: both;" /><Br/><Br/>
+	<br style="clear: both;" />
 	<!-- <div class="col-md-12 center"><a href="<?php echo get_permalink(222); ?>#hdr" class="read-more">Read More</a></div>	 -->
 </div>
 

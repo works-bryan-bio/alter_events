@@ -27,8 +27,8 @@ get_header('inner');
 <div class="row margin-content" style="padding-top:52px;">
 	<div class="col-md-4 left">
 		<img class="full-width max-height-img" src="<?php bloginfo('template_directory'); ?>/assets/images/blog-beauty/blog-pic.jpg"/>
-		<div class="col-md-12 center margin-small">
-			<span class="text-detail-beauty-blog">March 30, 2017 &nbsp; | &nbsp;</span><span class="text-detail-beauty-blog">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty-blog">0 comments</span>
+		<div class="col-md-12 center margin-small">		
+			<span class="text-detail-beauty-blog"><?php echo date('F d, Y',strtotime($post->post_date)); ?> &nbsp; | &nbsp;</span><span class="text-detail-beauty-blog">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty-blog"><?php echo $post->comment_count; ?> comments</span>
 		</div>		
 	</div>
 	<div class="col-md-7 right content-blog-beauty">

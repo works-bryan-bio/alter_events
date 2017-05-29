@@ -31,7 +31,7 @@
 			</div>
 			<br/>
 			<div class="col-md-12 center">
-				<span class="text-detail-beauty">March 30, 2017 &nbsp; | &nbsp;</span><span class="text-detail-beauty">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty"><?php echo $post->comment_count; ?> comments</span>
+				<span class="text-detail-beauty"><?php echo date('F d, Y',strtotime($post->post_date)); ?> &nbsp; | &nbsp;</span><span class="text-detail-beauty">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty"><?php echo $post->comment_count; ?> comments</span>
 			</div>
 			<div class="col-md-12 center">
 				<h1 class="beauty-text-title"><?php echo apply_filters( 'the_title', $post->post_title, $post->ID ); ?></h1>
