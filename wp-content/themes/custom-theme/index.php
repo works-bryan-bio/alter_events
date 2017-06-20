@@ -100,7 +100,7 @@
 					<div class="testimonial-content">
 						<?php if($client_name != ""){ ?>	
 							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;padding-right: 10px;width: 100%;margin: 0 auto;margin-top: 30px;" class="testimonial-text-home white">"
-							<?php echo $t->post_excerpt;?> - <?php echo $client_name; ?>"</p>
+							<?php echo $t->post_excerpt;?>" - <?php echo $client_name; ?></p>
 						<?php } else { ?>		
 							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="testimonial-text-home white">"<?php echo mb_strimwidth($t->post_content, 0, 35, '...');?>"</p>
 						<?php } ?>
