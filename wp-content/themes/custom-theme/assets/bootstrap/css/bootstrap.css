@@ -1613,7 +1613,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container-blog {
-    width: 1170px;
+    width: 1190px;
   }
   .container {
     width: 1170px;
@@ -1621,17 +1621,22 @@ pre code {
 }
 @media (min-width: 1300px) {
   .container-blog {
-    width: 1270px;
+    width: 1290px;
   }
 }
 @media (min-width: 1400px) {
   .container-blog {
-    width: 1370px;
+    width: 1390px;
   }
 }
 @media (min-width: 1480px) {
   .container-blog {
-    width: 1420px;
+    width: 1480px;
+  }
+}
+@media (min-width: 1580px) {
+  .container-blog {
+    width: 1530px;
   }
 }
 .container-fluid {

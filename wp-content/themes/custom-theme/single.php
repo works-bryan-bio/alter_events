@@ -27,7 +27,7 @@ get_header('inner');
 <div class="row margin-content" style="padding-top:52px;">
 	<div class="col-md-4 left">
 		<img class="full-width max-height-img" src="<?php bloginfo('template_directory'); ?>/assets/images/blog-beauty/blog-pic.jpg"/>
-		<div class="col-md-12 center margin-small">		
+		<div class="col-md-12 center margin-small">
 			<span class="text-detail-beauty-blog"><?php echo date('F d, Y',strtotime($post->post_date)); ?> &nbsp; | &nbsp;</span><span class="text-detail-beauty-blog">by Admin &nbsp; | &nbsp;</span><span class="text-detail-beauty-blog"><?php echo $post->comment_count; ?> comments</span>
 		</div>		
 	</div>
@@ -51,9 +51,8 @@ get_header('inner');
 			endwhile;
 			?>
 
-	</div>
-	<br style="clear:both;" /><br/><br/> 
 
+			<br style="clear:both;" /><br/><br/> 
 			<?php
 			// Start the loop.
 			while ( have_posts() ) : the_post();
@@ -83,6 +82,10 @@ get_header('inner');
 			// End the loop.
 			endwhile;
 			?>
+	</div>
+
+
+
 
 </div>
 </article><!-- #post-## -->

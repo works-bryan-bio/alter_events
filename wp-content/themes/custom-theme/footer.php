@@ -21,7 +21,7 @@ jQuery(document).ready(function ($) {
                             loop:true,
                             autoPlay: true,
                             margin:10,
-                            autoHeight:true     
+                            autoHeight:true   
                          });   
                          $(".testimonial-home").removeClass('hidden');
                          $('.menu-btn').on('click', function(){

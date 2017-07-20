@@ -35,15 +35,11 @@
 		</nav><!-- #mobile-access -->
 	</header>	
 
-	<header id="mobile-menu">
+	<header id="mobile-menu" style="background-image: none !important;">
 		<div class="col-sm-12 no-space menu-home-container">
-			<div class="col-sm-4 left">
+			<div class="col-sm-7 left">
 				 <button class="menu-btn">&#9776;</button>
-			</div>
-			<div class="col-sm-5 left no-space">
-				<a href="" title="Alters Events" rel="home"><img style="margin: 0 auto 0px !important;width: 90px;" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-alter.png" alt="Alters Events"></a>
-			</div>
-			
+			</div>		
 		</div>
 	</header>
 
@@ -99,10 +95,10 @@
 					</div>-->
 					<div class="testimonial-content">
 						<?php if($client_name != ""){ ?>	
-							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;padding-right: 10px;width: 100%;margin: 0 auto;margin-top: 30px;" class="testimonial-text-home white">"
-							<?php echo $t->post_excerpt;?>" - <?php echo $client_name; ?></p>
+							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;padding-left:10px;padding-right: 10px;width: 100%;margin: 0 auto;margin-top: 30px;" class="testimonial-text-home white">"
+							<?php echo $t->post_excerpt;?> " - <?php echo $client_name; ?></p>
 						<?php } else { ?>		
-							<p style="text-align: center;font-style: italic;font-size: 19px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="testimonial-text-home white">"<?php echo mb_strimwidth($t->post_content, 0, 35, '...');?>"</p>
+							<p style="text-align: center;font-style: italic;font-size: 19px;padding-left:10px;padding-right:10px;font-weight: 400;width: 100%;margin: 0 auto;margin-top: 30px;" class="testimonial-text-home white">"<?php echo $t->post_excerpt;?>"</p>
 						<?php } ?>
 					</div>
 
@@ -124,7 +120,7 @@
             <div class="f-md-8 text-left left no-space">
               <h3 class="footer-text left"><strong><span style="color:#cdcdcd;"><a href="mailto:altersevents@gmail.com">altersevents@gmail.com</a></span></strong></h3>
               <h3 class="footer-text divider-f left"><span class="footer-divider left">&nbsp;|&nbsp;</span></h3>
-              <h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> 845-537-7291</h3>
+              <h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> <a href="tel:845-537-7291"><phone>845-537-7291</phone></a></h3>
             </div>
             <div class="f-md-3 left no-space footer-social" style="margin-bottom: 10px;">
               <div class="f-md-4 left">

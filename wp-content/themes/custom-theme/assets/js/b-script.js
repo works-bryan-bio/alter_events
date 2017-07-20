@@ -81,7 +81,7 @@ jQuery(document).ready(function ($) {
 	    $win.scroll(function(){
 	        var pos = $win.scrollTop();
 	        if(pos > 110){
-	            targets.stop(true, true).fadeOut("fast");
+	            targets.stop(true, true).fadeOut(1000);
 	        } else {
 	            targets.stop(true, true).fadeIn("fast");
 	        }
@@ -97,13 +97,13 @@ jQuery(document).ready(function ($) {
 		       
 		       footer
 		          .addClass('bottom')
-		          .stop(true, true).fadeIn("fast");
+		          .fadeIn(900);
 		
 		    }
 		    else if ( scrolledLength <= documentHeight && footer.hasClass('bottom') ) {           
 		        footer
 		           .removeClass('bottom')
-		           .stop(true, true).fadeOut("fast");
+		           .stop(true, true).fadeOut(500);
 		    } 
 	        
 	    });

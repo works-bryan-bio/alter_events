@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/font-awesome.css"/>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/owl.carousel.css"/>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/pushy.css"/>
+	<link rel=icon href='<?php bloginfo('template_directory'); ?>/alter-favicon.png'>
 	<?php wp_head(); ?>
 </head>
 <body id="container" class="page-template page-template-onecolumn-page page-template-onecolumn-page-php page page-id-15 desktop chrome">
@@ -34,6 +35,9 @@
 		?> 
             <div class="pushy-content">
                 <ul>
+		   			<li class="pushy-submenu">
+		   				<a href="<?php echo get_home_url(); ?>" title="Alters Events" rel="home"><img style="margin: 0 auto 0px !important;width: 90px;" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-alter.png" alt="Alters Events"></a>
+		   			</li>    
                		<?php foreach( $items as $item ){ ?>
 	                    <li class="pushy-submenu">
 	                        <a id="first-link" style="text-transform: uppercase;" href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>

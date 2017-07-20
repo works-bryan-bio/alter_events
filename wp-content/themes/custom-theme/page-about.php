@@ -16,7 +16,7 @@
 <h2 class="page-title" style="    height: 95px !important;"><?php the_title(); ?></h2>
 			
 <article id="post-691" class="content-about">
-<div class="row margin-content about-content" style="">
+<div class="row margin-content-about about-content" style="">
 	<?php
 			while ( have_posts() ) : the_post();
 

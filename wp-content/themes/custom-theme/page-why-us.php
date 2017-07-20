@@ -9,7 +9,7 @@
 				$image_bg = get_template_directory_uri() . "/assets/images/why-us/why-us-top.jpg";
 			}					
 		?>
-		<img class="img-banner-top banner-inner" src="<?php echo $image_bg; ?>">
+		<img  class="banner-inner" src="<?php echo $image_bg; ?>" style="position: absolute; margin: 0px; padding: 0px; border: none; z-index: -999999; width: 100%; height: 910.03px; left: 0px; top: -197.516px;">
 	</div>
 </section>
 <section id="content" role="main">

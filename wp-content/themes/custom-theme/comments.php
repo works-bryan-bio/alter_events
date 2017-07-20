@@ -23,12 +23,6 @@ if ( post_password_required() ) {
 }
 ?>
 
-<style>
-.comment-list{
-	width:50%;
-}
-</style>
-
 <div id="comments" class="comments-area">
 
 	<?php

@@ -10,7 +10,7 @@
             <div class="f-md-8 text-left left no-space">
               <h3 class="footer-text left"><strong><span style="color:#cdcdcd;"><a href="mailto:altersevents@gmail.com">altersevents@gmail.com</a></span></strong></h3>
               <h3 class="footer-text divider-f left"><span class="footer-divider left">&nbsp;|&nbsp;</span></h3>
-              <h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> 845-537-7291</h3>
+              <h3 class="footer-text left"><strong><span style="color:#cdcdcd;">TEL</span></strong> <a href="tel:845-537-7291"><phone>845-537-7291</phone></a></h3>
             </div>
             <div class="f-md-3 left no-space footer-social" style="margin-bottom: 10px;">
               <div class="f-md-4 left">
@@ -44,10 +44,12 @@
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/plugins.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/b-script.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/pushy.js"></script>
+
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.colorbox-min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){  
-  $(".gallery-zoom-image").colorbox({rel:'prod-images', maxWidth:'95%', maxHeight:'95%'});
+  $(".gallery-zoom-image").colorbox({rel:'group3', transition:"none", width:"75%", height:"75%"});
+
   $('.grid').masonry({
     itemSelector: '.grid-item',
     columnWidth: 1,
