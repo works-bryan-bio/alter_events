@@ -279,5 +279,11 @@ body { font-family: sans-serif; }
  				}); 				
  			});
 		<?php } ?>
+		setTimeout(function(){ 			
+			$('.grid-all').masonry();
+			if( !$('.cf-more-all-photos').hasClass('shown-all') ){
+				$('.cf-more-all-photos').fadeIn();  
+			}						
+		}, 1000);
  	});
 </script>
